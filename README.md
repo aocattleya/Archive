@@ -32,13 +32,13 @@
 | --------------- | ---------- | ------------------------------- |
 | name            | string     | null: false, index: true        |
 | price           | integer    | null: false, index: true        |
-| size            | string     |                                 |
-| condition       | string     | null: false                     |
-| shipping_date   | integer    | null: false                     |
-| shipping_price  | integer    | null: false                     |
-| shipping_area   | string     | null: false                     |
-| shipping_method | string     | null: false                     |
-| category_id     | references | null: false , foreign_key: true |
+| size            | integer    | enum, index: true               |
+| condition       | integer    | enum, null: false               |
+| shipping_date   | integer    | enum, null: false               |
+| shipping_price  | integer    | enum, null: false               |
+| shipping_area   | integer    | enum, null: false               |
+| shipping_method | integer    | enum, null: false               |
+| category_id     | references | null: false,  foreign_key: true |
 | brand_id        | references | null: false, foreign_key: true  |
 | user_id         | references | null: false, foreign_key: true  |
 
@@ -57,6 +57,7 @@
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | postal_code     | integer    | null: false                    |
+| prefecture      | string     | null: false                    |
 | city            | string     | null: false                    |
 | street          | string     | null: false                    |
 | building        | string     |                                |
@@ -87,11 +88,11 @@
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| evaluate  | string     | null: false                    |
-| confirm   | boolean    | null: false                    |
-| body      | text       | null: false                    |
-| seller_id | references | null: false, foreign_key: true |
-| buyer_id  | references | null: false, foreign_key: true |
+| evaluate  | integer    | enum, null: false              |
+| confirm   | boolean    | default: false                 |
+| body      | text       |                                |
+| seller_id | integer    |                                |
+| buyer_id  | integer    |                                |
 | item_id   | references | null: false, foreign_key: true |
 
 ### Association
@@ -116,7 +117,7 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| state   | integer    | null: false                    |
+| state   | integer    | null: false, dafault: 0        |
 | item_id | references | null: false, foreign_key: true |
 
 ### Association
@@ -176,7 +177,7 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| comment | text       |                                |
+| comment | text       | null: false                    |
 | user_id | references | null: false, foreign_key: true |
 | item_id | references | null: false, foreign_key: true |
 

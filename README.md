@@ -1,5 +1,7 @@
 # Mercari_clone DB設計
 
+![ER](https://user-images.githubusercontent.com/39142850/70142690-2b676000-16dd-11ea-9782-44e3708b8684.png)
+
 ## users テーブル
 
 | Column          | Type       | Options                        |

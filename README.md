@@ -1,4 +1,4 @@
-# Mercari-clone DB設計
+# Mercari_clone DB設計
 
 ## users テーブル
 
@@ -18,9 +18,13 @@
 
 ### Association
 
-- has_many
-- has_many
-- has_many
+- has_many : comments
+- has_many : likes
+- has_many : items
+- has_many : ordercomments
+- has_many : address
+- has_many : users_transacts
+- has_many : transacts through::users_transacts
 
 ## items テーブル
 
@@ -40,16 +44,19 @@
 
 ### Association
 
-- has_many
-- has_many
-- has_many
+- has_many : images
+- has_many : comments
+- has_many : likes
+- has_many : orders
+- belongs_to : user
+- belongs_to : category
+- belongs_to : brand
 
 ## addresses テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
 | postal_code     | integer    | null: false                    |
-| prefecture      | string     | null: false                    |
 | city            | string     | null: false                    |
 | street          | string     | null: false                    |
 | building        | string     |                                |
@@ -62,8 +69,7 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- belongs_to : user
 
 ## users_transacts テーブル
 
@@ -74,8 +80,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- belongs_to : user
+- belongs_to : transact
 
 ## transacts テーブル
 
@@ -90,8 +96,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- has_many : users_transacts
+- belongs_to : user
 
 ## ordercomments テーブル
 
@@ -103,8 +109,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- belongs_to user
+- belongs_to order
 
 ## orders テーブル
 
@@ -115,8 +121,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- has_many : ordercomments
+- belongs_to : item
 
 ## categories テーブル
 
@@ -128,8 +134,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- has_many : items
+- has_many : brands_categories
 
 ## brands テーブル
 
@@ -140,8 +146,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- has many : items
+- has many : categories through brands_categories
 
 ## brands_categories テーブル
 
@@ -152,8 +158,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- belongs_to : brand
+- belongs_to : category
 
 ## images テーブル
 
@@ -164,8 +170,7 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- belongs_to : item
 
 ## comments テーブル
 
@@ -177,8 +182,8 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- belongs_to : user
+- belongs_to :item
 
 ## likes テーブル
 
@@ -189,5 +194,5 @@
 
 ### Association
 
-- belongs_to
-- belongs_to
+- belongs_to : user
+- belongs_to : item

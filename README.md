@@ -1,6 +1,6 @@
 # Mercari_clone DB設計
 
-![ER](https://user-images.githubusercontent.com/39142850/70142690-2b676000-16dd-11ea-9782-44e3708b8684.png)
+![ER](https://user-images.githubusercontent.com/39142850/70198638-bafb2600-1752-11ea-83b7-fa267ca9e76f.png)
 
 ## users テーブル
 

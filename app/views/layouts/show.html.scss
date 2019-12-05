@@ -1,0 +1,66 @@
+.default-container
+
+.item-box-container
+  %h1.item-name{
+  }
+  .item-box-container__item-main-content-clearfix
+  %table{:border => "1", :style => "border-collapse: collapse; border-color: gray"}
+    %tr
+      %th 出品者名
+      %td ルーブル美術館
+    %tr
+      %th カテゴリー
+      %td おもちゃ・ホビー・グッズ>美術品>絵画/タペストリ
+    %tr
+      %th ブランド
+      %td
+    %tr
+      %th 商品の状態
+      %td
+    %tr
+      %th 配送料の負担
+      %td 送料込み（出品者負担）
+    %tr
+      %th 発送元地域
+      %td 東京都
+    %tr
+      %th 発送日の目安
+      %td ２〜３日で発送
+
+
+  .item-box-container__item-price-box-center
+  %a.item-buy-btn
+
+.item-description
+  .item-btn-left
+  .item-btn-right
+
+.item-detail-message
+  .item-detail-message__content
+  %p
+  %textarea 
+  %button  .message-submit 
+  %span 
+
+
+.item.button-container-clearfix
+
+.nav-item-link-prev-next-clearfix
+  %li.nav-item-link-left
+  %li.nav-item-link-right
+
+.item-social-mediabox
+  %li.facebook
+  %li.twitter
+  %li.LINE
+  %li.pintest
+
+.items-in-user-profile
+  %h2.items-box-head
+  %a href="#"  レオナルド・ダ・ヴィンチさんのその他の出品
+  .items-box-content-clearfix
+
+.items-in-user-profile
+  %h2.items-box-head
+  %a href="#"  モナリザの微笑のその他の商品
+  .items-box-content-clearfix

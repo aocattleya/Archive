@@ -1,11 +1,15 @@
-.default-container
+.default-container{
 
-.item-box-container
+}
+
+  .item-box-container
   %h1.item-name{
   }
   .item-box-container__item-main-content-clearfix
   %table{:border => "1", :style => "border-collapse: collapse; border-color: gray"}
-    %tr
+    %tr{
+    background-color: yellow;
+    }
       %th 出品者名
       %td ルーブル美術館
     %tr
@@ -38,9 +42,9 @@
 .item-detail-message
   .item-detail-message__content
   %p
-  %textarea 
-  %button  .message-submit 
-  %span 
+  %textarea
+  %button  .message-submit
+  %span
 
 
 .item.button-container-clearfix

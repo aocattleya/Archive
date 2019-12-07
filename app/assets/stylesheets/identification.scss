@@ -120,10 +120,10 @@ html {
           line-height: 1.5;
           color: #888;
         }
-        &__down--Prefecture {
+        &__down--prefecture {
           position: relative;
           left: 435px;
-          top: 51px;
+          top: 54px;
           z-index: 2;
           color: #888;
           font-size: 18px;
@@ -177,6 +177,18 @@ html {
           color: #333;
           border-top: 1px solid #eee;
           text-decoration: none;
+          &-active {
+            position: relative;
+            display: block;
+            min-height: 48px;
+            padding: 16px;
+            background: #eee;
+            font-size: 14px;
+            color: #333;
+            border-top: 1px solid #eee;
+            text-decoration: none;
+            font-weight: 600;
+          }
           &__icon {
             display: inline-block;
             position: absolute;

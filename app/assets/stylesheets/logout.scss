@@ -16,13 +16,18 @@ body {
 }
 
 .container {
-  margin: auto 0;
+  margin: 24px auto 0;
   padding: 24px 0 40px;
+  width: 1020px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row-reverse;
   &__content {
     border-top: 1px solid #f5f5f5;
     padding: 64px;
     margin: 0 auto;
     width: 700px;
+    height: 179px;
     background-color: #fff;
     &__inner {
       max-width: 320px;
@@ -46,14 +51,17 @@ body {
   }
   &__lists {
     &__nav {
-      width: 700px;
+      width: 280px;
       background: #f5f5f5;
-      margin: 40px auto 0;
+      margin: 0 40px 0 0;
       &__list {
         list-style: none;
         box-sizing: border-box;
         position: relative;
-        margin: 8px 0 0;
+        margin-top: 8px;
+        &:nth-child(1) {
+          margin-top: 0;
+        }
         &__item {
           position: relative;
           display: block;
@@ -67,8 +75,11 @@ body {
           &-active {
             position: relative;
             display: block;
-            min-height: 48px;
-            padding: 16px;
+            // min-height: 48px;
+            // padding: 16px;
+            box-sizing: border-box;
+            line-height: 48px;
+            padding-left: 16px;
             background: #eee;
             font-size: 14px;
             color: #333;

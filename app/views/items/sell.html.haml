@@ -1,0 +1,133 @@
+.sell
+  %header.sell__head
+    = link_to "" do
+      = image_tag "fmarket_logo_red.svg", class: "sell__head__img"
+  .sell__main
+    .sell__main__content
+      %h2.sell__main__content__head
+        商品の情報を入力
+      .sell__main__content__file
+        .sell__main__content__file__up
+          %h3.sell__main__content__file__up__head
+            出品画像
+            %span.form-require
+              必須
+            %p.sell__main__content__file__up__head__text
+              最大10枚までアップロードできます
+          .sell__main__content__file__up__box
+            %input{type: "file", class: "sell__main__content__file__up__box__file", style: "display: none;"}
+            %pre.sell__main__content__file__up__box__inner
+              ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+      .sell__main__content__form
+        %label
+          商品
+          %span.form-require
+            必須
+          %input.sell__main__content__form__input{placeholder: "商品名（必須 40文字まで)"}
+        %label
+          商品の説明
+          %span.form-require
+            必須
+        %textarea{class: "sell__main__content__form__input", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+      .sell__main__content__form
+        %h3.sell__main__content__form__sub
+          商品の詳細
+        .sell__main__content__form__box
+          .sell__main__content__form__box__group
+            %label
+              カテゴリ
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+            %label
+              商品の状態
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+      .sell__main__content__form
+        %h3.sell__main__content__form__sub
+          配送について
+        .sell__main__content__form__box
+          .sell__main__content__form__box__group
+            %label
+              配送料の負担
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+            %label
+              発送元の地域
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+            %label
+              発送元の地域
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+      .sell__main__content__form
+        %h3.sell__main__content__form__sub
+          販売価格(300〜9,999,999)
+        .sell__main__content__form__box
+          %ul.sell__main__content__form__box__price
+            %li.sell__main__content__form__box__price__top
+              .sell__main__content__form__box__price__top__left
+                価格
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__price__top__right
+                ¥
+                %input{placeholder: "例）300", class: "sell__main__content__form__box__price__top__right__input"}
+            %li.sell__main__content__form__box__price__fee
+              .sell__main__content__form__box__price__fee__left
+                販売手数料 (10%)
+              .sell__main__content__form__box__price__fee__right
+                \-
+            %li.sell__main__content__form__box__price__profit
+              .sell__main__content__form__box__price__profit__left
+                販売利益
+              .sell__main__content__form__box__price__profit__right
+                \-
+      .sell__main__content__button
+        %div
+          %p
+            = link_to "", target: "_blank" do
+              禁止されている出品
+            \/
+            = link_to "", target: "_blank" do
+              行為
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "", target: "_blank" do
+              偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+          %p
+            また、出品をもちまして
+            = link_to "", target: "_blank" do
+              加盟店規約
+            に同意したことになります。
+        %button{type: "submit", class: "sell__main__content__button__red"}
+          出品する
+        %a.sell__main__content__button__gray
+          もどる
+  %header.sell__footer
+    %ul
+      %li
+        = link_to "", target: "_blank" do
+          プライバシーポリシー
+      %li
+        = link_to "", target: "_blank" do
+          メルカリ利用規約
+      %li
+        = link_to "", target: "_blank" do
+          特定商取引に関する表記
+    .sell__footer__logo
+      = link_to "" do
+        = image_tag "logo_gray.svg"
+      %small
+        ©&nbsp;Mercari,&nbsp;Inc.

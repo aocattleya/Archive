@@ -74,12 +74,11 @@ body {
       background: #eee;
       &__active {
         width: 50%;
-        background: #fff; //selection
+        background: #fff;
         border-top: 2px solid #ea352d;
       }
       &__todo {
         width: 50%;
-        // border-top: 2px solid #ea352d;
       }
     }
     &__content {
@@ -109,8 +108,6 @@ body {
               color: #888;
               .clock {
                 margin: 0 8px 0 0px;
-              }
-              span {
               }
             }
           }

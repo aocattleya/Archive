@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/card'
 
+  resources :items do
+    collection do
+      get :confirm
+    end
+  end
+
   devise_for :users
   root 'items#index'
 

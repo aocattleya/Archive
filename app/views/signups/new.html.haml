@@ -1,2 +1,38 @@
-%h1 Signups#new
-%p Find me in app/views/signups/new.html.haml
+%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+
+.body
+  %header.signup-header
+    %h1
+      = link_to root_path do
+        = image_tag("fmarket_logo_red.svg")
+  .signup
+    %section.signup__container
+      %h2 新規会員登録
+      .signup__container__form
+        .signup__container__form__content
+          .signup__container__form__content__email
+            = link_to "#" do
+              %i.far.fa-envelope
+              = "メールアドレスで登録する"
+          .signup__container__form__content__facebook
+            = link_to "#" do
+              %i.fab.fa-facebook-f
+              = "Facebookで登録"
+          .signup__container__form__content__google
+            = link_to "#" do
+              %i.fab.fa-google
+              = "Googleで登録する"
+.footer
+  .single-footer
+    .nav
+      .ul
+        .li
+          %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+        .li
+          %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+        .li
+          %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+    = link_to root_path do
+      = image_tag("logo_gray.svg")
+    %p
+      © Fmarket, Inc.

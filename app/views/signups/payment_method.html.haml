@@ -1,0 +1,70 @@
+%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+
+.body
+  .payment-method-container
+    %header.payment-method-container__header
+      %h1
+        = link_to root_path do
+          = image_tag("fmarket_logo_red.svg")
+      %nav.payment-method-container__header__nav
+        %ol.payment-method-container__header__nav__ol
+          %li.active.complete
+            会員情報
+            .progress-status.middle
+          %li.active.complete.midle-comp
+            電話番号認証
+            .progress-status.middle
+          %li.active.complete.midle-comp
+            お届け先住所入力
+            .progress-status.middle
+          %li.active.midle-comp
+            支払い方法
+            .progress-status.middle
+          %li.deactive
+            完了
+            .progress-status
+    %main.payment-method-container__main
+      %section.payment-method-container__main__container
+        %h2 支払い方法
+        = form_tag "", url: "#", local: true, method: :get, class:"payment-method-container__main__container__form" do
+          .payment-method-container__main__container__form__content
+            .payment-method-container__main__container__form__content__group
+              = label_tag :card, "カード番号"
+              %span.span="必須"
+              = text_field_tag :card, "", placeholder: "半角数字のみ", class: "input-default"
+            .payment-method-container__main__container__form__content__group
+              = label_tag :expiration_date, "有効期限"
+              %span.span 必須
+              .payment-method-container__main__container__form__content__group__select
+                %i.fas.fa-chevron-down
+                %select.select-default.resigtration-field
+                %span
+                  年
+              .payment-method-container__main__container__form__content__group__select
+                %i.fas.fa-chevron-down
+                %select.select-default.resigtration-field
+                %span
+                  月
+            .payment-method-container__main__container__form__content__group
+              = label_tag :security_code, "セキュリティコード"
+              %span.span 必須
+              = text_field_tag :security_code, "", placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default"
+              %a{:href => "#"}
+                %i.fas.fa-question-circle
+                カード裏面の番号とは？
+            .payment-method-container__main__container__form__content__submit
+              = submit_tag "次へ進む", class:"btn-default btn-red"
+.footer
+  .single-footer
+    .nav
+      .ul
+        .li
+          %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+        .li
+          %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+        .li
+          %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+    = link_to root_path do
+      = image_tag("logo_gray.svg")
+    %p
+      © Fmarket, Inc.

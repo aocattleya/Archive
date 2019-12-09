@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   get 'signups/new'
+  get 'signups/registration'
+  get 'signups/sms_confirmation'
+  get 'signups/address'
+  get 'signups/payment_method'
+  get 'signups/complete'
 
   get 'users/show'
 

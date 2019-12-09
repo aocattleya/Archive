@@ -1,0 +1,50 @@
+%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+
+.body
+  .complete-container
+  %header.complete-container__header
+    %h1
+      = link_to root_path do
+        = image_tag("fmarket_logo_red.svg")
+    %nav.complete-container__header__nav
+      %ol.complete-container__header__nav__ol
+        %li.active.complete
+          会員情報
+          .progress-status.middle
+        %li.active.complete.midle-comp
+          電話番号認証
+          .progress-status.middle
+        %li.active.complete.midle-comp
+          お届け先住所入力
+          .progress-status
+        %li.active.complete.midle-comp
+          支払い方法
+          .progress-status
+        %li.last.midle-comp
+          完了
+          .progress-status
+  %main.complete-container__main
+    %section.complete-container__main__container
+      %h2 会員登録完了
+      = form_tag "", url: "#", method: :get, class: "complete-container__main__container__form", local: true do
+        .complete-container__main__container__form__content
+          %p
+            ありがとうございます。
+            %br
+            会員登録が完了しました。
+          .complete-container__main__container__form__content__submit
+            = submit_tag "メルカリをはじめる", class:"btn-default btn-red"
+.footer
+  .single-footer
+    .nav
+      .ul
+        .li
+          %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+        .li
+          %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+        .li
+          %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+    = link_to root_path do
+      = image_tag("logo_gray.svg")
+    %p
+      © Fmarket, Inc.

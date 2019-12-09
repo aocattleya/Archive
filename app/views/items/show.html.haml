@@ -3,7 +3,7 @@
 .item-box-container
   %h1.item-name モナリザの微笑
   .item-box-container__item-main-content-clearfix
-  %table{:border => "1", :style => "border-collapse: collapse"}
+  %table{border: "1", style: "border-collapse: collapse"}
     %tr
       %th 出品者名
       %td ルーブル美術館
@@ -33,26 +33,26 @@
 
 
   .item-box-container__item-price-box-center
-  %a.item-buy-btn{:href => "https://www.mercari.com/jp/transaction/buy/m16206739217/?_s=U2FsdGVkX1-i4GrFNncLIuy22luQBD1oVONSK8mj8RZfrvmblDy2SPo1msTgWyNvIJMBwMi1P9QJpVQNlCFVvbUbZxatVJpEBfQXv0M4iRstYXbKAKg5ZoIV8oTtEA5_"}
+  %a.item-buy-btn{href: "https://www.mercari.com/jp/transaction/buy/m16206739217/?_s=U2FsdGVkX1-i4GrFNncLIuy22luQBD1oVONSK8mj8RZfrvmblDy2SPo1msTgWyNvIJMBwMi1P9QJpVQNlCFVvbUbZxatVJpEBfQXv0M4iRstYXbKAKg5ZoIV8oTtEA5_"}
   購入画面に進む
 
 
 .item-description
-  .item-description__inner 
+  .item-description__inner
     %p 諸般の事情により名作を売ることになりました。館長直々のサインとスタンプが押印された証明書がついております
   .item-btn-left
   .item-btn-right
 
 .item-detail-message
   .item-detail-message__content
-  %form.message-form{:action => "#  ", :method => "POST"}
-  %input{:name => "__csrf_value", :type => "hidden", :value => "8c678805befc222e7d19b30116c53bb696471c03c95a479cfe4ea49aad82bb330d59c9bfb0fe9dd6f2c872a6db457c1e3c5fdb093291350c521598ac2372b075b"}/
-  %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-  %input{:name => "item_id", :type => "hidden", :value => "m16206739217"}/
-  %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
-  %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
-  %button.message-submit.btn-default.btn-gray{:type => "submit"}
-    %span コメントする
+  %form.message-form{action: "#  ", method: "POST"}
+  -# %input{:name "__csrf_value", :type "hidden", :value "8c678805befc222e7d19b30116c53bb696471c03c95a479cfe4ea49aad82bb330d59c9bfb0fe9dd6f2c872a6db457c1e3c5fdb093291350c521598ac2372b075b"}/
+  -# %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  -# %input{:name "item_id", :type "hidden", :value "m16206739217"}/
+  -# %input{:name "redirect_url_key", :type "hidden", :value "item_detail"}/
+  -# %textarea.textarea-default{:name "body", :type "text", :value ""}
+  -# %button.message-submit.btn-default.btn-gray{:type "submit"}
+  -#   %span コメントする
 
 
 

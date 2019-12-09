@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  get 'signups/new'
+  resources :signups, only: [:new] do
+    collection do
+      get :registration
+      get :sms_confirmation
+      get :address
+      get :payment_method
+      get :complete
+    end
+  end
 
   get 'users/show'
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   get 'users/show'
+  get 'users/card'
 
   devise_for :users
   root 'items#index'

@@ -47,9 +47,8 @@
               = label_tag :security_code, "セキュリティコード"
               %span.span 必須
               = text_field_tag :security_code, "", placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default"
-              %a{href: "#"}
-                %i.fas.fa-question-circle
-                カード裏面の番号とは？
+              %i.fas.fa-question-circle
+              = link_to "カード裏面の番号とは？", "#"
             .payment-method-container__main__container__form__content__submit
               = submit_tag "次へ進む", class:"btn-default btn-red"
 .footer
@@ -57,11 +56,11 @@
     .nav
       .ul
         .li
-          %a{href: "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
         .li
-          %a{href: "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
         .li
-          %a{href: "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
     = link_to root_path do
       = image_tag("logo_gray.svg")
     %p

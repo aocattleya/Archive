@@ -32,18 +32,17 @@
             .devise-login-container__main__container__form__content__submit
               = f.submit "ログイン", class:"btn-default btn-red"
             .devise-login-container__main__container__form__content__group
-              %a{href: "#"}
-                パスワードをお忘れの方
+              = link_to "パスワードをお忘れの方", "#"
 .footer
   .single-footer
     .nav
       .ul
         .li
-          %a{href: "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
         .li
-          %a{href: "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
         .li
-          %a{href: "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
     = link_to root_path do
       = image_tag("logo_gray.svg")
     %p

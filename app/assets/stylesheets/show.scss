@@ -1,34 +1,86 @@
-.item-box-container{
+.item-box-container {
   .item-name {
     font-size: 24px;
     text-align: center;
     word-wrap: break-word;
     line-height: 1.4;
-}
-}
+  }
 
-.item-box-container__item-main-content-clearfix{
-  float: left;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 375px;
+  &__item-main-content-clearfix {
+    display: flex;
     position: relative;
     margin: 0 auto;
     background: #fafafa;
-}
-th {
-  background-color: gray;
-}
-.item-price-box.text-center{
-}
-  span.item-price.bold{
+
+    &__image {
+      width: 300px;
+      height: 375px;
+    }
+    &__table {
+      min-width: 300px;
+      max-width: 300px;
+    }
+  }
+  th {
+    background-color: gray;
+  }
+
+  .item-price-box {
+    text-align: center;
+
+    &__bold {
+      font-weight: 600;
+      margin: 0 16px 0 0;
+      font-size: 50px;
+    }
+    &__tax {
+      font-size: 10px;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  a.item-buy-btn {
+    font-size: 24px;
+    line-height: 60px;
+    display: block;
+    margin-top: 16px;
+    background: #ea352d;
+    color: #fff;
+    line-height: 56px;
+    text-align: center;
     font-weight: 600;
-    margin: 0 16px 0 0;
-    font-size: 50px;
   }
-  span.item-tax{
-
+  .item-description {
+    &__inner {
+      p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        text-decoration: inherit;
+        vertical-align: inherit;
+      }
+    }
   }
-  span.item-shipping-fee{
+  .item-detail-message {
+    &__content {
+      p {
+        padding: 8px;
+        font-size: 14px;
+        background: #fff6de;
+      }
+      button.btn-gray {
+        width: 100%;
+        margin: 8px 0 0;
+        font-size: 0;
+        text-align: center;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+      }
+    }
   }
-
+}

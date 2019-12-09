@@ -2,67 +2,73 @@
 
 .item-box-container
   %h1.item-name モナリザの微笑
-  .item-box-container__item-main-content-clearfix
-  %table{border: "1", style: "border-collapse: collapse"}
-    %tr
-      %th 出品者名
-      %td ルーブル美術館
-    %tr
-      %th カテゴリー
-      %td おもちゃ・ホビー・グッズ>美術品>絵画/タペストリ
-    %tr
-      %th ブランド
-      %td
-    %tr
-      %th 商品の状態
-      %td
-    %tr
-      %th 配送料の負担
-      %td 送料込み（出品者負担）
-    %tr
-      %th 発送元地域
-      %td 東京都
-    %tr
-      %th 発送日の目安
-      %td ２〜３日で発送
-    .item-box-container__item-main-content__image
+  .item-box-container__item-main-content
+    .item-box-container__item-main-content-clearfix
+      .item-box-container__item-main-content-clearfix__image
 
-  .item-price-box.text-center
-  %span.item-price.bold ¥99,999,999
-  %span.item-tax (税込)
-  %span.item-shipping-fee 送料込み
+      .item-box-container__item-main-content-clearfix__table
+        %table{border: "1", style: "border-collapse: collapse"}
+          %tr
+            %th 出品者名
+            %td ルーブル美術館
+          %tr
+            %th カテゴリー
+            %td おもちゃ・ホビー・グッズ>美術品>絵画/タペストリ
+          %tr
+            %th ブランド
+            %td
+          %tr
+            %th 商品の状態
+            %td
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 発送元地域
+            %td 東京都
+          %tr
+            %th 発送日の目安
+            %td ２〜３日で発送
+
+    .item-price-box
+      %span.item-price-box__bold ¥99,999,999
+      %span.item-price-box__tax (税込)
+      %span.item-price-box__shipping-fee 送料込み
+
+      %a.item-buy-btn 購入画面に進む
 
 
+    .item-description
+      .item-description__inner
+        %p 諸般の事情により名作を売ることになりました。館長直々のサインとスタンプが押印された証明書がついております
+    .item-description__btn-left
+    .item-description__btn-right
 
-  .item-box-container__item-price-box-center
-  %a.item-buy-btn{href: "https://www.mercari.com/jp/transaction/buy/m16206739217/?_s=U2FsdGVkX1-i4GrFNncLIuy22luQBD1oVONSK8mj8RZfrvmblDy2SPo1msTgWyNvIJMBwMi1P9QJpVQNlCFVvbUbZxatVJpEBfQXv0M4iRstYXbKAKg5ZoIV8oTtEA5_"}
-  購入画面に進む
+  .item-detail-message
+    .item-detail-message__content
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %button.item-button.item-button-like{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "unlike", "data-id" => "m16206739217", "data-toggle" => "like", :name => "like!", :type => "button"}
+    %i.icon-like-border
+    %span いいね!
+    %span.fade-in-down
+
+    %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
+    %i.icon-flag
+    %span 不適切な商品の報告
 
 
-.item-description
-  .item-description__inner
-    %p 諸般の事情により名作を売ることになりました。館長直々のサインとスタンプが押印された証明書がついております
-  .item-btn-left
-  .item-btn-right
-
-.item-detail-message
-  .item-detail-message__content
-  %form.message-form{action: "#  ", method: "POST"}
-  -# %input{:name "__csrf_value", :type "hidden", :value "8c678805befc222e7d19b30116c53bb696471c03c95a479cfe4ea49aad82bb330d59c9bfb0fe9dd6f2c872a6db457c1e3c5fdb093291350c521598ac2372b075b"}/
-  -# %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-  -# %input{:name "item_id", :type "hidden", :value "m16206739217"}/
-  -# %input{:name "redirect_url_key", :type "hidden", :value "item_detail"}/
-  -# %textarea.textarea-default{:name "body", :type "text", :value ""}
-  -# %button.message-submit.btn-default.btn-gray{:type "submit"}
-  -#   %span コメントする
+    -# %input{:name "item_id", :type "hidden", :value "m16206739217"}/
+    -# %input{:name "redirect_url_key", :type "hidden", :value "item_detail"}/
+    -# %textarea.textarea-default{:name "body", :type "text", :value ""}
+    %button.btn-gray コメントする
 
 
 
 .item.button-container-clearfix
 
 .nav-item-link-prev-next-clearfix
-  %li.nav-item-link-left
-  %li.nav-item-link-right
+  %li.nav-item-link-prev-next-clearfix__left
+  %li.nav-item-link-prev-next-clearfix__right
 
 .item-social-mediabox
   %li.facebook

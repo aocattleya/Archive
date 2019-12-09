@@ -1,4 +1,4 @@
-%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+%link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}/
 
 .body
   .payment-method-container
@@ -30,7 +30,7 @@
           .payment-method-container__main__container__form__content
             .payment-method-container__main__container__form__content__group
               = label_tag :card, "カード番号"
-              %span.span="必須"
+              %span.span 必須
               = text_field_tag :card, "", placeholder: "半角数字のみ", class: "input-default"
             .payment-method-container__main__container__form__content__group
               = label_tag :expiration_date, "有効期限"
@@ -49,7 +49,7 @@
               = label_tag :security_code, "セキュリティコード"
               %span.span 必須
               = text_field_tag :security_code, "", placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default"
-              %a{:href => "#"}
+              %a{href: "#"}
                 %i.fas.fa-question-circle
                 カード裏面の番号とは？
             .payment-method-container__main__container__form__content__submit
@@ -59,11 +59,11 @@
     .nav
       .ul
         .li
-          %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+          %a{href: "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
         .li
-          %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+          %a{href: "https://www.mercari.com/jp/tos/"} メルカリ利用規約
         .li
-          %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+          %a{href: "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
     = link_to root_path do
       = image_tag("logo_gray.svg")
     %p

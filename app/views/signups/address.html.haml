@@ -1,4 +1,4 @@
-%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+%link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}/
 
 .body
   .address-container
@@ -30,7 +30,7 @@
           .address-container__main__container__form__content
             .address-container__main__container__form__content__group
               = label_tag :postal_code, "郵便番号"
-              %span.span="必須"
+              %span.span 必須
               = text_field_tag :postal_code, "", placeholder: "例) 123-4567", class: "input-default"
             .address-container__main__container__form__content__group
               = label_tag :prefecture, "地域"
@@ -57,11 +57,11 @@
     .nav
       .ul
         .li
-          %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+          %a{href: "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
         .li
-          %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+          %a{href: "https://www.mercari.com/jp/tos/"} メルカリ利用規約
         .li
-          %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+          %a{href: "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
     = link_to root_path do
       = image_tag("logo_gray.svg")
     %p

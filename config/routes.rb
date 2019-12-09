@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
+  get 'items/confirm'
+
   devise_for :users
   root 'items#index'
 

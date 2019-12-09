@@ -1,3 +1,203 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
+    "メイリオ", "Meiryo", sans-serif;
+  background: #f5f5f5;
+}
+.content {
+  width: 700px;
+  margin: 0 auto;
+  .user {
+    width: 100%;
+    height: 200px;
+    weight: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    background-image: url("/download.jpg");
+    &__link {
+      width: 700px;
+      &__figure {
+        margin: 0 auto;
+        img {
+          border-radius: 50%;
+        }
+      }
+      &__bold {
+        font-size: 14px;
+        margin-top: 8px;
+        font-weight: 600;
+      }
+      &__number {
+        margin-top: 8px;
+        display: inline-block;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        line-height: 20px;
+        &__evaluation {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          font-size: 14px;
+          .bold {
+            margin: 0 0 0 8px;
+          }
+        }
+        &__exhibit {
+          list-style: none;
+          display: flex;
+          font-size: 14px;
+          margin: 0 0 0 16px;
+          .bold {
+            margin: 0 0 0 8px;
+          }
+        }
+      }
+    }
+  }
+  .tab1 {
+    width: 100%;
+    &__tabs {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      line-height: 72px;
+      font-weight: bold;
+      background: #eee;
+      &__active {
+        width: 50%;
+        background: #fff;
+        border-top: 2px solid #ea352d;
+      }
+      &__todo {
+        width: 50%;
+      }
+    }
+    &__content {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      &__active {
+        &__link {
+          border-bottom: 1px solid #eee;
+          display: flex;
+          height: 60px;
+          list-style: none;
+          color: black;
+          font-size: 14px;
+          padding: 16px;
+          &__logo {
+            position: absolute;
+            display: block;
+          }
+          &__body {
+            &__text {
+              margin: 0 40px 0 68px;
+            }
+            time {
+              margin: 0 40px 0 68px;
+              display: inline-block;
+              color: #888;
+              .clock {
+                margin: 0 8px 0 0px;
+              }
+            }
+          }
+          &__icon {
+            line-height: 50px;
+          }
+        }
+        &__go-list {
+          padding: 16px;
+          &__go {
+            display: block;
+            height: 56px;
+            width: 100%;
+            font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+              "YuGothic", "メイリオ", "Meiryo", sans-serif;
+            background-color: #eee;
+            line-height: 56px;
+            text-align: center;
+          }
+        }
+      }
+      &__todo {
+        display: none;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .tab2 {
+    width: 100%;
+    margin: 40px 0 0 0px;
+    &__head {
+      padding: 0 16px 0px;
+      background: #fafafa;
+      height: 72px;
+      line-height: 72px;
+      font-family: Courier New;
+      font-size: 16px;
+    }
+    &__tabs {
+      width: 100%;
+      line-height: 72px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      background: #eee;
+      &__current {
+        width: 50%;
+        font-size: 16px;
+        background: #fff;
+        border-top: 2px solid #ea352d;
+      }
+      &__past {
+        background: #eee;
+        width: 50%;
+        font-size: 16px;
+      }
+      &__content {
+        height: 250px;
+        width: 100%;
+        &__current {
+          background: #fff;
+          margin: 0 auto;
+          &__bold {
+            font-size: large;
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            list-style: none;
+            padding: 60px 0 40px;
+            color: #ccc;
+            text-align: center;
+            .box {
+              height: 110px;
+              width: 110px;
+              margin: 0 0 20px 0;
+            }
+            li {
+              font-weight: 600;
+              text-align: center;
+            }
+          }
+        }
+        &__past {
+          display: none;
+          height: 100%;
+          width: 100%;
+          background-color: white;
+        }
+      }
+    }
+  }
+}

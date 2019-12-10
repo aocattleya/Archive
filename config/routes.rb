@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'signups/new'
 
   get 'users/show'
+  get 'users/logout'
 
   devise_for :users
   root 'items#index'

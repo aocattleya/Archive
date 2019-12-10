@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :items do
     collection do
       get :confirm

@@ -5,20 +5,20 @@
     .identification__inner__text
       %p お客さまの本人情報をご登録ください。<br>登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
       %p.identification__inner__right
-        %a{:href => "#", :target => "_blank"}
+        %a{href: "#", target: "_blank"}
           本人確認書類のアップロードについて
           %span
             = fa_icon 'chevron-right', class: "identification__inner__right__icon"
     .identification__inner__form
       %label お名前
       %span.identification__inner__form__require 必須
-      %input.identification__inner__form__input{:type => "text", :name => "family_name_kanji", :placeholder => "例）山田"}
-      %input.identification__inner__form__input{:type => "text", :name => "first_name_kanji", :placeholder => "例）彩"}
+      %input.identification__inner__form__input{type: "text", name: "family_name_kanji", placeholder: "例）山田"}
+      %input.identification__inner__form__input{type: "text", name: "first_name_kanji", placeholder: "例）彩"}
     .identification__inner__form
       %label お名前カナ
       %span.identification__inner__form__require 必須
-      %input.identification__inner__form__input{:type => "text", :name => "family_name_kana", :placeholder => "例）ヤマダ"}
-      %input.identification__inner__form__input{:type => "text", :name => "", :placeholder => "例）アヤ"}
+      %input.identification__inner__form__input{type: "text", name: "family_name_kana", placeholder: "例）ヤマダ"}
+      %input.identification__inner__form__input{type: "text", name: "", placeholder: "例）アヤ"}
     .identification__inner__form
       %label 生年月日
       %span.identification__inner__form__require 必須
@@ -207,7 +207,7 @@
     .identification__inner__form
       %label 郵便番号
       %span.identification__inner__form__arbitrary 任意
-      %input.identification__inner__form__input{:type => "text", :name => "", :placeholder => "例）1234567"}
+      %input.identification__inner__form__input{type: "text", name: "", placeholder: "例）1234567"}
     .identification__inner__form
       %label 都道府県
       %span.identification__inner__form__arbitrary 任意
@@ -266,120 +266,17 @@
     .identification__inner__form
       %label 市区町村
       %span.identification__inner__form__arbitrary 任意
-      %input.identification__inner__form__input{:type => "text", :name => "", :placeholder => "例) 横浜市緑区"}
+      %input.identification__inner__form__input{type: "text", name: "", placeholder: "例) 横浜市緑区"}
     .identification__inner__form
       %label 番地
       %span.identification__inner__form__arbitrary 任意
-      %input.identification__inner__form__input{:type => "text", :name => "", :placeholder => "例) 青山1−1−1"}
+      %input.identification__inner__form__input{type: "text", name: "", placeholder: "例) 青山1−1−1"}
     .identification__inner__form
       %label 建物名
       %span.identification__inner__form__arbitrary 任意
-      %input.identification__inner__form__input{:type => "text", :name => "", :placeholder => "例) 柳ビル103"}
-    %buttom{:type => "submit", :class => "identification__inner__btn-default"} 登録する
+      %input.identification__inner__form__input{type: "text", name: "", placeholder: "例) 柳ビル103"}
+    %buttom{type: "submit", class: "identification__inner__btn-default"} 登録する
     .identification__inner__form.identification__inner__right
       %p
-        = link_to "", :target => "_blank" do
+        = link_to "", target: "_blank" do
           本人情報の登録について
-          %span
-            = fa_icon 'chevron-right', class: "identification__inner__right__icon"
-  .identification__lists
-    %nav.identification__lists__nav
-      %ul.identification__lists__nav__list
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            マイページ
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            お知らせ
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            やることリスト
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            いいね！一覧
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            出品する
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            出品した商品 - 出品中
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            出品した商品 - 取引中
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            出品した商品 - 売却済み
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            購入した商品 - 取引中
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            購入した商品 - 過去の取引
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            ニュース一覧
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            評価一覧
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            ガイド
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            お問い合わせ
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-      %h3.identification__lists__nav__head
-        メルペイ
-      %ul.identification__lists__nav__list
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            売上・振込申請
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            ポイント
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-      %h3.identification__lists__nav__head
-        設定
-      %ul.identification__lists__nav__list
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            プロフィール
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            発送元・お届け先住所変更
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            支払い情報
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            メール/パスワード
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item-active", :target => "_blank" do
-            本人情報
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            電話番号の確認
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"
-        %li
-          = link_to "", class: "identification__lists__nav__list__item", :target => "_blank" do
-            ログアウトの確認
-            = fa_icon 'chevron-right', class: "identification__lists__nav__list__item__icon"

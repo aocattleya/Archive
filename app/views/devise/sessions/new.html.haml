@@ -1,0 +1,49 @@
+.body
+  .devise-login-container
+    %header.devise-login-container__header
+      %h1
+        = link_to root_path do
+          = image_tag("fmarket_logo_red.svg")
+    %main.devise-login-container__main
+      .devise-login-container__main__container
+        .devise-login-container__main__container__new
+          %p アカウントお持ちでない方はこちら
+          = link_to "新規会員登録", "#"
+        .devise-login-container__main__container__sns
+          .devise-login-container__main__container__sns__facebook
+            = link_to "#" do
+              %i.fab.fa-facebook-f
+              = "Facebookでログイン"
+          .devise-login-container__main__container__sns__google
+            = link_to "#" do
+              %i.fab.fa-google
+              = "Googleでログイン"
+        = form_for(resource, as: resource_name, url: "#", class:"devise-login-container__main__container__form") do |f|
+          .devise-login-container__main__container__form__content
+            .devise-login-container__main__container__form__content__group
+              %div
+                = email_field_tag :email,  "", placeholder: "メールアドレス", class: "input-default"
+            .devise-login-container__main__container__form__content__group
+              %div
+                = password_field_tag :password, "", placeholder: "パスワード", class: "input-default"
+            .devise-login-container__main__container__form__content__group
+              = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数
+              私はロボットではありません
+            .devise-login-container__main__container__form__content__submit
+              = f.submit "ログイン", class:"btn-default btn-red"
+            .devise-login-container__main__container__form__content__group
+              = link_to "パスワードをお忘れの方", "#"
+.footer
+  .single-footer
+    .nav
+      .ul
+        .li
+          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+        .li
+          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+        .li
+          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    = link_to root_path do
+      = image_tag("logo_gray.svg")
+    %p
+      ©&nbsp;Fmarket,&nbsp;Inc.

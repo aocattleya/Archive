@@ -9,9 +9,15 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'users/show'
-  get 'users/identification'
-  get 'users/card'
+  resources :users, only: [:show] do
+    collection do
+      get :confirm
+      get :profile
+      get :identification
+      get :card
+      get :logout
+    end
+  end
 
   resources :items do
     collection do

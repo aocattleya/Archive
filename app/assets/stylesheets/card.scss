@@ -1,6 +1,25 @@
+.body {
+  background-color: #f5f5f5;
+}
+
+.card-content {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  background-color: #f5f5f5;
+  justify-content: space-between;
+  padding-top: 40px;
+  height: 1300px;
+  &__box {
+    width: 1020px;
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
 .card-index-container {
   width: 700px;
-  padding: 40px;
+  padding-right: 10px;
   display: block;
   &__content {
     float: none;
@@ -49,7 +68,6 @@
             border: 1px solid #ea352d;
             color: #ea352d;
             font-size: 14px;
-
           }
         }
         &__info {

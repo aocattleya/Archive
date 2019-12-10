@@ -1,7 +1,10 @@
+= render 'items/header'
 .logout-container
   .logout
+    = render "items/sidebar"
     .logout__content
       .logout__content__inner
         %button{class: "logout__content__inner__button", type: "submit"}
-        = link_to root_path do
-          ログアウト
+          = link_to root_path do
+            ログアウト
+= render 'items/footer'

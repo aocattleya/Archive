@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     collection do
       get :confirm
       get :profile
+      get :identification
       get :card
       get :logout
     end

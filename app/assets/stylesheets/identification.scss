@@ -1,0 +1,147 @@
+.identification {
+  width: 700px;
+  height: 100%;
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+  color: #333;
+  box-sizing: border-box;
+  &__top {
+    background-color: #fff;
+    font-size: 24px;
+    padding: 8px 24px;
+    text-align: center;
+    border-bottom: 1px solid #f5f5f5;
+    &__text {
+      font-weight: bold;
+      line-height: 1.4;
+    }
+  }
+  &__inner {
+    background-color: #fff;
+    padding: 64px;
+    font-size: 14px;
+    &__right {
+      font-size: 14px;
+      touch-action: manipulation;
+      text-align: right;
+      margin-top: 8px;
+      a {
+        text-decoration: none;
+        color: #0099e8;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+      &__icon {
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        &:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+    }
+    &__form {
+      margin: 40px 0 0;
+      label {
+        font-weight: 600;
+        display: inline-block;
+      }
+      &__require {
+        background: #ea352d;
+        margin: 0 0 0 8px;
+        width: 100%;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+      }
+      &__input {
+        height: 48px;
+        margin: 8px 0 0;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+      }
+      &__select {
+        width: 76px;
+        display: inline-block;
+        position: relative;
+        &__down {
+          position: absolute;
+          right: 8px;
+          top: 59%;
+          z-index: 2;
+          color: #888;
+          font-size: 18px;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+        }
+        &__default {
+          padding: 0 10px;
+          margin: 8px 0 0;
+          width: 100%;
+          position: relative;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          font-size: 13px;
+          line-height: 1.5;
+          box-sizing: border-box;
+          cursor: pointer;
+          background: #fff;
+          -webkit-appearance: none;
+        }
+        &__text {
+          margin: 8px 0 0;
+          line-height: 1.5;
+          color: #888;
+        }
+        &__down--prefecture {
+          position: relative;
+          left: 435px;
+          top: 54px;
+          z-index: 2;
+          color: #888;
+          font-size: 18px;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+        }
+      }
+      &__arbitrary {
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        background: #ccc;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+      }
+    }
+    &__btn-default {
+      margin: 40px 0 0 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      -webkit-transition: all ease-out 0.3s;
+      transition: all ease-out 0.3s;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+}

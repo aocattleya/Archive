@@ -1,0 +1,214 @@
+.sell
+  %header.sell__head
+    = link_to "" do
+      = image_tag "fmarket_logo_red.svg", class: "sell__head__img"
+  .sell__main
+    .sell__main__content
+      %h2.sell__main__content__head
+        商品の情報を入力
+      .sell__main__content__file
+        .sell__main__content__file__up
+          %h3.sell__main__content__file__up__head
+            出品画像
+            %span.form-require
+              必須
+            %p.sell__main__content__file__up__head__text
+              最大10枚までアップロードできます
+          .sell__main__content__file__up__box
+            %input{type: "file", class: "sell__main__content__file__up__box__file", style: "display: none;"}
+            %pre.sell__main__content__file__up__box__inner
+              ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+      .sell__main__content__form
+        %label
+          商品
+          %span.form-require
+            必須
+          %input.sell__main__content__form__input{placeholder: "商品名（必須 40文字まで)"}
+        %label
+          商品の説明
+          %span.form-require
+            必須
+        %textarea{class: "sell__main__content__form__input", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+      .sell__main__content__form
+        %h3.sell__main__content__form__sub
+          商品の詳細
+        .sell__main__content__form__box
+          .sell__main__content__form__box__group
+            %label
+              カテゴリ
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+                %option ---
+                %option{value: 1} レディース
+                %option{value: 2} メンズ
+                %option{value: 3} ベビー・キッズ
+                %option{value: 4} インテリア・住まい・小物
+                %option{value: 5} 本・音楽・ゲーム
+                %option{value: 6} おもちゃ・ホビー・グッズ
+                %option{value: 7} コスメ・香水・美容
+                %option{value: 8} 家電・スマホ・カメラ
+                %option{value: 9} スポーツ・レジャー
+                %option{value: 10} ハンドメイド
+                %option{value: 11} チケット
+                %option{value: 12} 自動車・オートバイ
+                %option{value: 13} レディース
+            %label
+              商品の状態
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+                %option ---
+                %option{value: 1} 新品、未使用
+                %option{value: 2} 未使用に近い
+                %option{value: 3} 目立った傷や汚れなし
+                %option{value: 4} やや傷や汚れあり
+                %option{value: 5} 傷や汚れあり
+                %option{value: 6} 全体的に状態が悪い
+      .sell__main__content__form
+        %h3.sell__main__content__form__sub
+          配送について
+          = link_to "", target: "_blank", class: "sell__main__content__form__sub__icon" do
+            \?
+        .sell__main__content__form__box
+          .sell__main__content__form__box__group
+            %label
+              配送料の負担
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+                %option ---
+                %option{value: 1} 送料込み(出品者負担)
+                %option{value: 2} 着払い(購入者負担)
+            %label
+              発送元の地域
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+                %option ---
+                %option{value: 1} 北海道
+                %option{value: 2} 青森県
+                %option{value: 3} 岩手県
+                %option{value: 4} 宮城県
+                %option{value: 5} 秋田県
+                %option{value: 6} 山形県
+                %option{value: 7} 福島県
+                %option{value: 8} 茨城県
+                %option{value: 9} 栃木県
+                %option{value: 10} 群馬県
+                %option{value: 11} 埼玉県
+                %option{value: 12} 千葉県
+                %option{value: 13} 東京都
+                %option{value: 14} 神奈川県
+                %option{value: 15} 新潟県
+                %option{value: 16} 富山県
+                %option{value: 17} 石川県
+                %option{value: 18} 福井県
+                %option{value: 19} 山梨県
+                %option{value: 20} 長野県
+                %option{value: 21} 岐阜県
+                %option{value: 22} 静岡県
+                %option{value: 23} 愛知県
+                %option{value: 24} 三重県
+                %option{value: 25} 滋賀県
+                %option{value: 26} 京都府
+                %option{value: 27} 大阪府
+                %option{value: 28} 兵庫県
+                %option{value: 29} 奈良県
+                %option{value: 30} 和歌山県
+                %option{value: 31} 鳥取県
+                %option{value: 32} 島根県
+                %option{value: 33} 岡山県
+                %option{value: 34} 広島県
+                %option{value: 35} 山口県
+                %option{value: 36} 徳島県
+                %option{value: 37} 香川県
+                %option{value: 38} 愛媛県
+                %option{value: 39} 高知県
+                %option{value: 40} 福岡県
+                %option{value: 41} 佐賀県
+                %option{value: 42} 長崎県
+                %option{value: 43} 熊本県
+                %option{value: 44} 大分県
+                %option{value: 45} 宮崎県
+                %option{value: 46} 鹿児島県
+                %option{value: 47} 沖縄県
+                %option{value: 99} 未定
+            %label
+              発送元の地域
+              %span.form-require
+                必須
+            .sell__main__content__form__box__group__select
+              %select.sell__main__content__form__box__group__select__form
+                %option ---
+                %option{value: 1} 1~2日で発送
+                %option{value: 2} 2~3日で発送
+                %option{value: 3} 4~7日で発送
+      .sell__main__content__form
+        %h3.sell__main__content__form__sub
+          販売価格(300〜9,999,999)
+          = link_to "", target: "_blank", class: "sell__main__content__form__sub__icon" do
+            \?
+        .sell__main__content__form__box
+          %ul.sell__main__content__form__box__price
+            %li.sell__main__content__form__box__price__top
+              .sell__main__content__form__box__price__top__left
+                価格
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__price__top__right
+                ¥
+                %input{placeholder: "例）300", class: "sell__main__content__form__box__price__top__right__input"}
+            %li.sell__main__content__form__box__price__fee
+              .sell__main__content__form__box__price__fee__left
+                販売手数料 (10%)
+              .sell__main__content__form__box__price__fee__right
+                \-
+            %li.sell__main__content__form__box__price__profit
+              .sell__main__content__form__box__price__profit__left
+                販売利益
+              .sell__main__content__form__box__price__profit__right
+                \-
+      .sell__main__content__button
+        %div
+          %p
+            = link_to "", target: "_blank" do
+              禁止されている出品
+            \/
+            = link_to "", target: "_blank" do
+              行為
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "", target: "_blank" do
+              偽ブランドの販売
+            は犯罪であり処罰される可能性があります。
+          %p
+            また、出品をもちまして
+            = link_to "", target: "_blank" do
+              加盟店規約
+            に同意したことになります。
+        %button{type: "submit", class: "sell__main__content__button__red"}
+          出品する
+        %a.sell__main__content__button__gray
+          もどる
+  %header.sell__footer
+    %ul
+      %li
+        = link_to "", target: "_blank" do
+          プライバシーポリシー
+      %li
+        = link_to "", target: "_blank" do
+          メルカリ利用規約
+      %li
+        = link_to "", target: "_blank" do
+          特定商取引に関する表記
+    .sell__footer__logo
+      = link_to "" do
+        = image_tag "logo_gray.svg"
+      %small
+        ©&nbsp;Mercari,&nbsp;Inc.

@@ -1,0 +1,88 @@
+.wrapper
+  .top.footer
+    .top.footer__image
+      .top.footer__image__decorate
+        .top.footer__image__decorate__left
+          .top.footer__image__decorate__left__upper
+            スマホでかんたんフリマアプリ
+          .top.footer__image__decorate__left__middle
+            今すぐ無料ダウンロード！
+          .top.footer__image__decorate__left__below
+            = image_tag 'logo_red.svg', size: '50x45', class: "logo"
+            = link_to 'https://apps.apple.com/jp/app/id667861049?l=ja', class: "appstore" do
+              = image_tag 'appstore.svg', size: '150x42'
+            = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "googleplay" do
+              = image_tag 'googleplay.svg', size: '150x42'
+        .top.footer__image__decorate__right
+          = image_tag 'steve.jpg', size: '300x260', class: "steve"
+    .top.footer__box
+      .top.footer__box__upper
+        .top.footer__box__upper__1
+          %b メルカリについて
+          = link_to "" do
+            %p 会社概要（運営会社）
+          = link_to "" do
+            %p 採用情報
+          = link_to "" do
+            %p プレスリリース
+          = link_to "" do
+            %p 公式ブログ
+          = link_to "" do
+            %p メルカリロゴ利用ガイドライン
+          = link_to 'https://twitter.com/mercari_jp', class: "i" do
+            %i.fab.fa-twitter
+          = link_to 'https://www.facebook.com/mercarijp', class: "facebook" do
+            %facebook.fab.fa-facebook-square
+        .top.footer__box__upper__2
+          %b ヘルプ＆ガイド
+          = link_to "" do
+            %p メルカリガイド
+          = link_to "" do
+            %p らくらくメルカリ便
+          = link_to "" do
+            %p ゆうゆうメルカリ便
+          = link_to "" do
+            %p 大型メルカリ便
+          = link_to "" do
+            %p 車体取引ガイド
+          = link_to "" do
+            %p メルカリあんしん・あんぜん宣言！
+          = link_to "" do
+            %p 偽ブランド品撲滅への取り組み
+          = link_to "" do
+            %p メルカリボックス
+        .top.footer__box__upper__3
+          %b プライバシーと利用規約
+          = link_to "" do
+            %p プライバシーポリシー
+          = link_to "" do
+            %p メルカリ利用規約
+          = link_to "" do
+            %p あんしんスマホサポート制度に関する利用特約
+          = link_to "" do
+            %p コンプライアンスポリシー
+        .top.footer__box__upper__4
+          = link_to "" do
+            %p 個人データの安全管理に係る基本方針
+          = link_to "" do
+            %p 特定商取引に関する表記
+          = link_to "" do
+            %p 資金決済法に基づく表示
+          = link_to "" do
+            %p 法令順守と犯罪抑止のために
+        .top.footer__box__upper__5
+          %b 国
+          = link_to "" do
+            %p 日本
+          = link_to "" do
+            %p United States
+      .top.footer__box__below
+        .top.footer__box__below__1
+          = link_to root_path do
+            = image_tag "logo_white.svg", size: '120x36', alt: "Mercari"
+            %li Fmarket
+        .top.footer__box__below__2
+        .top.footer__box__below__3
+          © Mercari, Inc.
+        .top.footer__box__below__4
+        .top.footer__box__below__5

@@ -1,0 +1,52 @@
+.body
+  .sms-confirmation-container
+    %header.sms-confirmation-container__header
+      %h1
+        = link_to root_path do
+          = image_tag("fmarket_logo_red.svg")
+      %nav.sms-confirmation-container__header__nav
+        %ol.sms-confirmation-container__header__nav__ol
+          %li.active.complete
+            会員情報
+            .progress-status.middle
+          %li.active.midle-comp
+            電話番号認証
+            .progress-status.middle
+          %li.deactive
+            お届け先住所入力
+            .progress-status.middle
+          %li.deactive
+            支払い方法
+            .progress-status.middle
+          %li.deactive
+            完了
+            .progress-status
+      %main.sms-confirmation-container__main
+        %section.sms-confirmation-container__main__container
+          %h2 電話番号の確認
+          = form_tag "", url: "#", local: true, method: :get, class: "sms-confirmation-container__main__container__form" do
+            .sms-confirmation-container__main__container__form__content
+              .sms-confirmation-container__container__form__content__group
+                = label_tag :phone, "携帯電話の番号"
+                = phone_field_tag :phone, "", placeholder: "携帯電話の番号", class: "input-default"
+              %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+              .sms-confirmation-container__main__container__form__content__submit
+                = submit_tag "SMSを送信する", class:"btn-default btn-red"
+                %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+              .sms-confirmation-container__main__container__form__content__group
+                = link_to "電話番号の確認が必要な理由", "#"
+                  %i.fas.fa-chevron-right
+.footer
+  .single-footer
+    .nav
+      .ul
+        .li
+          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+        .li
+          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+        .li
+          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    = link_to root_path do
+      = image_tag("logo_gray.svg")
+    %p
+      ©&nbsp;Fmarket,&nbsp;Inc.

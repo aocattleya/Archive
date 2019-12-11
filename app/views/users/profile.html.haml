@@ -1,12 +1,16 @@
-.profiles
-  .profile
-    %h2.profile__head
-      プロフィール
-    .profile__form
-      .profile__form__icon
-        %figure= image_tag "member_default.png", heith:60, width:60, class: "profile__form__icon__img"
-        %input{type: "text", class: "profile__form__icon__input", name: "nickname", placeholder: "例)AYA☆セール中"}
-    .profile__profile
-      %textarea{class: "profile__profile__textarea", name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-      %button{type: "submit", class: "profile__profile__btn"}
-        変更する
+= render 'items/header'
+.profiles-content
+  = render 'items/sidebar'
+  .profiles
+    .profile
+      %h2.profile__head
+        プロフィール
+      .profile__form
+        .profile__form__icon
+          %figure= image_tag "member_default.png", heith:60, width:60, class: "profile__form__icon__img"
+          %input{type: "text", class: "profile__form__icon__input", name: "nickname", placeholder: "例)AYA☆セール中"}
+      .profile__profile
+        %textarea{class: "profile__profile__textarea", name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+        %button{type: "submit", class: "profile__profile__btn"}
+          変更する
+= render 'items/footer'

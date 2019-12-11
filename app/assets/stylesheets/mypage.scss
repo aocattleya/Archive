@@ -1,15 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-  line-height: inherit;
+.user-contents {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  &__box {
+    width: 1020px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
 }
-body {
-  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
-    "メイリオ", "Meiryo", sans-serif;
-  background: #f5f5f5;
-}
-.content {
+
+.user-content {
   width: 700px;
   margin: 0 auto;
   .user {
@@ -23,6 +26,8 @@ body {
     background-image: url("/download.jpg");
     &__link {
       width: 700px;
+      height: 80px;
+      box-sizing: border-box;
       &__figure {
         margin: 0 auto;
         img {
@@ -33,6 +38,8 @@ body {
         font-size: 14px;
         margin-top: 8px;
         font-weight: 600;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+          "YuGothic", "メイリオ", "Meiryo", sans-serif;
       }
       &__number {
         margin-top: 8px;
@@ -41,6 +48,8 @@ body {
         display: flex;
         justify-content: center;
         line-height: 20px;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+          "YuGothic", "メイリオ", "Meiryo", sans-serif;
         &__evaluation {
           list-style: none;
           display: flex;
@@ -75,9 +84,13 @@ body {
         width: 50%;
         background: #fff;
         border-top: 2px solid #ea352d;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+          "YuGothic", "メイリオ", "Meiryo", sans-serif;
       }
       &__todo {
         width: 50%;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+          "YuGothic", "メイリオ", "Meiryo", sans-serif;
       }
     }
     &__content {
@@ -92,14 +105,21 @@ body {
           list-style: none;
           color: black;
           font-size: 14px;
-          padding: 16px;
+          padding: 10px;
+          &__icon {
+            margin-right: 8px;
+            margin-top: 6px;
+          }
           &__logo {
             position: absolute;
             display: block;
+            margin-top: 5px;
           }
           &__body {
             &__text {
               margin: 0 40px 0 68px;
+              font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+                "YuGothic", "メイリオ", "Meiryo", sans-serif;
             }
             time {
               margin: 0 40px 0 68px;
@@ -145,6 +165,8 @@ body {
       line-height: 72px;
       font-family: Courier New;
       font-size: 16px;
+      font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+        "YuGothic", "メイリオ", "Meiryo", sans-serif;
     }
     &__tabs {
       width: 100%;
@@ -159,11 +181,15 @@ body {
         font-size: 16px;
         background: #fff;
         border-top: 2px solid #ea352d;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+          "YuGothic", "メイリオ", "Meiryo", sans-serif;
       }
       &__past {
         background: #eee;
         width: 50%;
         font-size: 16px;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+          "YuGothic", "メイリオ", "Meiryo", sans-serif;
       }
       &__content {
         height: 250px;
@@ -179,6 +205,8 @@ body {
             padding: 60px 0 40px;
             color: #ccc;
             text-align: center;
+            font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体",
+              "YuGothic", "メイリオ", "Meiryo", sans-serif;
             .box {
               height: 110px;
               width: 110px;

@@ -1,0 +1,24 @@
+= render 'items/header'
+.card-content
+  .card-content__box
+    = render 'items/sidebar'
+    %main.card-index-container
+      .card-index-container__content
+        %section.card-index-container__content__container
+          %h2 支払い方法
+          .card-index-container__content__container__content
+            %h3 クレジットカード一覧
+            %ul
+              %li
+                .card-index-container__content__container__content__type
+                %i.fab.fa-cc-jcb
+                .card-index-container__content__container__content__number ********1234
+                .card-index-container__content__container__content__expiration 12 / 22
+            .card-index-container__content__container__content__btn
+              %input{name: "method", type: "hidden", value: "card"}/
+              %button.settings-payment-remove{type: "submit"}
+                削除する
+            .card-index-container__content__container__content__info
+              = link_to "支払い方法について", ""
+              %i= fa_icon 'chevron-right', class: 'card-index-container__content__container__content__info__icon'
+= render 'items/footer'

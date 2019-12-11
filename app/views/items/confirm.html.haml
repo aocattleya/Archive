@@ -1,0 +1,43 @@
+.confirm.wrapper
+  .confirm.header
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", size: '170x50', alt: "Mercari"
+  .confirm.body
+    .confirm.body__top
+      購入内容の確認
+    .confirm.body__show
+      = image_tag 'steve.jpg', size: '80x80', class: "confirm.body__show__image"
+      .confirm.body__show__detail
+        %p steve⭐️stay foolish
+        %p ¥18,200 （税込）送料込み
+    .confirm.body__box
+      .confirm.body__box__form
+        .confirm.body__box__form__1
+          支払い金額
+          %a ¥18,200
+          = form_for "" do |f|
+            = f.check_box :content, class: 'form__check', id: "form__check"
+            %b ポイントを使用(所持ポイント:po)
+        .confirm.body__box__form__2
+          %p 支払い方法
+          = link_to "" do
+            %i.fas.fa-plus-circle
+              登録してください
+        .confirm.body__box__form__3
+          %p 配送先
+          = link_to "" do
+            %i.fas.fa-plus-circle
+              登録してください
+        .confirm.body__box__form__4
+          購入する
+  .confirm.footer
+    .confirm.footer__box
+      .confirm.footer__box__upper
+        %li プライバシーポリシー
+        %li メルカリ利用規約
+        %li 特定商取引に関する表記
+      .confirm.footer__box__middle
+        = link_to root_path do
+          = image_tag "logo_gray.svg", size: '120x70'
+      .confirm.footer__box__below
+        © Fmarket, Inc.

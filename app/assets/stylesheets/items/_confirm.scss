@@ -1,0 +1,133 @@
+.confirm.wrapper {
+  width: 100vw;
+  height: 100%;
+  background-color: #f5f5f5;
+  .confirm.header {
+    height: 90px;
+    text-align: center;
+    padding-top: 40px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .confirm.body {
+    background-color: rgb(255, 255, 255);
+    height: 730px;
+    width: 700px;
+    margin: 0 auto;
+    &__top {
+      border-bottom: ridge 0.5px;
+      padding: 30px;
+      font-size: 24px;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__show {
+      display: flex;
+      border-bottom: ridge 0.5px;
+      padding: 20px 170px;
+      height: 80px;
+      &__detail {
+        margin-left: 20px;
+        font-size: 14px;
+      }
+    }
+    &__box {
+      height: 465px;
+      &__form {
+        padding: 32px 170px 48px;
+        height: 430px;
+        margin: 0 auto;
+        p {
+          font-size: 15px;
+          font-weight: bold;
+        }
+        i {
+          color: #0099e8;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        &__1 {
+          padding-top: 10px;
+          height: 100px;
+          font-weight: bold;
+          font-size: 18px;
+          justify-content: space-between;
+          border-bottom: ridge 0.5px;
+          form {
+            display: flex;
+            width: 100%;
+          }
+          b {
+            width: 100%;
+          }
+          a {
+            font-size: 25px;
+            margin-left: 20px;
+            float: right;
+            position: relative;
+            bottom: 15px;
+          }
+          .form__check {
+            margin-top: 2px;
+            margin-right: 4px;
+          }
+          b {
+            font-size: 14px;
+            color: gray;
+            display: block;
+          }
+        }
+        &__2 {
+          height: 60px;
+          padding: 20px 0;
+          border-bottom: ridge 0.5px;
+        }
+        &__3 {
+          height: 60px;
+          padding: 20px 0;
+          border-bottom: ridge 0.5px;
+        }
+        &__4 {
+          width: 100%;
+          background-color: gray;
+          margin-top: 40px;
+          padding-top: 10px;
+          height: 40px;
+          text-align: center;
+          color: white;
+        }
+      }
+    }
+  }
+  .confirm.footer {
+    width: 100%;
+    height: 220px;
+    &__box {
+      height: 100%;
+      width: 700px;
+      margin: 0 auto;
+      &__upper {
+        display: flex;
+        padding-top: 30px;
+        justify-content: center;
+        li {
+          margin-right: 15px;
+          list-style: none;
+          font-size: 12px;
+        }
+      }
+      &__middle {
+        margin-top: 40px;
+        text-align: center;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      &__below {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -26,8 +26,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  #root 'items#index'
-  root 'items#show'
+  root 'items#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,7 @@
 .confirm.wrapper
   .confirm.header
-    = image_tag "fmarket_logo_red.svg", size: '170x50', alt: "Mercari"
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", size: '170x50', alt: "Mercari"
   .confirm.body
     .confirm.body__top
       購入内容の確認
@@ -36,6 +37,7 @@
         %li メルカリ利用規約
         %li 特定商取引に関する表記
       .confirm.footer__box__middle
-        = image_tag "logo_gray.svg", size: '120x70'
+        = link_to root_path do
+          = image_tag "logo_gray.svg", size: '120x70'
       .confirm.footer__box__below
-        © Mercari, Inc.
+        © Fmarket, Inc.

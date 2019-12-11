@@ -12,7 +12,7 @@
           %tr
             %th 出品者名
             %td.item-box-container__item-main-content-clearfix__table__td
-              %a{:href => "#", class: "light-blue"} ルーブル美術館
+              %a{href: "#", class: "light-blue"} ルーブル美術館
               =fas_icon 'grin',class: "grin-icon"
               %span 25
               =fa_icon 'meh',class: "meh-icon"
@@ -22,9 +22,9 @@
           %tr
             %th カテゴリー
             %td.item-box-container__item-main-content-clearfix__table__td
-              %a{:href => "#", class: "light-blue"} おもちゃ・ホビー・グッズ
-              %a{:href => "#", class: "light-blue"} >美術品
-              %a{:href => "#", class: "light-blue"} >絵画/タペストリ
+              %a{href: "#", class: "light-blue"} おもちゃ・ホビー・グッズ
+              %a{href: "#", class: "light-blue"} >美術品
+              %a{href: "#", class: "light-blue"} >絵画/タペストリ
           %tr
             %th ブランド
             %td
@@ -38,7 +38,7 @@
           %tr
             %th 発送元地域
             %td.item-box-container__item-main-content-clearfix__table__td
-              %a{:href => "#", class: "light-blue"} 東京都
+              %a{href: "#", class: "light-blue"} 東京都
           %tr
             %th 発送日の目安
             %td
@@ -71,8 +71,8 @@
   .item-detail-message__content
     %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
     %textarea.inputs
-    %form.message-form{:action => "https://www.mercari.com/jp/comment/add/", :method => "POST"}
-    %input{:name => "__csrf_value", :type => "hidden", :value => "8c678805befc222e7d19b30116c53bb696471c03c95a479cfe4ea49aad82bb330d59c9bfb0fe9dd6f2c872a6db457c1e3c5fdb093291350c521598ac2372b075b"}/
+    %form.message-form{action:  "https://www.mercari.com/jp/comment/add/", method: "POST"}
+    %input{name: "__csrf_value", type: "hidden", value: "8c678805befc222e7d19b30116c53bb696471c03c95a479cfe4ea49aad82bb330d59c9bfb0fe9dd6f2c872a6db457c1e3c5fdb093291350c521598ac2372b075b"}/
     .item-detail-message__btn
       .item-detail-message__btn__text
         コメントする

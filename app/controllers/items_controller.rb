@@ -18,8 +18,7 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-    # user_id = current_user.id
-    # @item.save!
+    
   end
 
   private

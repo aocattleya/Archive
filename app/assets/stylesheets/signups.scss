@@ -1,0 +1,814 @@
+@mixin signup-btn($border,$back-color,$color) {
+  max-width: 343px;
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+  background: #eee;
+  display: block;
+  width:100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid $border;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background-color: $back-color;
+  margin: 0 auto 16px auto;
+  & a {
+    text-decoration: none;
+    color: $color;
+  }
+}
+
+@mixin progress-status-after($color:#ccc,$width:100%){
+  left: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: $color;
+  border-style: solid;
+  border-width: 0;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+}
+
+@mixin progress-status-before($color:#ccc){
+  right: 50%;
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: $color;
+  border-style: solid;
+  border-width: 0;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+}
+
+@mixin progress-status($color:#888) {
+  font-weight: 600;
+  color: $color;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  min-width: 40px;
+  text-align: -webkit-match-parent;
+  font-size: 12px;
+  margin: 0 40px 0 0;
+  & div{
+    background: $color;
+    width: 12px;
+    height: 12px;
+    margin: 8px auto 0;
+    border-radius: 50%;
+  }
+}
+
+@mixin signup-head() {
+  &__header {
+    // height: 128px;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
+    display: block;
+    border-style: solid;
+    border-width: 0;
+    box-sizing: inherit;
+    & h1 {
+      display: inline-block;
+      margin: 40px 0 0;
+      & a {
+        display: inline-block;
+        width: 185px;
+        height: 49px;
+        margin: 0 8px 0 0;
+        line-height: 49px;
+        color: #0099e8;
+        text-decoration: none;
+        touch-action: manipulation;
+        & img {
+          width: 185px;
+          height: 49px;
+          vertical-align: middle;
+        }
+      }
+    }
+    &__nav {
+      padding: 40px 0 0 44px;
+      border-top: 1px solid #eee;
+      display: inline-block;
+      vertical-align: top;
+      border-top: 1px solid #eee;
+      font-size: 0;
+      text-align: center;
+      &__ol {
+        margin: 0;
+        list-style: none;
+        & .deactive{
+          @include progress-status();
+          & div::before{
+            @include progress-status-before()
+          }
+          & .middle::after{
+            @include progress-status-after();
+          }
+        }
+        & .active{
+          @include progress-status(#ea352d);
+          & div::after{
+            @include progress-status-after();
+          }
+        }
+        & .complete::after{
+            @include progress-status-after(#ea352d,200%);
+            z-index: 10;
+        }
+        & .midle-comp{
+          @include progress-status(#ea352d);
+          & div::before{
+            @include progress-status-before(#ea352d)
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin half() {
+  margin-right: 12px;
+  width: calc(50% - 6px);
+  margin: 8px 0 0 0;
+}
+
+@mixin input_default() {
+  width: 90%;
+  margin: 8px 0 0;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  min-height: 1.5em;
+  outline: 0;
+  font-family: inherit;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+@mixin btn_default(){
+  margin-top: 32px;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  min-height: 1.5em;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+@mixin select-wrap-half(){
+  display: inline-block;
+  width: calc(42% - 2px);
+  margin: 8px 0 0;
+  position: relative;
+  background: #fff;
+}
+
+@mixin select-half(){
+  width: calc(100%);
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.body {
+  background-color: #f5f5f5;
+}
+
+.signup-header {
+  height: 128px;
+  text-align: center;
+  & h1 {
+    font-size: 22px;
+    padding: 32px;
+    display: inline-block;
+    margin: 11px 0 12px;
+    & a {
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+      & img {
+        width: 185px;
+        height: 49px;
+      }
+    }
+  }
+}
+
+.signup {
+  display: block;
+  &__container{
+    background: #fff;
+    width: 700px;
+    margin: 0 auto;
+    & h2 {
+      font-size: 22px;
+      padding: 32px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    &__form {
+      padding: 24px,16px,40px;
+      border-top:1px solid #f5f5f5;
+      &__content {
+        padding: 40px 40px 64px;
+        &__email {
+          @include signup-btn(transparent,#ea352d,#ffffff);
+        }
+        &__facebook {
+          @include signup-btn(transparent,#385185,#ffffff);
+        }
+        &__google {
+          @include signup-btn(#979797,#fff,#333);
+        }
+      }
+    }
+  }
+}
+
+.registration-container {
+  @include signup-head();
+  &__main {
+    display: block;
+    &__container {
+      background: #fff;
+      width: 700px;
+      margin: 0 auto;
+      & h2 {
+        font-size: 22px;
+        padding: 32px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &__form {
+        padding: 24px 16px 40px;
+        border-top: 1px solid #f5f5f5;
+        &__content {
+          max-width: 343px;
+          margin: 0 auto;
+          text-align: left;
+          &__group {
+            font-size: inherit;
+            line-height: inherit;
+            margin: 24px 0 0;
+            & label {
+              font-weight: 600;
+              font-size: 14px;
+              display: inline-block;
+              touch-action: manipulation;
+            }
+            & .span {
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            & .input-default {
+              @include input_default();
+            }
+            & #last_name{
+              @include half();
+              margin-right: 8px;
+            }
+            & #first_name{
+              @include half();
+            }
+            & #last_name_kana{
+              @include half();
+              margin-right: 8px;
+            }
+            & #first_name_kana{
+              @include half();
+            }
+            &__fields {
+              display: inline-flex;
+            }
+            & .checkbox-default {
+              width: 20px;
+              height: 24px;
+              -moz-transform: scale(1.4);
+              -webkit-transform: scale(1.4);
+              transform: scale(1.4);
+            }
+            & .form-info-text {
+              color: #888;
+              font-size: 14px;
+            }
+            & a {
+              color: #0099e8;
+              text-decoration: none;
+              float: right;
+              font-size: 14px;
+            }
+            &__select {
+              &__wrap {
+                width: 76px;
+                margin: 8px 0 0;
+                position: relative;
+                background: #fff;
+                display: inline-block;
+                & i {
+                  right: 12px;
+                  position: absolute;
+                  top: 50%;
+                  z-index: 2;
+                  color: #888;
+                  -webkit-transform: translate(0, -50%);
+                  transform: translate(0, -50%);
+                  display: inline-block;
+                  font-family: "Font Awesome 5 Free";
+                  font-style: normal;
+                  // font-weight: 400;
+                  font-variant: normal;
+                  text-transform: none;
+                  line-height: 1;
+                  -webkit-font-smoothing: antialiased;
+                }
+                & select {
+                  width: 100%;
+                  padding: 0 10px;
+                  position: relative;
+                  z-index: 2;
+                  height: 48px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                  outline: 0;
+                  -webkit-appearance: none;
+                  touch-action: manipulation;
+                  min-height: 1.5em;
+                  color: inherit;
+                  font-family: inherit;
+                  font-style: inherit;
+                  font-weight: inherit;
+                }
+              }
+              & span {
+                margin: 0 2px 0 8px;
+                text-decoration: inherit;
+                vertical-align: inherit;
+              }
+            }
+          }
+          &__submit {
+            & .btn-default {
+              @include btn_default();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sms-confirmation-container {
+  @include signup-head();
+  &__main {
+    display: block;
+    &__container {
+      background: #fff;
+      width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      & h2 {
+        font-size: 22px;
+        padding: 32px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &__form {
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        &__content {
+          max-width: 343px;
+          margin: 0 auto;
+          &__group {
+            & label {
+              font-weight: 600;
+              display: inline-block;
+              touch-action: manipulation;
+              font-size: 14px;
+            }
+          }
+          & p {
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 14px;
+            color: #333;
+          }
+          & .input-default {
+            @include input_default();
+          }
+          &__submit{
+            & .btn-default {
+              @include btn_default();
+            }
+            & p {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              font-size: 14px;
+              color: #333;
+            }
+          }
+          & a {
+            color: #0099e8;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.address-container{
+  @include signup-head();
+  &__main{
+    display: block;
+    &__container{
+      background: #fff;
+      width: 700px;
+      margin: 0 auto;
+      & h2{
+        font-size: 22px;
+        padding: 32px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &__form{
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        &__content{
+          max-width: 343px;
+          margin: 0 auto;
+          &__group{
+            font-size: inherit;
+            line-height: inherit;
+            margin: 24px 0 0;
+            & label{
+              font-weight: 600;
+              display: inline-block;
+              touch-action: manipulation;
+            }
+            & .span{
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            & .input-default {
+              @include input_default();
+            }
+            &__select{
+              position: relative;
+              & i {
+                right: 18px;
+                position: absolute;
+                top: 60%;
+                z-index: 2;
+                color: #888;
+                font-size: 16px;
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                display: inline-block;
+                font-family: 'Font Awesome 5 Free';
+                font-style: normal;
+                // font-weight: 400;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+              }
+              & select {
+                width: 100%;
+                padding: 0 10px;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+                outline: 0;
+                -webkit-appearance: none;
+                touch-action: manipulation;
+                min-height: 1.5em;
+                color: inherit;
+                font-family: inherit;
+                font-style: inherit;
+                font-weight: inherit;
+              }
+              & #address_prefecture_id{
+                @include input_default();
+              }
+            }
+          }
+          &__submit{
+            & .btn-default{
+              @include btn_default();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.payment-method-container {
+  @include signup-head();
+  &__main {
+    display: block;
+    &__container {
+      background: #fff;
+      width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      & h2 {
+        font-size: 22px;
+        padding: 32px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &__form {
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        &__content {
+          max-width: 343px;
+          margin: 0 auto;
+          &__group {
+            font-size: inherit;
+            line-height: inherit;
+            margin: 24px 0 0;
+            & label {
+              font-weight: 600;
+              display: inline-block;
+              touch-action: manipulation;
+              font-size: 14px;
+            }
+            & .span{
+              background: #ea352d;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            & p {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              font-size: 14px;
+            }
+            &__select{
+              position: relative;
+              & i {
+                right: 220px;
+                position: absolute;
+                top: 60%;
+                z-index: 2;
+                color: #888;
+                font-size: 16px;
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                display: inline-block;
+                font-family: 'Font Awesome 5 Free';
+                font-style: normal;
+                // font-weight: 400;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+              }
+              & select {
+                margin: 8px 0 0;
+                width: 40%;
+                padding: 0 10px;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+                outline: 0;
+                -webkit-appearance: none;
+                touch-action: manipulation;
+                min-height: 1.5em;
+                color: inherit;
+                font-family: inherit;
+                font-style: inherit;
+                font-weight: inherit;
+              }
+            }
+          }
+          & .input-default {
+            @include input_default();
+          }
+          &__submit{
+            & .btn-default {
+              @include btn_default();
+            }
+            & p {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              font-size: 14px;
+            }
+          }
+          & a {
+            color: #0099e8;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.payment-method-container__main__container__form__content__group__select {
+  &__wrap {
+    @include select-wrap-half();
+    & i {
+      right: 16px;
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      color: #888;
+      font-size: 8px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      display: inline-block;
+      font-family: 'Font Awesome 5 Free';
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+    }
+    & i::before {
+      content: '\e001';
+      border-style: solid;
+      border-width: 0;
+      text-decoration: inherit;
+      vertical-align: inherit;
+      box-sizing: inherit;
+    }
+    & select {
+      @include select-half()
+    }
+  }
+  & span {
+    margin: 0 2px 0 8px;
+    text-decoration: inherit;
+    vertical-align: inherit;
+  }
+}
+
+.complete-container {
+  @include signup-head();
+  &__main {
+    display: block;
+    &__container {
+      background: #fff;
+      width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      & h2 {
+        font-size: 22px;
+        padding: 32px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &__form {
+        padding: 40px 40px 64px;
+        border-top: 1px solid #f5f5f5;
+        &__content {
+          max-width: 343px;
+          margin: 0 auto;
+          & label {
+            font-weight: 600;
+            display: inline-block;
+            touch-action: manipulation;
+            font-size: 14px;
+          }
+          & p {
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 14px;
+            text-align: center;
+          }
+          & .input-default {
+            @include input_default();
+          }
+          &__submit{
+            & .btn-default {
+              @include btn_default();
+            }
+            & p {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              font-size: 14px;
+            }
+          }
+          & a {
+            color: #0099e8;
+            text-decoration: none;
+            float: right;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.footer {
+  // height: 220px;
+  background-color: #f5f5f5;
+  text-align: center;
+  & .single-footer {
+    // height: 250px;
+    padding: 40px 0;
+    text-align: center;
+    & .ul {
+      text-align: center;
+      & .li {
+        margin: 0 0 0 16px;
+        display: inline-block;
+        & a {
+          text-decoration: none;
+          color: #333;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+    & img {
+      width: 300px;
+      height: 80px;
+      margin: 40px auto 0;
+    }
+    & p {
+      color: #333;
+      font-size: 12px;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+

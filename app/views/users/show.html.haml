@@ -1,0 +1,100 @@
+= render 'items/header'
+.user-contents
+  .user-contents__box
+    = render 'items/sidebar'
+    .user-content
+      .user
+        .user__link
+          .user__link__figure
+            = image_tag src="/animal-17430.jpg", size: "60x60"
+          .user__link__bold
+            %a CAT
+          .user__link__number
+            .user__link__number__evaluation
+              評価
+              %span.bold 999
+            .user__link__number__exhibit
+              出品数
+              %span.bold 999
+      .tab1
+        .tab1__tabs
+          .tab1__tabs__active
+            お知らせ
+          .tab1__tabs__todo
+            やることリスト
+        .tab1__content
+          .tab1__content__active
+            .tab1__content__active__link
+              .tab1__content__active__link__logo
+                = image_tag src="logo_red.svg", size: "48x48"
+              .tab1__content__active__link__body
+                .tab1__content__active__link__body__text
+                  《終了間近！12/9まで》今なら2人誘うとユニバーサル・スタジオ・ジャパン貸切イベントに抽選でご招待
+                %time
+                  = far_icon 'clock'
+                  %span
+                    3日前
+              = fa_icon 'chevron-right', class: "tab1__content__active__link__icon"
+            .tab1__content__active__link
+              .tab1__content__active__link__logo
+                = image_tag src="logo_red.svg", size: "48x48"
+              .tab1__content__active__link__body
+                .tab1__content__active__link__body__text
+                  《終了間近！12/9まで》今なら2人誘うとユニバーサル・スタジオ・ジャパン貸切イベントに抽選でご招待
+                %time
+                  = far_icon 'clock', class: "clock"
+                  %span
+                    3日前
+              = fa_icon 'chevron-right', class: "tab1__content__active__link__icon"
+            .tab1__content__active__link
+              .tab1__content__active__link__logo
+                = image_tag src="logo_red.svg", size: "48x48"
+              .tab1__content__active__link__body
+                .tab1__content__active__link__body__text
+                  《終了間近！12/9まで》今なら2人誘うとユニバーサル・スタジオ・ジャパン貸切イベントに抽選でご招待
+                %time
+                  = far_icon 'clock'
+                  %span
+                    3日前
+              = fa_icon 'chevron-right', class: "tab1__content__active__link__icon"
+            .tab1__content__active__link
+              .tab1__content__active__link__logo
+                = image_tag src="logo_red.svg", size: "48x48"
+              .tab1__content__active__link__body
+                .tab1__content__active__link__body__text
+                  《終了間近！12/9まで》今なら2人誘うとユニバーサル・スタジオ・ジャパン貸切イベントに抽選でご招待
+                %time
+                  = far_icon 'clock'
+                  %span
+                    3日前
+              = fa_icon 'chevron-right', class: "tab1__content__active__link__icon"
+            .tab1__content__active__link
+              .tab1__content__active__link__logo
+                = image_tag src="logo_red.svg", size: "48x48"
+              .tab1__content__active__link__body
+                .tab1__content__active__link__body__text
+                  《終了間近！12/9まで》今なら2人誘うとユニバーサル・スタジオ・ジャパン貸切イベントに抽選でご招待
+                %time
+                  = far_icon 'clock'
+                  %span
+                    3日前
+              = fa_icon 'chevron-right', class: "tab1__content__active__link__icon"
+            .tab1__content__active__go-list
+              .tab1__content__active__go-list__go
+                %a 一覧を見る
+          .tab1__content__todo
+      .tab2
+        .tab2__head
+          購入した商品
+        .tab2__tabs
+          .tab2__tabs__current
+            取引中
+          .tab2__tabs__past
+            過去の取引
+        .tab2__tabs__content
+          .tab2__tabs__content__current
+            .tab2__tabs__content__current__bold
+              = image_tag src="logo_gray.svg", class: "box"
+              %li 取引中の商品がありません
+          .tab2__tabs__content__past
+= render 'items/footer'

@@ -1,0 +1,36 @@
+.body
+  %header.signup-header
+    %h1
+      = link_to root_path do
+        = image_tag("fmarket_logo_red.svg")
+  .signup
+    %section.signup__container
+      %h2 新規会員登録
+      .signup__container__form
+        .signup__container__form__content
+          .signup__container__form__content__email
+            = link_to "#" do
+              %i.far.fa-envelope
+              = "メールアドレスで登録する"
+          .signup__container__form__content__facebook
+            = link_to "#" do
+              %i.fab.fa-facebook-f
+              = "Facebookで登録"
+          .signup__container__form__content__google
+            = link_to "#" do
+              %i.fab.fa-google
+              = "Googleで登録する"
+.footer
+  .single-footer
+    .nav
+      .ul
+        .li
+          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+        .li
+          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+        .li
+          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    = link_to root_path do
+      = image_tag("logo_gray.svg")
+    %p
+      ©&nbsp;Fmarket,&nbsp;Inc.

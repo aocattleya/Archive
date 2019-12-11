@@ -1,8 +1,18 @@
+.identification-content {
+  width: 100%;
+  background-color: #f5f5f5;
+  &__box {
+    width: 1020px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 40px 0 40px 0;
+  }
+}
+
 .identification {
   width: 700px;
   height: 100%;
-  margin: 24px auto 0;
-  padding: 0 0 40px;
   color: #333;
   box-sizing: border-box;
   &__top {

@@ -69,4 +69,5 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'font_awesome5_rails'
 gem 'pry-rails'
+gem 'active_hash'
 

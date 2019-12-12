@@ -21,9 +21,14 @@
         .top.header__box__below__users
           .top.header__box__below__users__member
             .top.header__box__below__users__member__left
-              新規会員登録
-            .top.header__box__below__users__member__right
-              ログイン
+            - if user_signed_in?
+              = current_user.nickname
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: ".top.header__box__below__users__member__left"
+            - else
+              = link_to "新規登録", new_signup_path, class: ".top.header__box__below__users__member__left"
+              .top.header__box__below__users__member__right
+                = link_to "ログイン", new_user_session_path, class: ".top.header__box__below__users__member__right"
+
   .top.syuppin
     %p出品
     %i.fas.fa-camera

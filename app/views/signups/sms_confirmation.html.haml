@@ -24,17 +24,18 @@
       %main.sms-confirmation-container__main
         %section.sms-confirmation-container__main__container
           %h2 電話番号の確認
-          = form_tag "", url: "#", local: true, method: :get, class: "sms-confirmation-container__main__container__form" do
+          = form_for @user, url: address_signups_path, method: :post, class: "sms-confirmation-container__main__container__form" do |f|
             .sms-confirmation-container__main__container__form__content
               .sms-confirmation-container__container__form__content__group
-                = label_tag :phone, "携帯電話の番号"
-                = phone_field_tag :phone, "", placeholder: "携帯電話の番号", class: "input-default"
+                = f.label :phonenumber, "携帯電話の番号"
+                = f.phone_field :phonenumber, placeholder: "携帯電話の番号", class: "input-default"
               %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
               .sms-confirmation-container__main__container__form__content__submit
-                = submit_tag "SMSを送信する", class:"btn-default btn-red"
+                = f.submit "次へ進む", class:"btn-default btn-red"
                 %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
               .sms-confirmation-container__main__container__form__content__group
-                = link_to "電話番号の確認が必要な理由", "#"
+                = link_to "" do
+                  電話番号の確認が必要な理由
                   %i.fas.fa-chevron-right
 .footer
   .single-footer

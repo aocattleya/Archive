@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191205030520) do
+ActiveRecord::Schema.define(version: 20191211115436) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "postal_code", null: false
+    t.string   "prefecture",  null: false
+    t.string   "city",        null: false
+    t.string   "street",      null: false
+    t.string   "building"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                                          null: false
@@ -20,7 +30,10 @@ ActiveRecord::Schema.define(version: 20191205030520) do
     t.string   "first_name",                                        null: false
     t.string   "last_name_kana",                                    null: false
     t.string   "first_name_kana",                                   null: false
-    t.string   "birthday",                                          null: false
+    t.integer  "birthday_year"
+    t.integer  "birthday_month"
+    t.integer  "birthday_day"
+    t.string   "phonenumber"
     t.text     "profile",                limit: 65535
     t.string   "image"
     t.string   "reset_password_token"

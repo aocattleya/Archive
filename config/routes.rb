@@ -14,7 +14,15 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'users/show'
+  resources :users, only: [:show] do
+    collection do
+      get :confirm
+      get :profile
+      get :identification
+      get :card
+      get :logout
+    end
+  end
 
   resources :items do
     collection do

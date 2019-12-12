@@ -3,8 +3,12 @@
 @import "./header";
 @import "./items/body";
 @import "./footer";
-@import "./items/confirm";
 @import "./signups";
-@import "./sell";
-@import "./devise";
-@import "./users";
+@import "card";
+@import "./items/confirm";
+@import "./sidebar";
+@import "./logout.scss";
+@import "mypage";
+@import "editprofile";
+@import "identification";
+@import "sell";

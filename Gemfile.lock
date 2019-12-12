@@ -24,6 +24,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_hash (3.0.0)
+      activesupport (>= 5.0.0)
     activejob (5.0.7.2)
       activesupport (= 5.0.7.2)
       globalid (>= 0.3.6)
@@ -281,6 +283,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash
   byebug
   capistrano
   capistrano-bundler

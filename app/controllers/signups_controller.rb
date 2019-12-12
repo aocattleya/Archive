@@ -1,6 +1,6 @@
 class SignupsController < ApplicationController
   before_action :save_to_session, only: :sms_confirmation
-  # before_action :save_to_session2, only: :address
+  # before_action :save_to_session2, only: :address　#sessionでの番号のvalidationsで使用予定
 
 
   def new
@@ -113,7 +113,7 @@ def save_to_session
   redirect_to registration_signups_path unless @user.valid?
 end
 
-# def save_to_session2
+# def save_to_session2　　　　　　　　#sessionでのphonenumberのvalidation時に使用予定
 #   session[:phonenumber] = user_params[:phonenumber]
 
 #   @user = User.new(

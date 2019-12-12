@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  resources :signups, only: [:new] do
+  devise_for :users
+  resources :signups, only: [:new, :create] do
     collection do
       get :registration
+      post :registration
       get :sms_confirmation
+      post :sms_confirmation
       get :address
+      post :address
       get :payment_method
+      post :payment_method
       get :complete
     end
   end
@@ -17,8 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+
   root 'items#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

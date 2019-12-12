@@ -24,7 +24,7 @@
   %main.complete-container__main
     %section.complete-container__main__container
       %h2 会員登録完了
-      -# = form_for @user, url: root_path, method: :get, class: "complete-container__main__container__form" do |f|
+      = form_for @user, url: root_path, method: :get, class: "complete-container__main__container__form" do |f|
         .complete-container__main__container__form__content
           %p
             ありがとうございます。

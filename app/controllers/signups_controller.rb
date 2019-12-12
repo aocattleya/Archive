@@ -1,6 +1,5 @@
 class SignupsController < ApplicationController
   before_action :save_to_session, only: :sms_confirmation
-  # before_action :save_to_session2, only: :address　#sessionでの番号のvalidationsで使用予定
 
 
   def new
@@ -65,16 +64,12 @@ class SignupsController < ApplicationController
         street: session[:street],
         building: session[:building]
       )
-
-      
-      
        if @address.save
           session[:id] = @user.id
           redirect_to complete_signups_path
        else
-          
            redirect_to root_path
-       end    
+       end
     else
       render '/signups/registration'
     end
@@ -113,15 +108,6 @@ def save_to_session
   redirect_to registration_signups_path unless @user.valid?
 end
 
-# def save_to_session2　　　　　　　　#sessionでのphonenumberのvalidation時に使用予定
-#   session[:phonenumber] = user_params[:phonenumber]
-
-#   @user = User.new(
-#     phonenumber: session[:phonenumber]
-#   )
-#   redirect_to sms_confirmation_signups_path unless @user.valid?
-# end
-
 
 private
 
@@ -140,8 +126,8 @@ private
       :birthday_day
     )
   end
+
   def address_params
-    
     params.require(:address).permit(
       :postal_code,
       :prefecture,

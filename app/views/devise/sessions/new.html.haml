@@ -28,8 +28,8 @@
               %div
                 = f.password_field :password, placeholder: "パスワード", class: "input-default"
             .devise-login-container__main__container__form__content__group
-              -# = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数
-              -# 私はロボットではありません
+              = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数
+              私はロボットではありません
             .devise-login-container__main__container__form__content__submit
               = f.submit "ログイン", class:"btn-default btn-red"
             .devise-login-container__main__container__form__content__group

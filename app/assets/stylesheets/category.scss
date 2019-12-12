@@ -1,0 +1,74 @@
+.wrapper {
+  width: 100vw;
+  .top.header {
+    height: 90px;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    padding-top: 8px;
+    &__box {
+      width: 1020px;
+      margin: 0 auto;
+      &__upper {
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        &__title {
+          margin-right: 20px;
+          cursor: pointer;
+        }
+        &__form {
+          background-color: rgb(245, 245, 245);
+          display: flex;
+          justify-content: space-between;
+          border-radius: 4px;
+          border: solid 1px rgb(204, 204, 204);
+          width: 100%;
+          &__field {
+            padding: 0 0 0 10px;
+            width: 100%;
+            input {
+              width: 100%;
+              padding: 7px 0;
+              background-color: rgb(245, 245, 245);
+              border-style: none;
+            }
+          }
+          &__point {
+            button {
+              background-color: rgb(245, 245, 245);
+              padding: 12px;
+              font-size: 14px;
+              border-style: none;
+            }
+          }
+        }
+      }
+      &__below {
+        margin-top: 8px;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        &__search {
+          padding-top: 5px;
+          width: 50%;
+          &__category {
+            cursor: pointer;
+            i {
+              color: rgb(234, 53, 45);
+              font-size: 14px;
+            }
+            a {
+              font-weight: bold;
+              font-size: 13px;
+              margin-right: 10px;
+            }
+            a:hover {
+              color: rgb(0, 149, 238);
+            }
+          }
+        }
+      }
+    }
+  }
+}

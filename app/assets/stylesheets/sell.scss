@@ -27,6 +27,9 @@
       line-height: 49px;
       margin: 0 auto;
       display: block;
+      &:hover {
+        opacity: 0.7;
+      }
       &__content {
         width: 700px;
         margin: 0 auto;

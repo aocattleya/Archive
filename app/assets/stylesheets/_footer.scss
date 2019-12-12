@@ -47,7 +47,6 @@
             opacity: 0.7;
           }
         }
-
       }
     }
   }
@@ -74,7 +73,8 @@
       }
       &__1 {
         padding-right: 10px;
-        width: 25%;
+        width: 22%;
+        text-align: left;
         i {
           color: rgb(255, 255, 255);
           font-size: 30px;
@@ -89,19 +89,25 @@
         }
       }
       &__2 {
-        padding-right: 10px;
         width: 25%;
+        text-align: left;
       }
       &__3 {
-        padding-right: 10px;
-        width: 25%;
+        padding-right: 30px;
+        width: 20%;
+        text-align: left;
+        a {
+          text-decoration: none;
+        }
       }
       &__4 {
         padding: 26px 10px 0 0;
         width: 25%;
+        text-align: left;
       }
       &__5 {
         width: 25%;
+        text-align: left;
       }
     }
     &__below {
@@ -112,6 +118,7 @@
         width: 25%;
         a {
           display: flex;
+          text-decoration: none;
           img {
             width: 35px;
           }
@@ -128,8 +135,8 @@
       }
       &__3 {
         font-size: 12px;
-        color: rgb(255, 255, 255)
-;       width: 25%;
+        color: rgb(255, 255, 255);
+        width: 25%;
       }
       &__4 {
         width: 25%;
@@ -140,15 +147,3 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

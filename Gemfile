@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -70,3 +71,5 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'font_awesome5_rails'
 gem 'ancestry'
+gem 'pry-rails'
+gem 'active_hash'

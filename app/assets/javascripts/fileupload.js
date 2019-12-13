@@ -22,13 +22,11 @@ $(() => {
     let previewCount = $(".preview").length;
     if (dropImg.length == 1) {
       if (previewCount <= 9) {
-        for (let i = 0; i < dropImg.length; i++) {
-          let img = URL.createObjectURL(dropImg[i]);
-          previewHTML(img);
-          images.push(dropImg[i].name);
-          if (previewCount == 9) {
-            $(".dropbox__img").remove();
-          }
+        let img = URL.createObjectURL(dropImg[0]);
+        previewHTML(img);
+        images.push(dropImg[0].name);
+        if (previewCount == 9) {
+          $(".dropbox__img").remove();
         }
       }
     } else {

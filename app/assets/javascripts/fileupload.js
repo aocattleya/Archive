@@ -20,11 +20,13 @@ $(() => {
     e.stopPropagation();
     let dropImg = e.originalEvent.dataTransfer.files;
     let previewCount = $(".preview").length;
+    let fileImput = $("#sell-img")[0];
     if (dropImg.length == 1) {
       if (previewCount <= 9) {
         let img = URL.createObjectURL(dropImg[0]);
         previewHTML(img);
         images.push(dropImg[0].name);
+        fileImput.files = dropImg;
         if (previewCount == 9) {
           $(".dropbox__img").remove();
         }

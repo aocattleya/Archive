@@ -44,6 +44,8 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    ancestry (3.0.7)
+      activerecord (>= 3.2.0)
     arel (7.1.4)
     bcrypt (3.1.13)
     bindex (0.8.1)
@@ -169,6 +171,9 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry-byebug (3.7.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.1)
@@ -283,6 +288,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   active_hash
   byebug
   capistrano
@@ -301,6 +307,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mini_magick
   mysql2 (>= 0.3.18, < 0.6.0)
+  pry-byebug
   pry-rails
   puma (~> 3.12)
   rails (~> 5.0.7, >= 5.0.7.2)

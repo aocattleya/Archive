@@ -24,3 +24,4 @@ doc/
 .idea
 .secret
 config/secrets.yml
+vendor/.env

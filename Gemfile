@@ -69,4 +69,7 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'font_awesome5_rails'
 gem 'pry-rails'
-
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'

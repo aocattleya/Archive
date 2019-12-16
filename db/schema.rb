@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191210090544) do
+ActiveRecord::Schema.define(version: 20191212094054) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "postal_code", null: false
+    t.string   "prefecture",  null: false
+    t.string   "city",        null: false
+    t.string   "street",      null: false
+    t.string   "building"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -47,16 +57,6 @@ ActiveRecord::Schema.define(version: 20191210090544) do
     t.index ["price"], name: "index_items_on_price", using: :btree
     t.index ["size"], name: "index_items_on_size", using: :btree
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
-  end
-
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "postal_code", null: false
-    t.string   "prefecture",  null: false
-    t.string   "city",        null: false
-    t.string   "street",      null: false
-    t.string   "building"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "todohukens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

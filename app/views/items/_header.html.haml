@@ -3,7 +3,7 @@
     .top.header__box
       .top.header__box__upper
         .top.header__box__upper__title
-          = image_tag "fmarket_logo_red.svg", size: '130x36', alt: "Mercari"
+          = link_to image_tag("fmarket_logo_red.svg", size: '130x36', alt: "Mercari"), root_path
         .top.header__box__upper__form
           .top.header__box__upper__form__field
             = form_for "" do |f|

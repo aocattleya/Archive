@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+
   devise_for :users
   resources :signups, only: [:new, :create] do
     collection do
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :categories, only: [:index, :show]
 
   root 'items#index'
 

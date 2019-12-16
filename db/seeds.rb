@@ -35,3 +35,13 @@ end
 grandchild_array.each do |grandchild|
   Category.create(name: grandchild[0] , parent_id: grandchild[1])
 end
+
+parent_id_cnt = 0
+child_array = []
+parent_child_array.each do |child|
+  if child == parent_array[parent_id_cnt]
+    parent_id_cnt += 1
+  else
+    child_array.push([child,parent_id_cnt])
+  end
+end

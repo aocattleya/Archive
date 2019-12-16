@@ -1,5 +1,7 @@
 = render 'items/header'
 .user-contents
+  - breadcrumb :mypage
+  = render "shared/breadcrumbs"
   .user-contents__box
     = render 'items/sidebar'
     .user-content

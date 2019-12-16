@@ -77,7 +77,6 @@ class SignupsController < ApplicationController
            redirect_to root_path
        end
     else
-      binding.pry
       render '/signups/registration'
     end
   end

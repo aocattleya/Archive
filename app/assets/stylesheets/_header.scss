@@ -71,13 +71,33 @@
         &__users {
           &__member {
             display: flex;
+            font-size: 15px;
             &__left {
+            }
+              i {
+                padding-top: 7px;
+                margin-left: 20px;
+                color: #333;
+                cursor: pointer;
+              }
+              i:hover {
+                color: rgb(0, 149, 238);
+              }
+              .mypage {
+                color: #333;
+                text-decoration: none;
+              }
+              .mypage:hover {
+                color: rgb(0, 149, 238);
+              }
+            .newreg {
+              cursor: pointer;
               font-size: 14px;
               border-radius: 6px;
               padding: 5px 10px 5px 10px;
               background-color: rgb(234, 53, 45);
               color: rgb(255, 255, 255);
-              cursor: pointer;
+              text-decoration: none;
             }
             &__right {
               margin-left: 10px;
@@ -89,11 +109,14 @@
               -moz-transition: all 0.3s ease;
               -o-transition: all 0.3s ease;
               transition: all  0.3s ease;
-              color: rgb(0, 149, 238);
               border-width: 1px;
               border-style: solid;
               border-color: rgb(0, 149, 238);
               cursor: pointer;
+              .login {
+                color: rgb(0, 149, 238);
+                text-decoration: none;
+              }
             }
             &__right:hover {
               background-color: rgb(0, 149, 238);
@@ -101,8 +124,10 @@
               -moz-transition: all 0.3s ease;
               -o-transition: all 0.3s ease;
               transition: all  0.3s ease;
-              color: rgb(255, 255, 255);
-
+              .login {
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+              }
             }
           }
         }
@@ -124,7 +149,6 @@
     cursor: pointer;
     p {
       font-size: 22px;
-      // font-weight: 700;
       font-family: "游ゴシック体", YuGothic;
     }
     i {

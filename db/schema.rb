@@ -12,6 +12,43 @@
 
 ActiveRecord::Schema.define(version: 20191212120346) do
 
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+    t.index ["name"], name: "index_categories_on_name", using: :btree
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "image",      null: false
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+  end
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                          null: false
+    t.integer  "price",                         null: false
+    t.integer  "size"
+    t.integer  "condition",                     null: false
+    t.integer  "shipping_date",                 null: false
+    t.integer  "shipping_price",                null: false
+    t.integer  "shipping_area",                 null: false
+    t.integer  "shipping_method",               null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.text     "description",     limit: 65535, null: false
+    t.integer  "category_id",                   null: false
+    t.index ["name"], name: "index_items_on_name", using: :btree
+    t.index ["price"], name: "index_items_on_price", using: :btree
+    t.index ["size"], name: "index_items_on_size", using: :btree
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
+  end
+
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "postal_code", null: false
     t.string   "prefecture",  null: false
@@ -20,6 +57,13 @@ ActiveRecord::Schema.define(version: 20191212120346) do
     t.string   "building"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "todohukens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "todohuken_prefecture"
+    t.string   "todohuken_city"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -47,4 +91,6 @@ ActiveRecord::Schema.define(version: 20191212120346) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "users"
 end

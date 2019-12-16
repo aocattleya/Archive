@@ -4,52 +4,201 @@
       .top.header__box__below__search__category
         %i.fas.fa-bars
         %a カテゴリーから探す
-        %i.fas.fa-tags
-        %a ブランドから探す
-
-.test
-  .container
-    %h1.title CSSだけで作るドロップダウンメニュー（多階層）サンプル7
-    %p.read
-      「transition」でアニメーションさせつつ、第4階層（ひ孫階層）まで対応したコードになります。一番右の「Menu5」は逆方向に折り返すようにしています。
-      .gnav
-        %li
-          %a{:href => ""} Menu1
-          %ul
-            %li
-              %a{:href => ""} レディース
-              %ul
-                %li
-                  %a{href: ""} トップス
-                  %ul
+        .gnav
+          %li
+            %ul
+              %li
+                %a{:href => ""} レディース
+                %ul
+                  %li
+                    %a{href: ""} トップス
+                    %ul
+                      %li
+                        %a{href: ""} Tシャツ/カットソー（半袖/袖なし）
+                      %li
+                        %a{href: ""} Tシャツ/カットソー（七分/長袖）
+                      %li
+                        %a{href: ""} シャツ/ブラウス（半袖/袖なし）
+                      %li
+                        %a{href: ""} シャツ/ブラウス（七分/長袖）
+                      %li
+                        %a{href: ""} ポロシャツ
+                      %li
+                        %a{href: ""} キャミソール
+                      %li
+                        %a{href: ""} タンクトップ
+                      %li
+                        %a{href: ""} ホルターネック
+                      %li
+                        %a{href: ""} ニット/セーター
+                      %li
+                        %a{href: ""} チュニック
+                      %li
+                        %a{href: ""} カーディガン/ボレロ
+                      %li
+                        %a{href: ""} アンサンブレ
+                      %li
+                        %a{href: ""} ベスト/ジレ
+                      %li
+                        %a{href: ""} パーカー
                     %li
-                      %a{href: ""} Tシャツ/カットソー（半袖/袖なし）
+                      %a{href: ""} ジャケット・アウター
+                      %ul
+                        %li
+                          %a{href: ""} テーラードジャケット
+                        %li
+                          %a{href: ""} ノーカラージャケット
+                        %li
+                          %a{href: ""} Gジャン/デニムジャケット
+                        %li
+                          %a{href: ""} レザージャケット
+                        %li
+                          %a{href: ""} ダウンジャケット
+                        %li
+                          %a{href: ""} ライダースジャケット
+                        %li
+                          %a{href: ""} ミリタリージャケット
+                        %li
+                          %a{href: ""} ジャンパー/ブルゾンちえみ
+                        %li
+                          %a{href: ""} ポンチョ佐藤
+                        %li
+                          %a{href: ""} ロングコート
+                        %li
+                          %a{href: ""} トレンチコート
+                        %li
+                          %a{href: ""} ダッフルコート
+                        %li
+                          %a{href: ""} ピーコート
                     %li
-                      %a{href: ""} Tシャツ/カットソー（七分/長袖）
+                      %a{href: ""} パンツ
+                      %ul
+                        %li
+                          %a{href: ""} デニム/ジーンズ
+                        %li
+                          %a{href: ""} ショートパンツ
+                        %li
+                          %a{href: ""} カジュアルパンツ
+                        %li
+                          %a{href: ""} ハーフパンツ
+                        %li
+                          %a{href: ""} チノパン
+                        %li
+                          %a{href: ""} ワークパンツ/カーゴパンツ
+                        %li
+                          %a{href: ""} クロップドパンツ
+                        %li
+                          %a{href: ""} サロペット/オーバーオール
+                        %li
+                          %a{href: ""} オールインワン
+                        %li
+                          %a{href: ""} サルエルパンツ
+                        %li
+                          %a{href: ""} ガウチョパンツ
+                        %li
+                          %a{href: ""} その他
                     %li
-                      %a{href: ""} シャツ/ブラウス（半袖/袖なし）
+                      %a{href: ""} スカート
+                      %ul
+                        %li
+                          %a{href: ""} ミニスカート
+                        %li
+                          %a{href: ""} 膝丈スカート
+                        %li
+                          %a{href: ""} ロングスカート
+                        %li
+                          %a{href: ""} キュロット
+                        %li
+                          %a{href: ""} その他
                     %li
-                      %a{href: ""} シャツ/ブラウス（七分/長袖）
-                    %li
-                      %a{href: ""} ポロシャツ
-                    %li
-                      %a{href: ""} キャミソール
-                    %li
-                      %a{href: ""} タンクトップ
-                    %li
-                      %a{href: ""} ホルターネック
-                    %li
-                      %a{href: ""} ニット/セーター
-                    %li
-                      %a{href: ""} チュニック
-                    %li
-                      %a{href: ""} カーディガン/ボレロ
-                    %li
-                      %a{href: ""} アンサンブレ
-                    %li
-                      %a{href: ""} ベスト/ジレ
-                    %li
-                      %a{href: ""} パーカー
+                      %a{href: ""} ワンピース
+                      %ul
+                        %li
+                          %a{href: ""} ミニワンピース
+                        %li
+                          %a{href: ""} 膝丈ワンピース
+                        %li
+                          %a{href: ""} ロングワンピウース
+                        %li
+                          %a{href: ""} その他
+                  %li
+                    %a{href: ""} 靴
+                    %ul
+                      %li
+                        %a{href: ""} ブーツ
+                      %li
+                        %a{href: ""} ハイヒールモモコ
+                      %li
+                        %a{href: ""} サンダル
+                      %li
+                        %a{href: ""} スニーカー
+                      %li
+                        %a{href: ""} ミュール
+                      %li
+                        %a{href: ""} モカシン
+                      %li
+                        %a{href: ""} ローファー/革靴
+                      %li
+                        %a{href: ""} フラットシューズ/バレエシューズ
+                      %li
+                        %a{href: ""} 長靴/レインシューズ
+                      %li
+                        %a{href: ""} その他
+                  %li
+                    %a{href: ""} ルームウェア・パジャマ
+                  %li
+                    %a{href: ""} レッグウェア
+                    %ul
+                      %li
+                        %a{href: ""} ソックス
+                      %li
+                        %a{href: ""} スパッツ
+                      %li
+                        %a{href: ""} ストッキング/タイツ
+                      %li
+                        %a{href: ""} レッグウォーマー
+                      %li
+                        %a{href: ""} その他
+                  %li
+                    %a{href: ""} 帽子
+                  %li
+                    %a{href: ""} バッグ
+                  %li
+                    %a{href: ""} アクセサリー
+                  %li
+                    %a{href:""} ヘアアクセサリー
+                  %li
+                    %a{href: ""} 小物
+                  %li
+                    %a{href: ""} 時計
+              %li
+                %a{href: ""} メンズ
+                %ul
+                  %li
+                    %a{href: ""} トップス
+                    %ul
+                      %li
+                        %a{href: ""} Tシャツ/カットソー（半袖/袖なし）
+                      %li
+                        %a{href: ""} Tシャツ/カットソー（七分/長袖）
+                      %li
+                        %a{href: ""} ポロシャツ
+                      %li
+                        %a{href: ""} タンクトップ
+                      %li
+                        %a{href: ""} ニット/セーター
+                      %li
+                        %a{href: ""} パーカー
+                      %li
+                        %a{href: ""} カーディガン
+                      %li
+                        %a{href: ""} スウェット
+                      %li
+                        %a{href: ""} ジャージ
+                      %li
+                        %a{href: ""} ベスト
+                      %li
+                        %a{href: ""} その他
                   %li
                     %a{href: ""} ジャケット・アウター
                     %ul
@@ -68,17 +217,19 @@
                       %li
                         %a{href: ""} ミリタリージャケット
                       %li
-                        %a{href: ""} ジャンパー/ブルゾンちえみ
+                        %a{href: ""} ナイロンジャケット
                       %li
-                        %a{href: ""} ポンチョ佐藤
+                        %a{href: ""} フライトジャケット
                       %li
-                        %a{href: ""} ロングコート
+                        %a{href: ""} ステンカラーコート
                       %li
                         %a{href: ""} トレンチコート
                       %li
                         %a{href: ""} ダッフルコート
                       %li
                         %a{href: ""} ピーコート
+                      %li
+                        %a{href: ""} ステンカラーコート
                   %li
                     %a{href: ""} パンツ
                     %ul
@@ -91,213 +242,55 @@
                       %li
                         %a{href: ""} ハーフパンツ
                       %li
-                        %a{href: ""} チノパン
-                      %li
                         %a{href: ""} ワークパンツ/カーゴパンツ
                       %li
-                        %a{href: ""} クロップドパンツ
-                      %li
-                        %a{href: ""} サロペット/オーバーオール
-                      %li
-                        %a{href: ""} オールインワン
-                      %li
-                        %a{href: ""} サルエルパンツ
-                      %li
-                        %a{href: ""} ガウチョパンツ
+                        %a{href: ""} オーバーオール
                       %li
                         %a{href: ""} その他
                   %li
-                    %a{href: ""} スカート
-                    %ul
-                      %li
-                        %a{href: ""} ミニスカート
-                      %li
-                        %a{href: ""} 膝丈スカート
-                      %li
-                        %a{href: ""} ロングスカート
-                      %li
-                        %a{href: ""} キュロット
-                      %li
-                        %a{href: ""} その他
+                    %a{href: ""} 靴
                   %li
-                    %a{href: ""} ワンピース
-                    %ul
-                      %li
-                        %a{href: ""} ミニワンピース
-                      %li
-                        %a{href: ""} 膝丈ワンピース
-                      %li
-                        %a{href: ""} ロングワンピウース
-                      %li
-                        %a{href: ""} その他
-                %li
-                  %a{href: ""} 靴
-                  %ul
-                    %li
-                      %a{href: ""} ブーツ
-                    %li
-                      %a{href: ""} ハイヒールモモコ
-                    %li
-                      %a{href: ""} サンダル
-                    %li
-                      %a{href: ""} スニーカー
-                    %li
-                      %a{href: ""} ミュール
-                    %li
-                      %a{href: ""} モカシン
-                    %li
-                      %a{href: ""} ローファー/革靴
-                    %li
-                      %a{href: ""} フラットシューズ/バレエシューズ
-                    %li
-                      %a{href: ""} 長靴/レインシューズ
-                    %li
-                      %a{href: ""} その他
-                %li
-                  %a{href: ""} ルームウェア・パジャマ
-                %li
-                  %a{href: ""} レッグウェア
-                  %ul
-                    %li
-                      %a{href: ""} ソックス
-                    %li
-                      %a{href: ""} スパッツ
-                    %li
-                      %a{href: ""} ストッキング/タイツ
-                    %li
-                      %a{href: ""} レッグウォーマー
-                    %li
-                      %a{href: ""} その他
-                %li
-                  %a{href: ""} 帽子
-                %li
-                  %a{href: ""} バッグ
-                %li
-                  %a{href: ""} アクセサリー
-                %li
-                  %a{href:""} ヘアアクセサリー
-                %li
-                  %a{href: ""} 小物
-                %li
-                  %a{href: ""} 時計
-            %li
-              %a{href: ""} メンズ
-              %ul
-                %li
-                  %a{href: ""} トップス
-                  %ul
-                    %li
-                      %a{href: ""} Tシャツ/カットソー（半袖/袖なし）
-                    %li
-                      %a{href: ""} Tシャツ/カットソー（七分/長袖）
-                    %li
-                      %a{href: ""} ポロシャツ
-                    %li
-                      %a{href: ""} タンクトップ
-                    %li
-                      %a{href: ""} ニット/セーター
-                    %li
-                      %a{href: ""} パーカー
-                    %li
-                      %a{href: ""} カーディガン
-                    %li
-                      %a{href: ""} スウェット
-                    %li
-                      %a{href: ""} ジャージ
-                    %li
-                      %a{href: ""} ベスト
-                    %li
-                      %a{href: ""} その他
-                %li
-                  %a{href: ""} ジャケット・アウター
-                  %ul
-                    %li
-                      %a{href: ""} テーラードジャケット
-                    %li
-                      %a{href: ""} ノーカラージャケット
-                    %li
-                      %a{href: ""} Gジャン/デニムジャケット
-                    %li
-                      %a{href: ""} レザージャケット
-                    %li
-                      %a{href: ""} ダウンジャケット
-                    %li
-                      %a{href: ""} ライダースジャケット
-                    %li
-                      %a{href: ""} ミリタリージャケット
-                    %li
-                      %a{href: ""} ナイロンジャケット
-                    %li
-                      %a{href: ""} フライトジャケット
-                    %li
-                      %a{href: ""} ステンカラーコート
-                    %li
-                      %a{href: ""} トレンチコート
-                    %li
-                      %a{href: ""} ダッフルコート
-                    %li
-                      %a{href: ""} ピーコート
-                    %li
-                      %a{href: ""} ステンカラーコート
-                %li
-                  %a{href: ""} パンツ
-                  %ul
-                    %li
-                      %a{href: ""} デニム/ジーンズ
-                    %li
-                      %a{href: ""} ショートパンツ
-                    %li
-                      %a{href: ""} カジュアルパンツ
-                    %li
-                      %a{href: ""} ハーフパンツ
-                    %li
-                      %a{href: ""} ワークパンツ/カーゴパンツ
-                    %li
-                      %a{href: ""} オーバーオール
-                    %li
-                      %a{href: ""} その他
-                %li
-                  %a{href: ""} 靴
-                %li
-                  %a{href: ""} バッグ
-                %li
-                  %a{href: ""} 帽子
-                %li
-                  %a{href: ""} アクセサリー
-                %li
-                  %a{href: ""} 小物
-                %li
-                  %a{href: ""} レッグウェア
-                %li
-                  %a{href: ""} アンダーウェア
-                %li
-                  %a{href: ""} その他
-                  
-            %li
-              %a{href: ""} ベビー・キッズ
-            %li
-              %a{href:""} インテリア・住まい・小物
-            %li
-              %a{href: ""} 本・音楽・ゲーム
-            %li
-              %a{href: ""} おもちゃ・ホビー・グッズ
-            %li
-              %a{href: ""} コスメ・香水・美容
-            %li
-              %a{href: ""} 家電・スマホ・カメラ
-            %li
-              %a{href: ""} スポーツ・レジャー
-            %li
-              %a{href: ""} ハンドメイド
-            %li
-              %a{href: ""} チケット
-            %li
-              %a{href: ""} 自動車・オートバイ
-            %li
-              %a{href: ""} その他
-            %li
-              %a{href: ""} カテゴリー一覧
-        %li
-          %a{:href => ""} Menu2
-        %li
-          %a{:href => ""} Menu3
+                    %a{href: ""} バッグ
+                  %li
+                    %a{href: ""} 帽子
+                  %li
+                    %a{href: ""} アクセサリー
+                  %li
+                    %a{href: ""} 小物
+                  %li
+                    %a{href: ""} レッグウェア
+                  %li
+                    %a{href: ""} アンダーウェア
+                  %li
+                    %a{href: ""} その他
+              %li
+                %a{href: ""} ベビー・キッズ
+              %li
+                %a{href:""} インテリア・住まい・小物
+              %li
+                %a{href: ""} 本・音楽・ゲーム
+              %li
+                %a{href: ""} おもちゃ・ホビー・グッズ
+              %li
+                %a{href: ""} コスメ・香水・美容
+              %li
+                %a{href: ""} 家電・スマホ・カメラ
+              %li
+                %a{href: ""} スポーツ・レジャー
+              %li
+                %a{href: ""} ハンドメイド
+              %li
+                %a{href: ""} チケット
+              %li
+                %a{href: ""} 自動車・オートバイ
+              %li
+                %a{href: ""} その他
+              %li
+                %a{href: ""} カテゴリー一覧
+        %i.fas.fa-tags
+        %a ブランドから探す
+
+
+  .container
+
+

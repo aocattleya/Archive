@@ -1,0 +1,138 @@
+.sell
+  %header.sell__head
+    = link_to root_path do
+      = image_tag "fmarket_logo_red.svg", class: "sell__head__img"
+  .sell__main
+    .sell__main__content
+      %h2.sell__main__content__head
+        商品の情報を入力
+      = form_for @item do |f|
+        .sell__main__content__file
+          .sell__main__content__file__up
+            %h3.sell__main__content__file__up__head
+              出品画像
+              %span.form-require
+                必須
+              %p.sell__main__content__file__up__head__text
+                最大10枚までアップロードできます
+              .sell__main__content__file__up__head__preview
+                %ul#preview_list
+                  - i = 0
+                  - @item.images[0..4].each do |image|
+                    %li.upload-sell-item{id: i}
+                      - i += 1
+                      %figure.upload-sell-figure
+                        = image_tag(image.image[0], size: "114x114") 
+                      .upload-sell-btn
+                        %a.upload-sell-edit="編集"
+                        %a.upload-sell-delete="削除"
+              .dropbox
+                %label.dropbox__img
+                  %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
+                  = f.fields_for :images do |i|
+                    = i.file_field :image, multiple: true, id: "sell-img"
+        .sell__main__content__form
+          %label
+            商品
+            %span.form-require
+              必須
+            = f.text_field :name, class: "sell__main__content__form__input", placeholder: "商品名（必須 40文字まで)"
+          %label
+            商品の説明
+            %span.form-require
+              必須
+          = f.text_field :description, class: "sell__main__content__form__input", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        .sell__main__content__form
+          %h3.sell__main__content__form__sub
+            商品の詳細
+          .sell__main__content__form__box
+            .sell__main__content__form__box__group
+              %label
+                カテゴリ
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__group__select
+                = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form"
+              %label
+                商品の状態
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__group__select
+                = f.select :condition, Item.conditions.keys.to_a, {}, class: "sell__main__content__form__box__group__select__form"
+        .sell__main__content__form
+          %h3.sell__main__content__form__sub
+            配送について
+            = link_to "", target: "_blank", class: "sell__main__content__form__sub__icon" do
+              \?
+          .sell__main__content__form__box
+            .sell__main__content__form__box__group
+              %label
+                配送料の負担
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__group__select
+                = f.select :shipping_price, Item.shipping_prices.keys.to_a, {}, class: "sell__main__content__form__box__group__select__form"
+              %label
+                配送の方法
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__group__select
+                = f.select :shipping_method, Item.shipping_methods.keys.to_a, {}, class: "sell__main__content__form__box__group__select__form"
+              %label
+                発送元の地域
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__group__select
+                = f.collection_select :shipping_area, Prefecture.all, :id, :name, {}, class: "sell__main__content__form__box__group__select__form"
+              %label
+                発送までの日数
+                %span.form-require
+                  必須
+              .sell__main__content__form__box__group__select
+                = f.select :shipping_date, Item.shipping_dates.keys.to_a, {}, class: "sell__main__content__form__box__group__select__form"
+        .sell__main__content__form
+          %h3.sell__main__content__form__sub
+            販売価格(300〜9,999,999)
+            = link_to "", target: "_blank", class: "sell__main__content__form__sub__icon" do
+              \?
+          .sell__main__content__form__box
+            %ul.sell__main__content__form__box__price
+              %li.sell__main__content__form__box__price__top
+                .sell__main__content__form__box__price__top__left
+                  価格
+                  %span.form-require
+                    必須
+                .sell__main__content__form__box__price__top__right
+                  ¥
+                  = f.text_field :price, placeholder: "例）300", class: "sell__main__content__form__box__price__top__right__input"
+              %li.sell__main__content__form__box__price__fee
+                .sell__main__content__form__box__price__fee__left
+                  販売手数料 (10%)
+                .sell__main__content__form__box__price__fee__right
+                  \-
+              %li.sell__main__content__form__box__price__profit
+                .sell__main__content__form__box__price__profit__left
+                  販売利益
+                .sell__main__content__form__box__price__profit__right
+                  \-
+        .sell__main__content__button
+          %div
+          %button{type: "submit", class: "sell__main__content__button__red"}
+            変更する
+          = link_to "キャンセル", item_path(@item), class: "sell__main__content__button__gray"
+  %header.sell__footer
+    %ul
+      %li
+        = link_to "", target: "_blank" do
+          プライバシーポリシー
+      %li
+        = link_to "", target: "_blank" do
+          メルカリ利用規約
+      %li
+        = link_to "", target: "_blank" do
+          特定商取引に関する表記
+    .sell__footer__logo
+      = link_to root_path do
+        = image_tag "logo_gray.svg"
+      %small
+        ©&nbsp;Fmarket,&nbsp;Inc.

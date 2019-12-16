@@ -1,11 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  # before_action :session[:uid, :provider, :password].clear, only: facebook
 
   def google
     callback_for(:google)
-    # if session[:provider].persisted?
-    #   delete(:provider)
-    # end
   end
 
   def facebook
@@ -22,7 +18,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session[:provider] = session["devise.#{provider}_data"][:provider]
       session[:email] = session["devise.#{provider}_data"][:info][:email]
       session[:nickname] = session["devise.#{provider}_data"][:info][:name]
-      session[:password] = Devise.friendly_token[0, 20]
+      session[:password] = Devise.friendly_token[7, 20]
 
       render "signups/sns_registration"
     end

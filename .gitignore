@@ -25,3 +25,4 @@ doc/
 .secret
 config/secrets.yml
 vendor/.env
+.env

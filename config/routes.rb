@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
+
   resources :signups, only: [:new, :create] do
     collection do
       get :registration
       post :registration
+      get :sns_registration
+      post :sns_registration
       get :sms_confirmation
       post :sms_confirmation
       get :address

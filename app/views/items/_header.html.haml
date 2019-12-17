@@ -22,12 +22,19 @@
           .top.header__box__below__users__member
             .top.header__box__below__users__member__left
             - if user_signed_in?
-              = current_user.nickname
-              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: ".top.header__box__below__users__member__left"
+              %i.far.fa-heart
+                いいね！一覧
+              %i.far.fa-bell
+                お知らせ
+              %i.fas.fa-check
+                やることリスト
+              = link_to profile_users_path, class: "mypage" do
+                %i.fas.fa-user-circle
+                マイページ
             - else
-              = link_to "新規登録", new_signup_path, class: ".top.header__box__below__users__member__left"
+              = link_to "新規登録", new_signup_path, class: "newreg"
               .top.header__box__below__users__member__right
-                = link_to "ログイン", new_user_session_path, class: ".top.header__box__below__users__member__right"
+                = link_to "ログイン", new_user_session_path, class: "login"
 
   .top.syuppin
     %p出品

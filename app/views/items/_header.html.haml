@@ -3,7 +3,7 @@
     .top.header__box
       .top.header__box__upper
         .top.header__box__upper__title
-          = image_tag "fmarket_logo_red.svg", size: '130x36', alt: "Mercari"
+          = link_to image_tag("fmarket_logo_red.svg", size: '130x36', alt: "Mercari"), root_path
         .top.header__box__upper__form
           .top.header__box__upper__form__field
             = form_for "" do |f|
@@ -22,10 +22,17 @@
           .top.header__box__below__users__member
             .top.header__box__below__users__member__left
             - if user_signed_in?
-              = current_user.nickname
-              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: ".top.header__box__below__users__member__left"
+              %i.far.fa-heart
+                いいね！一覧
+              %i.far.fa-bell
+                お知らせ
+              %i.fas.fa-check
+                やることリスト
+              = link_to profile_users_path, class: "mypage" do
+                %i.fas.fa-user-circle
+                マイページ
             - else
-              = link_to "新規登録", new_signup_path, class: ".top.header__box__below__users__member__left"
+              = link_to "新規登録", new_signup_path, class: "newreg"
               .top.header__box__below__users__member__right
                 = link_to "ログイン", new_user_session_path, class: ".top.header__box__below__users__member__right"
   .top.syuppin

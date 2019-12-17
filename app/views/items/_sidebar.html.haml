@@ -96,6 +96,4 @@
           電話番号の確認
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
-          ログアウト
-          = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar__nav__list__item"

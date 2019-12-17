@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  get 'categories/index'
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
-  devise_for :users
   resources :signups, only: [:new, :create] do
     collection do
       get :registration
       post :registration
+      get :sns_registration
+      post :sns_registration
       get :sms_confirmation
       post :sms_confirmation
       get :address

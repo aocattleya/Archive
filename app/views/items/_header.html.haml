@@ -15,9 +15,9 @@
         .top.header__box__below__search
           .top.header__box__below__search__category
             %i.fas.fa-bars
-            %a カテゴリーから探す
+            = link_to "カテゴリーから探す", categories_path
             %i.fas.fa-tags
-            %a ブランドから探す
+            = link_to "ブランドから探す", root_path
         .top.header__box__below__users
           .top.header__box__below__users__member
             .top.header__box__below__users__member__left
@@ -34,8 +34,7 @@
             - else
               = link_to "新規登録", new_signup_path, class: "newreg"
               .top.header__box__below__users__member__right
-                = link_to "ログイン", new_user_session_path, class: "login"
-
+                = link_to "ログイン", new_user_session_path, class: ".top.header__box__below__users__member__right"
   .top.syuppin
     %p出品
     %i.fas.fa-camera

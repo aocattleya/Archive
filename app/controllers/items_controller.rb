@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :update]
+
   def index
     @items = Item.all
   end
@@ -22,16 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @parents = Category.all.order("id ASC").limit(13)
-    img_array = []
-    @item.images.each do |image|
-      img_array.push(image)
-    end
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(update_params)
       redirect_to item_path
     else
@@ -40,6 +36,10 @@ class ItemsController < ApplicationController
   end
 
   private
+    def set_item
+      @item = Item.find(params[:id])
+    end
+
     def item_params
       params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: :image)
     end

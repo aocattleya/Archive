@@ -21,16 +21,17 @@
                   - @item.images[0..4].each do |image|
                     %li.upload-sell-item{id: i}
                       - i += 1
-                      %figure.upload-sell-figure
-                        = image_tag(image.image, size: "114x114") 
-                      .upload-sell-btn
-                        %a.upload-sell-edit="編集"
-                        %a.upload-sell-delete="削除"
+                      .preview
+                        .preview__img
+                          %img{src: image.image, size: "114x114"}/
+                        .preview__delete
+                          .preview__delete--button
+                            %p 削除
               .dropbox
                 %label.dropbox__img
                   %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
                   = f.fields_for :images do |i|
-                    = i.file_field :image, multiple: true, id: "sell-img"
+                    = i.file_field :image, id: "sell-img"
         .sell__main__content__form
           %label
             商品

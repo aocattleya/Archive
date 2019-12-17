@@ -7,7 +7,7 @@
         = "カテゴリー一覧"
       .container__categories__visible__clearfix
         - @categories.each do |category|
-          %a.container__categories__visible__clearfix__link{href: "##{category.id}-header", id: category.id}= category.name
+          = link_to category.name, "##{category.id}-header", id: category.id, class: "container__categories__visible__clearfix__link"
       .container__categories__visible__list
         .container__categories__visible__list__clearfix
           - @categories.each do |category|

@@ -71,8 +71,11 @@
           font-size: 22px;
         }
         &__more {
-          color: rgb(0, 149, 238);
           cursor: pointer;
+          & a {
+            color: rgb(0, 149, 238);
+            text-decoration: none;
+          }
         }
       }
       &__list {
@@ -85,12 +88,21 @@
           margin: 10px;
           outline: solid 1px lightcyan;
           box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+          position: relative;
           cursor: pointer;
+          & a{
+            z-index: 10;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
           &__image {
             width: 100%;
             height: 73%;
-            background-image: url("/assets/cat.jpg");
-            background-size: cover;
+            position: relative;
             p {
               font-size: 14px;
               width: 40%;
@@ -98,7 +110,7 @@
               padding: 3px 0 3px 5px;
               border-radius: 0 15px 15px 0;
               color: white;
-              position: relative;
+              position: absolute;
               top: 140px;
             }
           }

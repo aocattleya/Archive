@@ -14,5 +14,4 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'mercariimages'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/mercariimages'
-  # config.asset_host = 'https://mercariimages.s3.amazonaws.com' これが正しい？
 end

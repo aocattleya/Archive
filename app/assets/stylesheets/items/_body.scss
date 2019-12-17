@@ -52,8 +52,11 @@
           font-size: 22px;
         }
         &__more {
-          color: rgb(0, 149, 238);
           cursor: pointer;
+          & a {
+            color: rgb(0, 149, 238);
+            text-decoration: none;
+          }
         }
       }
       &__list {
@@ -79,6 +82,7 @@
           &__image {
             width: 100%;
             height: 73%;
+            position: relative;
             // background-image: url("/assets/cat.jpg");
             // background-size: cover;
             p {
@@ -88,7 +92,7 @@
               padding: 3px 0 3px 5px;
               border-radius: 0 15px 15px 0;
               color: white;
-              position: relative;
+              position: absolute;
               top: 140px;
             }
           }

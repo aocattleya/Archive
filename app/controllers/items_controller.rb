@@ -44,15 +44,19 @@ class ItemsController < ApplicationController
       #     @item.images[n].purge
       #   end
       # end
-      # if image_params[:images] != nil
-      #   @item.update(image_params)
-      # end
-    @item.update(item_params)
+    # if image_params[:images] != nil
+    #   @item.update(image_params)
+    # end
+    @item.update(update_params)
     redirect_to item_path
   end
 
   private
     def item_params
-      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: {image: []})
+      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: :image)
+    end
+
+    def update_params
+      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: [:image, :id])
     end
 end

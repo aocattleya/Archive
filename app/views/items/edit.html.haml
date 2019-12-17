@@ -22,7 +22,7 @@
                     %li.upload-sell-item{id: i}
                       - i += 1
                       %figure.upload-sell-figure
-                        = image_tag(image.image[0], size: "114x114") 
+                        = image_tag(image.image, size: "114x114") 
                       .upload-sell-btn
                         %a.upload-sell-edit="編集"
                         %a.upload-sell-delete="削除"

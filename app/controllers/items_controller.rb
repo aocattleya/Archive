@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :update]
+
   def index
     @items = Item.all
   end
@@ -21,8 +23,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+
+  def update
+    if @item.update(update_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
+  end
+
   private
+    def set_item
+      @item = Item.find(params[:id])
+    end
+
     def item_params
-      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: {image: []})
+      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: :image)
+    end
+
+    def update_params
+      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: [:image, :id])
     end
 end

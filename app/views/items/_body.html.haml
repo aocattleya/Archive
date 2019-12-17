@@ -26,7 +26,7 @@
           .top.body__new__item__list__show
             = link_to "", item_path(item)
             .top.body__new__item__list__show__image
-              = image_tag(item.images.first.image[0], size: "183x183")
+              = image_tag(item.images.first.image, size: "184x184")
               %p
                 ¥#{item.price}
             .top.body__new__item__list__show__name

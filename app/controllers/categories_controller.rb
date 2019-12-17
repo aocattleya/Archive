@@ -4,14 +4,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    category = Category.find(params[:id])
-    if category.children.length == 0
-      @category = Category.find(params[:id])
+    @category = Category.find(params[:id])
+    if @category.children.length == 0
       @items = Item.where(category_id: params[:id])
       return
     end
 
-    categories = category.children
+    categories = @category.children
     ids = []
     categories.each do |item|
       id = item.children.pluck(:id)
@@ -20,11 +19,9 @@ class CategoriesController < ApplicationController
       end
     end
     if ids.length == 0
-      ids = category.children.pluck(:id)
+      ids = @category.children.pluck(:id)
       @items = Item.where(category_id: ids)
-      @category = Category.find(params[:id])
     end
     @items = Item.where(category_id: ids)
-    @category = Category.find(params[:id])
   end
 end

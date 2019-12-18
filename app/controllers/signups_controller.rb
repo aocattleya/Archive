@@ -1,10 +1,5 @@
 class SignupsController < ApplicationController
-  before_action :save_to_session, only: :sms_confirmation
-
-
-  def new
-
-  end
+  # before_action :save_to_session, only: :sms_confirmation
 
   def registration
     @user = User.new
@@ -34,15 +29,16 @@ class SignupsController < ApplicationController
     @address = Address.new
     @user = User.new
 
-    session[:postal_code] = address_params[:postal_code]
-    session[:prefecture] = address_params[:prefecture]
-    session[:city] = address_params[:city]
-    session[:street] = address_params[:street]
-    session[:building] = address_params[:building]
+    # session[:postal_code] = address_params[:postal_code]
+    # session[:prefecture] = address_params[:prefecture]
+    # session[:city] = address_params[:city]
+    # session[:street] = address_params[:street]
+    # session[:building] = address_params[:building]
 
   end
 
   def create
+    binding.pry
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -128,11 +124,11 @@ private
   end
 
   def address_params
-    params.require(:address).permit(
-      :postal_code,
-      :prefecture,
-      :city,
-      :street,
-      :building
-    )
+    # params.require(:address).permit(
+    #   :postal_code,
+    #   :prefecture,
+    #   :city,
+    #   :street,
+    #   :building
+    # )
   end

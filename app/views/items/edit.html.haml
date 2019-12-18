@@ -121,6 +121,7 @@
           %button{type: "submit", class: "sell__main__content__button__red"}
             変更する
           = link_to "キャンセル", item_path(@item), class: "sell__main__content__button__gray"
+          = link_to "商品を削除する", item_path(@item.id), method: :delete, class: "sell__main__content__button__red"
   %header.sell__footer
     %ul
       %li

@@ -2,12 +2,13 @@
 .container
   .container__box
     .item-box-container
-      %h1.item-name モナリザの微笑
+      %h1.item-name
+        = @item.name
       .item-box-container__item-main-content
         .item-box-container__item-main-content-clearfix
           .item-box-container__item-main-content-clearfix__image
             .item-box-container__item-main-content-clearfix__image__top
-              = image_tag src="モナリザの絵画アイコン.jpeg"
+              = image_tag(@item.images.first.image, width: "285px")
               .item-box-container__item-main-content-clearfix__image__dot-active
           .item-box-container__item-main-content-clearfix__table
             %table{border: "1", style: "border-collapse: collapse"}
@@ -16,7 +17,7 @@
                 %td.item-box-container__item-main-content-clearfix__table__td
                   %a{link_to: "#", class: "light-blue"} ルーブル美術館
                   =fas_icon 'grin',class: "grin-icon"
-                  %span 25
+                  %span 0
                   =fa_icon 'meh',class: "meh-icon"
                   %span 0
                   =fas_icon 'frown',class: "frown-icon"
@@ -24,35 +25,39 @@
               %tr
                 %th カテゴリー
                 %td.item-box-container__item-main-content-clearfix__table__td
-                  %a{link_to: "#", class: "light-blue"} おもちゃ・ホビー・グッズ
-                  %a{link_to: "#", class: "light-blue"} >美術品
-                  %a{link_to: "#", class: "light-blue"} >絵画/タペストリ
+                  = link_to @item.category.name, class: "light-blue__category"
               %tr
                 %th ブランド
                 %td トリココムデギャルソン
               %tr
                 %th 商品の状態
-                %td 目立った傷や汚れなし
+                %td
+                  = @item.condition
               %tr
                 %th 配送料の負担
                 %td
-                  %a 送料込み（出品者負担）
+                  %a
+                    = @item.shipping_price
               %tr
                 %th 発送元地域
                 %td.item-box-container__item-main-content-clearfix__table__td
-                  %a{link_to: "#", class: "light-blue"} 東京都
+                  = link_to @item.shipping_area, "", class: "light-blue"
               %tr
                 %th 発送日の目安
                 %td
-                  %a ２〜３日で発送
+                  %a
+                    = @item.shipping_date
         .item-price-box
-          %span.item-price-box__bold ¥5,000
+          %span.item-price-box__bold
+            = "¥#{@item.price.to_s(:delimited, delimiter: ',')}"
           %span.item-price-box__tax (税込)
           %span.item-price-box__shipping-fee 送料込み
-          %a.item-buy-btn 購入画面に進む
+          = link_to confirm_items_path, class:"item-buy-btn" do
+            購入画面に進む
         .item-description
           .item-description__inner
-            %p 諸般の事情により名作を売ることになりました。館長直々のサインとスタンプが押印された証明書がついております
+            %p
+              = @item.description
         .item-description__clearfix
           .item-description__btn-left
             .item-description__btn-left__box
@@ -90,161 +95,6 @@
           %li
             %a.pinterest
               = fab_icon 'pinterest', class: "pinterest__icon"
-      .container__items
-        .container__items__container
-          .container__items__container__head
-            WOLFさんのその他の出品
-          .container__items__container__content
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price
-                      $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price
-                      $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box-r
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box-r
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-        .container__items__container
-          .container__items__container__head
-            冷蔵庫 （家電・スマホ・カメラ） その他の商品
-          .container__items__container__content
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box-r
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
-            %section.items-box-r
-              %a
-                %figure.items-box__photo
-                  = image_tag src="apple-1589874.jpg"
-                .items-box__body
-                  .items-box__body__name
-                    apple
-                  .items-box__body__num
-                    .items-box__body__num__price $0
-                    .items-box__body__num__good
-                      = far_icon "heart", class: "heart"
-                      %span 999
       .container__bottom
         %nav.container__bottom__pos-bottom
           %ul

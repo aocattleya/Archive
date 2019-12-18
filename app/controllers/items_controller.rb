@@ -51,6 +51,4 @@ class ItemsController < ApplicationController
     def update_params
       params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: [:image, :id])
     end
-
-    
 end

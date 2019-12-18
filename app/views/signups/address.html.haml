@@ -33,10 +33,9 @@
             .address-container__main__container__form__content__group
               = f.label :prefecture, "地域"
               %span.span 必須
-              = f.text_field :prefecture, placeholder: "例) 東京", class: "input-default"
               .address-container__main__container__form__content__group__select
                 %i.fas.fa-chevron-down
-                %select.select-default.resigtration-field
+                = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: "input-default"
             .address-container__main__container__form__content__group
               = f.label :city, "市町村"
               %span.span 必須

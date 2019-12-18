@@ -24,9 +24,9 @@ class SignupsController < ApplicationController
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
-    session[:birthday_year] = user_params[:birthday_year]
-    session[:birthday_month] = user_params[:birthday_month]
-    session[:birthday_day] = user_params[:birthday_day]
+    session[:birthday_year] = user_params[:"birthday_year(1i)"]
+    session[:birthday_month] = user_params[:"birthday_month(2i)"]
+    session[:birthday_day] = user_params[:"birthday_day(1i)"]
     @user = User.new
   end
 
@@ -55,9 +55,9 @@ class SignupsController < ApplicationController
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
-      birthday_year: session[:birthday_year],
-      birthday_month: session[:birthday_month],
-      birthday_day: session[:birthday_day],
+      birthday_year: session[:birthday_year].to_i,
+      birthday_month: session[:birthday_month].to_i,
+      birthday_day: session[:birthday_day].to_i,
       phonenumber: session[:phonenumber],
       provider: session[:provider],
       uid: session[:uid]

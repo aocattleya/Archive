@@ -6,18 +6,18 @@
     .confirm.body__top
       購入内容の確認
     .confirm.body__show
-      = image_tag 'steve.jpg', size: '80x80', class: "confirm.body__show__image"
+      = image_tag(@item.images.first.image, size: "80x80", class: "confirm.body__show__image")
       .confirm.body__show__detail
-        %p steve⭐️stay foolish
-        %p ¥18,200 （税込）送料込み
+        %p #{@item.name}
+        %p ¥#{@item.price.to_s(:delimited, delimiter: ',')}（税込）送料込み
     .confirm.body__box
       .confirm.body__box__form
         .confirm.body__box__form__1
           支払い金額
-          %a ¥18,200
+          %a ¥#{@item.price.to_s(:delimited, delimiter: ',')}
           = form_for "" do |f|
             = f.check_box :content, class: 'form__check', id: "form__check"
-            %b ポイントを使用(所持ポイント:po)
+            %b ポイントを使用(所持ポイント:0)
         .confirm.body__box__form__2
           %p 支払い方法
           = link_to "" do

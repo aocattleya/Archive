@@ -1,254 +1,116 @@
+= render 'header'
 .container
-.item-box-container
-  %h1.item-name モナリザの微笑
-  .item-box-container__item-main-content
-    .item-box-container__item-main-content-clearfix
-      .item-box-container__item-main-content-clearfix__image
-        .item-box-container__item-main-content-clearfix__image__top
-          = image_tag src="/モナリザの絵画アイコン.jpeg"
-          .item-box-container__item-main-content-clearfix__image__dot-active
-      .item-box-container__item-main-content-clearfix__table
-        %table{border: "1", style: "border-collapse: collapse"}
-          %tr
-            %th 出品者名
-            %td.item-box-container__item-main-content-clearfix__table__td
-              %a{link_to: "#", class: "light-blue"} ルーブル美術館
-              =fas_icon 'grin',class: "grin-icon"
-              %span 25
-              =fa_icon 'meh',class: "meh-icon"
-              %span 0
-              =fas_icon 'frown',class: "frown-icon"
-              %span 0
-          %tr
-            %th カテゴリー
-            %td.item-box-container__item-main-content-clearfix__table__td
-              %a{link_to: "#", class: "light-blue"} おもちゃ・ホビー・グッズ
-              %a{link_to: "#", class: "light-blue"} >美術品
-              %a{link_to: "#", class: "light-blue"} >絵画/タペストリ
-          %tr
-            %th ブランド
-            %td
-          %tr
-            %th 商品の状態
-            %td
-          %tr
-            %th 配送料の負担
-            %td
-              %a 送料込み（出品者負担）
-          %tr
-            %th 発送元地域
-            %td.item-box-container__item-main-content-clearfix__table__td
-              %a{link_to: "#", class: "light-blue"} 東京都
-          %tr
-            %th 発送日の目安
-            %td
-              %a ２〜３日で発送
-    .item-price-box
-      %span.item-price-box__bold ¥99,999,999
-      %span.item-price-box__tax (税込)
-      %span.item-price-box__shipping-fee 送料込み
-      %a.item-buy-btn 購入画面に進む
-    .item-description
-      .item-description__inner
-        %p 諸般の事情により名作を売ることになりました。館長直々のサインとスタンプが押印された証明書がついております
-    .item-description__clearfix
-      .item-description__btn-left
-        .item-description__btn-left__box
-          .item-description__btn-left__box__button__like
-            = far_icon 'heart', class: "heart-icon"
-            %span いいね!
-            %i.icon-like-border
-            %span.fade-in-down
-          .item-description__btn-left__box__button__flag
-            = far_icon 'flag', class: "flag-icon"
-            %span 不適切な商品の報告
-        .item-description__btn-right
-          .item-description__btn-right__button__lock
-            = fa_icon 'lock', class: "lock-icon"
-            %span あんしん・あんぜんへの取り組み
-.item-detail-message
-  .item-detail-message__container
-  .item-detail-message__content
-    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %textarea.inputs
-    %form.message-form{action:  "https://www.mercari.com/jp/comment/add/", method: "POST"}
-    %input{name: "__csrf_value", type: "hidden", value: "8c678805befc222e7d19b30116c53bb696471c03c95a479cfe4ea49aad82bb330d59c9bfb0fe9dd6f2c872a6db457c1e3c5fdb093291350c521598ac2372b075b"}/
-    .item-detail-message__btn
-      .item-detail-message__btn__text
-        コメントする
-  .container__media
-    .container__media__text
-    .container__media__box
-      %li
-        %a.facebook
-          = fab_icon 'facebook-square', class: "facebook__icon"
-      %li
-        %a.twitter
-          = fab_icon 'twitter', class: "twitter__icon"
-      %li
-        %a.pinterest
-          = fab_icon 'pinterest', class: "pinterest__icon"
-  .container__items
-    .container__items__container
-      .container__items__container__head
-        WOLFさんのその他の出品
-      .container__items__container__content
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price
-                  $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price
-                  $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box-r
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box-r
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-    .container__items__container
-      .container__items__container__head
-        冷蔵庫 （家電・スマホ・カメラ） その他の商品
-      .container__items__container__content
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box-r
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-        %section.items-box-r
-          %a
-            %figure.items-box__photo
-              = image_tag src="/apple-1589874.jpg"
-            .items-box__body
-              .items-box__body__name
-                apple
-              .items-box__body__num
-                .items-box__body__num__price $0
-                .items-box__body__num__good
-                  = far_icon "heart", class: "heart"
-                  %span 999
-  .container__bottom
-    %nav.container__bottom__pos-bottom
-      %ul
-        %li
-          %a
-            %span.l  Fmarket
-          = fa_icon 'chevron-right', class: "icon"
-        %li
-          %span.r apple
+  .container__box
+    .item-box-container
+      %h1.item-name
+        = @item.name
+      .item-box-container__item-main-content
+        .item-box-container__item-main-content-clearfix
+          .item-box-container__item-main-content-clearfix__image
+            .item-box-container__item-main-content-clearfix__image__top
+              = image_tag(@item.images.first.image, width: "285px")
+              .item-box-container__item-main-content-clearfix__image__dot-active
+          .item-box-container__item-main-content-clearfix__table
+            %table{border: "1", style: "border-collapse: collapse"}
+              %tr
+                %th 出品者名
+                %td.item-box-container__item-main-content-clearfix__table__td
+                  = link_to @user.nickname, profile_users_path(@user), class: "light-blue__category"
+                  =fas_icon 'grin',class: "grin-icon"
+                  %span 0
+                  =fa_icon 'meh',class: "meh-icon"
+                  %span 0
+                  =fas_icon 'frown',class: "frown-icon"
+                  %span 0
+              %tr
+                %th カテゴリー
+                %td.item-box-container__item-main-content-clearfix__table__td
+                  = link_to @item.category.parent.parent.name, class: "light-blue__category"
+                  = fas_icon 'chevron-right', class: "chevron-right"
+                  = link_to @item.category.parent.name, class: "light-blue__category"
+                  = fas_icon 'chevron-right', class: "chevron-right"
+                  = link_to @item.category.name, class: "light-blue__category"
+              %tr
+                %th ブランド
+                %td トリココムデギャルソン
+              -if @item.size
+                %tr
+                  %th 商品のサイズ
+                  %td
+                    = @item.size
+              %tr
+                %th 商品の状態
+                %td
+                  = @item.condition
+              %tr
+                %th 配送料の負担
+                %td
+                  %a
+                    = @item.shipping_price
+              %tr
+                %th 発送元地域
+                %td.item-box-container__item-main-content-clearfix__table__td
+                  = link_to @prefecture.name, "", class: "light-blue"
+              %tr
+                %th 発送日の目安
+                %td
+                  %a
+                    = @item.shipping_date
+        .item-price-box
+          %span.item-price-box__bold
+            = "¥#{@item.price.to_s(:delimited, delimiter: ',')}"
+          %span.item-price-box__tax (税込)
+          %span.item-price-box__shipping-fee 送料込み
+          = link_to confirm_item_path, class:"item-buy-btn" do
+            購入画面に進む
+        .item-description
+          .item-description__inner
+            %p
+              = @item.description
+        .item-description__clearfix
+          .item-description__btn-left
+            .item-description__btn-left__box
+              .item-description__btn-left__box__button__like
+                = far_icon 'heart', class: "heart-icon"
+                %span いいね!
+                %i.icon-like-border
+                %span.fade-in-down
+              .item-description__btn-left__box__button__flag
+                = far_icon 'flag', class: "flag-icon"
+                %span 不適切な商品の報告
+            .item-description__btn-right
+              .item-description__btn-right__button__lock
+                = fa_icon 'lock', class: "lock-icon"
+                %span あんしん・あんぜんへの取り組み
+    .item-detail-message
+      .item-detail-message__container
+      .item-detail-message__content
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.inputs
+        %form.message-form{action:  "https://www.mercari.com/jp/comment/add/", method: "POST"}
+        %input{name: "__csrf_value", type: "hidden", value: "8c678805befc222e7d19b30116c53bb696471c03c95a479cfe4ea49aad82bb330d59c9bfb0fe9dd6f2c872a6db457c1e3c5fdb093291350c521598ac2372b075b"}/
+        .item-detail-message__btn
+          .item-detail-message__btn__text
+            コメントする
+      .container__media
+        .container__media__text
+        .container__media__box
+          %li
+            %a.facebook
+              = fab_icon 'facebook-square', class: "facebook__icon"
+          %li
+            %a.twitter
+              = fab_icon 'twitter', class: "twitter__icon"
+          %li
+            %a.pinterest
+              = fab_icon 'pinterest', class: "pinterest__icon"
+      .container__bottom
+        %nav.container__bottom__pos-bottom
+          %ul
+            %li
+              %a
+                %span.l  Fmarket
+              = fa_icon 'chevron-right', class: "icon"
+            %li
+              %span.r apple
+= render 'footer'

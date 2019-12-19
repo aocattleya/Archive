@@ -24,7 +24,7 @@
     %main.payment-method-container__main
       %section.payment-method-container__main__container
         %h2 支払い方法
-        = form_tag "", url: "#", local: true, method: :get, class:"payment-method-container__main__container__form" do
+        = form_for [@user,@address], url: signups_path, method: :post, class:"payment-method-container__main__container__form" do |f|
           .payment-method-container__main__container__form__content
             .payment-method-container__main__container__form__content__group
               = label_tag :card, "カード番号"
@@ -50,7 +50,7 @@
               %i.fas.fa-question-circle
               = link_to "カード裏面の番号とは？", "#"
             .payment-method-container__main__container__form__content__submit
-              = submit_tag "次へ進む", class:"btn-default btn-red"
+              = f.submit "登録", class:"btn-default btn-red"
 .footer
   .single-footer
     .nav

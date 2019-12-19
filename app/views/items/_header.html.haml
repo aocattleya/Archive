@@ -3,27 +3,40 @@
     .top.header__box
       .top.header__box__upper
         .top.header__box__upper__title
-          = image_tag "fmarket_logo_red.svg", size: '130x36', alt: "Mercari"
+          = link_to image_tag("fmarket_logo_red.svg", size: '130x36', alt: "Mercari"), root_path
         .top.header__box__upper__form
           .top.header__box__upper__form__field
-            = form_for "" do |f|
-              = f.text_field :content, class: 'top.header__box__upper__form__field', placeholder: '何かお探しですか？', id: "form__box"
-          .top.header__box__upper__form__point
-            %button.fas.fa-search-minus
+            = form_tag(items_searches_path, local: true, method: :get) do |f|
+              = text_field_tag :keyword, "", class: 'top.header__box__upper__form__field', placeholder: '何かお探しですか？', id: "form__box"
+              .top.header__box__upper__form__field__point
+                = button_tag type: 'submit', name: nil do
+                  .fas.fa-search-minus
           .top.header__box__upper__form__icon
       .top.header__box__below
         .top.header__box__below__search
           .top.header__box__below__search__category
             %i.fas.fa-bars
-            %a カテゴリーから探す
+            = link_to "カテゴリーから探す", categories_path
             %i.fas.fa-tags
-            %a ブランドから探す
+            = link_to "ブランドから探す", root_path
         .top.header__box__below__users
           .top.header__box__below__users__member
             .top.header__box__below__users__member__left
-              新規会員登録
-            .top.header__box__below__users__member__right
-              ログイン
+            - if user_signed_in?
+              %i.far.fa-heart
+                いいね！一覧
+              %i.far.fa-bell
+                お知らせ
+              %i.fas.fa-check
+                やることリスト
+              = link_to profile_users_path, class: "mypage" do
+                %i.fas.fa-user-circle
+                マイページ
+            - else
+              = link_to "新規登録", new_signup_path, class: "newreg"
+              .top.header__box__below__users__member__right
+                = link_to "ログイン", new_user_session_path, class: "member_right"
   .top.syuppin
-    %p出品
-    %i.fas.fa-camera
+    = link_to new_item_path do
+      %p出品
+      %i.fas.fa-camera

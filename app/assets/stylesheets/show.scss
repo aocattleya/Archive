@@ -2,12 +2,21 @@
   margin: 0;
   padding: 0;
 }
-body {
+
+.container {
+  margin: 0 auto;
+  padding: 40px 0 0 0;
   background: #f5f5f5;
-  width: 700px;
+  width: 100%;
+  &__box {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+
+body {
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
     "メイリオ", "Meiryo", sans-serif;
-  margin: 40px auto 0;
   .item-box-container {
     padding: 24px 40px 40px;
     background: #fff;
@@ -22,6 +31,7 @@ body {
       position: relative;
       margin: 0 auto;
       margin: 16px 0 0;
+      padding-bottom: 20px;
       &__image {
         width: 300px;
         height: 375px;
@@ -36,27 +46,43 @@ body {
           flex-direction: column;
           a {
             display: block;
+            color: #0099e8;
+            &:nth-child(1) {
+            color: #0099e8;
+            text-decoration: none;
+            }
           }
           .light-blue {
-            color: #0099e8;
+            color: #5ebbe6;
           }
           .grin-icon {
             font-size: 16px;
             color: #e65e92d5;
+            margin-top: 5px;
           }
           .meh-icon {
             font-size: 16px;
             color: #f7b321;
+            margin-left: 10px;
           }
           .frown-icon {
             font-size: 16px;
             color: #5ebbe6;
+            margin-left: 10px;
+          }
+          i {
+            font-size: 12px;
+            color: #5ebbe6;
+            margin-top: 4px;
+          }
+          .chevron-right {
+            float: left;
           }
         }
         table {
           border-color: #fafafa;
           float: right;
-          max-width: 300px;
+          width: 320px;
           height: 420px;
           margin: 0 auto;
           vertical-align: inherit;
@@ -110,7 +136,7 @@ body {
         padding: 0;
       }
     }
-    a.item-buy-btn {
+    .item-buy-btn {
       font-size: 24px;
       line-height: 60px;
       display: block;
@@ -120,6 +146,14 @@ body {
       line-height: 56px;
       text-align: center;
       font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.5s ease 0s;
+    }
+    .item-buy-btn:hover {
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      opacity: 0.5;
     }
     .item-description {
       &__inner {
@@ -130,6 +164,7 @@ body {
           margin-inline-start: 0px;
           margin-inline-end: 0px;
           text-decoration: inherit;
+          padding: 20px 5px 20px 5px;
         }
       }
       &__btn-left {
@@ -156,8 +191,6 @@ body {
               border-radius: 40px;
               font-size: 15px;
               color: #333;
-              .flag-icon {
-              }
             }
           }
         }
@@ -192,6 +225,7 @@ body {
         background: #fff;
         font-size: 16px;
         line-height: 1.5;
+        box-sizing: border-box;
       }
       p {
         color: #333;
@@ -232,8 +266,6 @@ body {
     padding: 32px 0 24px;
     width: 700px;
     background-color: white;
-    &__text {
-    }
     &__box {
       margin: 16px 0 0;
       text-align: center;
@@ -327,13 +359,9 @@ body {
                 margin: 8px 0 0;
                 justify-content: space-between;
                 display: flex;
-                &__price {
-                }
                 &__good {
                   .heart {
                     color: darkgrey;
-                  }
-                  span {
                   }
                 }
               }
@@ -363,13 +391,9 @@ body {
                 margin: 8px 0 0;
                 justify-content: space-between;
                 display: flex;
-                &__price {
-                }
                 &__good {
                   .heart {
                     color: darkgrey;
-                  }
-                  span {
                   }
                 }
               }

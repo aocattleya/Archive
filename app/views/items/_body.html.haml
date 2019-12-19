@@ -18,15 +18,63 @@
     .top.body__notice__main
       人気のカテゴリー
     .top.body__notice__select
-      %a レディース
-      %a メンズ
-      %a 家電
-      %a おもちゃ
+      = link_to "レディース", "#ladies-items"
+      = link_to "メンズ", "#mens-items"
+      = link_to "家電", "#electronics-items"
+      = link_to "おもちゃ", "#toys-items"
   .top.body__new
     .top.body__new__item
-      .top.body__new__item__box
+      .top.body__new__item__box#ladies-items
         .top.body__new__item__box__category
-          新着アイテム
+          レディース新着アイテム
+        .top.body__new__item__box__more
+          = link_to "もっと見る ＞", root_path
+      .top.body__new__item__list
+        - @items.each do |item|
+          .top.body__new__item__list__show
+            = link_to "", item_path(item)
+            .top.body__new__item__list__show__image
+              = image_tag(item.images.first.image, size: "184x184")
+              %p
+                ¥#{item.price}
+            .top.body__new__item__list__show__name
+              = item.name
+              .top.body__new__item__list__show__name__opa
+      .top.body__new__item__box#mens-items
+        .top.body__new__item__box__category
+          メンズ新着アイテム
+        .top.body__new__item__box__more
+          = link_to "もっと見る ＞", root_path
+      .top.body__new__item__list
+        - @items.each do |item|
+          .top.body__new__item__list__show
+            = link_to "", item_path(item)
+            .top.body__new__item__list__show__image
+              = image_tag(item.images.first.image, size: "184x184")
+              %p
+                ¥#{item.price}
+            .top.body__new__item__list__show__name
+              = item.name
+              .top.body__new__item__list__show__name__opa
+      .top.body__new__item__box#electronics-items
+        .top.body__new__item__box__category
+          家電新着アイテム
+        .top.body__new__item__box__more
+          = link_to "もっと見る ＞", root_path
+      .top.body__new__item__list
+        - @items.each do |item|
+          .top.body__new__item__list__show
+            = link_to "", item_path(item)
+            .top.body__new__item__list__show__image
+              = image_tag(item.images.first.image, size: "184x184")
+              %p
+                ¥#{item.price}
+            .top.body__new__item__list__show__name
+              = item.name
+              .top.body__new__item__list__show__name__opa
+      .top.body__new__item__box
+        .top.body__new__item__box__category#toys-items
+          おもちゃ新着アイテム
         .top.body__new__item__box__more
           = link_to "もっと見る ＞", root_path
       .top.body__new__item__list

@@ -37,7 +37,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index, :show] do
+    collection do
+      get 'get_child_category'
+      get 'get_grandchild_category'
+    end
+  end
 
   root 'items#index'
 

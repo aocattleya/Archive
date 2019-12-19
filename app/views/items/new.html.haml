@@ -35,13 +35,13 @@
           %h3.sell__main__content__form__sub
             商品の詳細
           .sell__main__content__form__box
-            .sell__main__content__form__box__group
+            .sell__main__content__form__box__group#category-select-box_list
               %label
                 カテゴリ
                 %span.form-require
                   必須
-              .sell__main__content__form__box__group__select
-                = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form"
+              .sell__main__content__form__box__group__select#parent_box
+                = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "parent_form"
               %label
                 商品の状態
                 %span.form-require

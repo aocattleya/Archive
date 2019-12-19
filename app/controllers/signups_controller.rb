@@ -1,9 +1,7 @@
 class SignupsController < ApplicationController
   # before_action :save_to_session, only: :sms_confirmation
 
-
   def new
-
   end
 
   def registration
@@ -73,6 +71,7 @@ class SignupsController < ApplicationController
        if @address.save
           session[:id] = @user.id
           redirect_to complete_signups_path
+          
        else
            redirect_to root_path
        end

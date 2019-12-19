@@ -9,12 +9,12 @@
       = image_tag(@item.images.first.image, size: "80x80", class: "confirm.body__show__image")
       .confirm.body__show__detail
         %p #{@item.name}
-        %p ¥#{@item.price.to_s(:delimited, delimiter: ',')}（税込）送料込み
+        %p #{convert_to_jpy(@item.price)}（税込）送料込み
     .confirm.body__box
       .confirm.body__box__form
         .confirm.body__box__form__1
           支払い金額
-          %a ¥#{@item.price.to_s(:delimited, delimiter: ',')}
+          %a #{convert_to_jpy(@item.price)}
           = form_for "" do |f|
             = f.check_box :content, class: 'form__check', id: "form__check"
             %b ポイントを使用(所持ポイント:0)

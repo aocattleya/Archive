@@ -36,7 +36,7 @@
             .top.body__new__item__list__show__image
               = image_tag(item.images.first.image, size: "184x184")
               %p
-                ¥#{item.price}
+                #{convert_to_jpy(item.price)}
             .top.body__new__item__list__show__name
               = item.name
               .top.body__new__item__list__show__name__opa
@@ -52,7 +52,7 @@
             .top.body__new__item__list__show__image
               = image_tag(item.images.first.image, size: "184x184")
               %p
-                ¥#{item.price}
+                #{convert_to_jpy(item.price)}
             .top.body__new__item__list__show__name
               = item.name
               .top.body__new__item__list__show__name__opa
@@ -68,7 +68,7 @@
             .top.body__new__item__list__show__image
               = image_tag(item.images.first.image, size: "184x184")
               %p
-                ¥#{item.price}
+                #{convert_to_jpy(item.price)}
             .top.body__new__item__list__show__name
               = item.name
               .top.body__new__item__list__show__name__opa
@@ -84,7 +84,7 @@
             .top.body__new__item__list__show__image
               = image_tag(item.images.first.image, size: "184x184")
               %p
-                ¥#{item.price}
+                #{convert_to_jpy(item.price)}
             .top.body__new__item__list__show__name
               = item.name
               .top.body__new__item__list__show__name__opa

@@ -15,7 +15,7 @@
               %tr
                 %th 出品者名
                 %td.item-box-container__item-main-content-clearfix__table__td
-                  %a{link_to: "#", class: "light-blue"} ルーブル美術館
+                  = link_to @user.nickname, profile_users_path(@user), class: "light-blue__category"
                   =fas_icon 'grin',class: "grin-icon"
                   %span 0
                   =fa_icon 'meh',class: "meh-icon"
@@ -41,7 +41,7 @@
               %tr
                 %th 発送元地域
                 %td.item-box-container__item-main-content-clearfix__table__td
-                  = link_to @item.shipping_area, "", class: "light-blue"
+                  = link_to @prefecture.name, "", class: "light-blue"
               %tr
                 %th 発送日の目安
                 %td

@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
   def destroy
     if @item.destroy
       redirect_to root_path
@@ -42,13 +43,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(@item.user_id)
+    @prefecture = Prefecture.find(@item.shipping_area)
+  end
+
   private
     def set_item
       @item = Item.find(params[:id])
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: :image)
+      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: :image).merge(user_id: current_user.id)
     end
 
     def update_params

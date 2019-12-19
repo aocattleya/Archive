@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  resources :signups, only: [:new] do
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
+
+  resources :signups, only: [:new, :create] do
     collection do
       get :registration
+      post :registration
+      get :sns_registration
+      post :sns_registration
       get :sms_confirmation
+      post :sms_confirmation
       get :address
+      post :address
       get :payment_method
+      post :payment_method
       get :complete
     end
   end
@@ -19,16 +27,24 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :items do
+    resources :searches, only: :index
+  end
+
   resources :items do
-    collection do
+    member do
       get :confirm
       get :category
     end
   end
 
-  devise_for :users
+  resources :categories, only: [:index, :show] do
+    collection do
+      get 'get_child_category'
+      get 'get_grandchild_category'
+    end
+  end
+
   root 'items#index'
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

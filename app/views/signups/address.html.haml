@@ -24,32 +24,32 @@
     %main.address-container__main
       %section.address-container__main__container
         %h2 お届け先住所入力
-        = form_tag "", url: "#", local: true, method: :get, class:"address-container__main__container__form" do
+        = form_for [@user,@address], url: payment_method_signups_path, method: :post, class:"address-container__main__container__form" do |f|
           .address-container__main__container__form__content
             .address-container__main__container__form__content__group
-              = label_tag :postal_code, "郵便番号"
+              = f.label :postal_code, "郵便番号"
               %span.span 必須
-              = text_field_tag :postal_code, "", placeholder: "例) 123-4567", class: "input-default"
+              = f.text_field :postal_code, placeholder: "例) 123-4567", class: "input-default"
             .address-container__main__container__form__content__group
-              = label_tag :prefecture, "地域"
+              = f.label :prefecture, "地域"
               %span.span 必須
               .address-container__main__container__form__content__group__select
                 %i.fas.fa-chevron-down
-                %select.select-default.resigtration-field
+                = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: "input-default"
             .address-container__main__container__form__content__group
-              = label_tag :city, "市町村"
+              = f.label :city, "市町村"
               %span.span 必須
-              = text_field_tag :city, "", placeholder: "例) 横浜市緑区", class: "input-default"
+              = f.text_field :city, placeholder: "例) 横浜市緑区", class: "input-default"
             .address-container__main__container__form__content__group
-              = label_tag :street, "番地"
+              = f.label :street, "番地"
               %span.span 必須
-              = text_field_tag :street, "", placeholder: "例) 青山1-1-1", class: "input-default"
+              = f.text_field :street, placeholder: "例) 青山1-1-1", class: "input-default"
             .address-container__main__container__form__content__group
-              = label_tag :building, "建物名"
+              = f.label :building, "建物名"
               %span.span 任意
-              = text_field_tag :building, "", placeholder: "例) 柳ビル103", class: "input-default"
+              = f.text_field :building, placeholder: "例) 柳ビル103", class: "input-default"
             .address-container__main__container__form__content__submit
-              = submit_tag "次へ進む", class:"btn-default btn-red"
+              = f.submit "次へ進む", class:"btn-default btn-red"
 .footer
   .single-footer
     .nav

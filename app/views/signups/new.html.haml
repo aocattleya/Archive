@@ -9,15 +9,15 @@
       .signup__container__form
         .signup__container__form__content
           .signup__container__form__content__email
-            = link_to "#" do
+            = link_to registration_signups_path, class: "email" do
               %i.far.fa-envelope
               = "メールアドレスで登録する"
           .signup__container__form__content__facebook
-            = link_to "#" do
+            = link_to user_facebook_omniauth_authorize_path, method: :post do
               %i.fab.fa-facebook-f
               = "Facebookで登録"
           .signup__container__form__content__google
-            = link_to "#" do
+            = link_to user_google_omniauth_authorize_path, method: :post do
               %i.fab.fa-google
               = "Googleで登録する"
 .footer

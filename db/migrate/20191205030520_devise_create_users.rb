@@ -11,7 +11,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :first_name,         null: false
       t.string :last_name_kana,     null: false
       t.string :first_name_kana,    null: false
-      t.string :birthday,           null: false
+      t.integer :birthday_year
+      t.integer :birthday_month
+      t.integer :birthday_day
+      t.string :phonenumber
       t.text :profile
       t.string :image
 

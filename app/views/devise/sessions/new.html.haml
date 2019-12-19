@@ -8,24 +8,25 @@
       .devise-login-container__main__container
         .devise-login-container__main__container__new
           %p アカウントお持ちでない方はこちら
-          = link_to "新規会員登録", "#"
+          = link_to registration_signups_path, class: "container__new" do
+            = "新規会員登録"
         .devise-login-container__main__container__sns
           .devise-login-container__main__container__sns__facebook
-            = link_to "#" do
+            = link_to user_facebook_omniauth_authorize_path, method: :post do
               %i.fab.fa-facebook-f
               = "Facebookでログイン"
           .devise-login-container__main__container__sns__google
-            = link_to "#" do
+            = link_to user_google_omniauth_authorize_path, method: :post do
               %i.fab.fa-google
               = "Googleでログイン"
-        = form_for(resource, as: resource_name, url: "#", class:"devise-login-container__main__container__form") do |f|
+        = form_for(resource, as: resource_name, url: session_path(resource_name), class:"devise-login-container__main__container__form") do |f|
           .devise-login-container__main__container__form__content
             .devise-login-container__main__container__form__content__group
               %div
-                = email_field_tag :email,  "", placeholder: "メールアドレス", class: "input-default"
+                = f.email_field :email, placeholder: "メールアドレス", class: "input-default"
             .devise-login-container__main__container__form__content__group
               %div
-                = password_field_tag :password, "", placeholder: "パスワード", class: "input-default"
+                = f.password_field :password, placeholder: "パスワード", class: "input-default"
             .devise-login-container__main__container__form__content__group
               = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数
               私はロボットではありません

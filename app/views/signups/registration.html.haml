@@ -24,61 +24,61 @@
       %main.registration-container__main
         %section.registration-container__main__container
           %h2 会員情報入力
-          = form_tag "", url: "#", local: true, method: :get, class: "registration-container__main__container__form", id: "registration-form" do
+          = form_for @user, url: sms_confirmation_signups_path, method: :post, class: "registration-container__main__container__form", id: "registration-form" do |f|
             .registration-container__main__container__form__content
               .registration-container__main__container__form__content__group
                 %div
-                  = label_tag :nickname, "ニックネーム"
+                  = f.label :nickname, "ニックネーム"
                   %span.span 必須
-                  = text_field_tag :nickname, "", placeholder: "例) メルカリ太郎", class: "input-default"
+                  = f.text_field :nickname, placeholder: "例) メルカリ太郎", class: "input-default"
               .registration-container__main__container__form__content__group
                 %div
-                  = label_tag :email, "メールアドレス"
+                  = f.label :email, "メールアドレス"
                   %span.span 必須
-                  = email_field_tag :email,  "", placeholder: "PC・携帯どちらでも可", class: "input-default"
+                  = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "input-default"
               .registration-container__main__container__form__content__group
                 %div
-                  = label_tag :password, "パスワード"
+                  = f.label :password, "パスワード"
                   %span.span 必須
-                  = password_field_tag :password, "", placeholder: "7文字以上の半角英数字", class: "input-default"
+                  = f.password_field :password, placeholder: "7文字以上の半角英数字", class: "input-default"
                 .form-info-text ※英字と数字の両方を含めて設定してください
-                = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数
+                -# = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数
                 %span.form-info-text パスワードを表示する
               .registration-container__main__container__form__content__group
                 %h3 本人確認
                 .form-info-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
               .registration-container__main__container__form__content__group
                 %div
-                  = label_tag :last_name, "お名前(全角) "
+                  = f.label :last_name, "お名前(全角) "
                   %span.span 必須
                 .registration-container__main__container__form__content__group__fields
-                  = text_field_tag :last_name, "", placeholder: "例) 山田", class: "input-default"
-                  = text_field_tag :first_name, "", placeholder: "例) 彩", class: "input-default"
+                  = f.text_field :last_name, placeholder: "例) 山田", class: "input-default"
+                  = f.text_field :first_name, placeholder: "例) 彩", class: "input-default"
               .registration-container__main__container__form__content__group
                 %div
-                  = label_tag :last_name_kana, "お名前カナ(全角) "
+                  = f.label :last_name_kana, "お名前カナ(全角) "
                   %span.span 必須
                 .registration-container__main__container__form__content__group__fields
-                  = text_field_tag :last_name_kana, "", placeholder: "例) ヤマダ", class: "input-default"
-                  = text_field_tag :first_name_kana, "", placeholder: "例) アヤ", class: "input-default"
+                  = f.text_field :last_name_kana, placeholder: "例) ヤマダ", class: "input-default"
+                  = f.text_field :first_name_kana, placeholder: "例) アヤ", class: "input-default"
               .registration-container__main__container__form__content__group
-                = label_tag :birthday, "生年月日 "
+                = f.label "生年月日 "
                 %span.span 必須
                 %br
                 .registration-container__main__container__form__content__group__select
                   .registration-container__main__container__form__content__group__select__wrap
                     %i.fas.fa-chevron-down
-                    %select.select-default.year.resigtration-field{name: "year"}
+                    = f.date_select :birthday_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".select-default.year.resigtration-field"
                   %span
                     年
                   .registration-container__main__container__form__content__group__select__wrap
                     %i.fas.fa-chevron-down
-                    %select.select-default.month.registration-field{name: "month"}
+                    = f.date_select :birthday_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".select-default.month.registration-field"
                   %span
                     月
                   .registration-container__main__container__form__content__group__select__wrap
                     %i.fas.fa-chevron-down
-                    %select.select-default.day.registration-field{name: "day"}
+                    = f.date_select :birthday_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".select.select-default.day.registration-field"
                   %span
                     日
                     .form-info-text ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -88,9 +88,10 @@
               .registration-container__main__container__form__content__group
                 .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
               .registration-container__main__container__form__content__submit
-                = submit_tag "次へ進む", class:"btn-default btn-red"
+                = f.submit "次へ進む", class:"btn-default btn-red"
               .registration-container__main__container__form__content__group
-                = link_to "本人情報の登録について", "#"
+                = link_to "#" do
+                  本人情報の登録について
                   %i.fas.fa-chevron-right
 .footer
   .single-footer

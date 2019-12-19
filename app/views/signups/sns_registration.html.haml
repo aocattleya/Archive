@@ -1,0 +1,101 @@
+.body
+  .registration-container
+    %header.registration-container__header
+      %h1
+        = link_to root_path do
+          = image_tag("fmarket_logo_red.svg")
+      %nav.registration-container__header__nav
+        %ol.registration-container__header__nav__ol
+          %li.active
+            会員情報
+            .progress-status.middle
+          %li.deactive
+            電話番号認証
+            .progress-status.middle
+          %li.deactive
+            お届け先住所入力
+            .progress-status.middle
+          %li.deactive
+            支払い方法
+            .progress-status.middle
+          %li.deactive
+            完了
+            .progress-status
+      %main.registration-container__main
+        %section.registration-container__main__container
+          %h2 会員情報入力
+          = form_for @user, url: sms_confirmation_signups_path, method: :post, class: "registration-container__main__container__form", id: "registration-form" do |f|
+            .registration-container__main__container__form__content
+              .registration-container__main__container__form__content__group
+                %div
+                  = f.label :nickname, "ニックネーム"
+                  %span.span 必須
+                  = f.text_field :nickname, placeholder: "例) メルカリ太郎", class: "input-default"
+              .registration-container__main__container__form__content__group
+                %div
+                  = f.label :email, "メールアドレス"
+                  %span.span 必須
+                  = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "input-default"
+              .registration-container__main__container__form__content__group
+                %h3 本人確認
+                .form-info-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+              .registration-container__main__container__form__content__group
+                %div
+                  = f.label :last_name, "お名前(全角) "
+                  %span.span 必須
+                .registration-container__main__container__form__content__group__fields
+                  = f.text_field :last_name, placeholder: "例) 山田", class: "input-default"
+                  = f.text_field :first_name, placeholder: "例) 彩", class: "input-default"
+              .registration-container__main__container__form__content__group
+                %div
+                  = f.label :last_name_kana, "お名前カナ(全角) "
+                  %span.span 必須
+                .registration-container__main__container__form__content__group__fields
+                  = f.text_field :last_name_kana, placeholder: "例) ヤマダ", class: "input-default"
+                  = f.text_field :first_name_kana, placeholder: "例) アヤ", class: "input-default"
+              .registration-container__main__container__form__content__group
+                = label_tag :birthday, "生年月日 "
+                %span.span 必須
+                %br
+                .registration-container__main__container__form__content__group__select
+                  .registration-container__main__container__form__content__group__select__wrap
+                    %i.fas.fa-chevron-down
+                    = f.date_select :birthday_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".select-default.year.resigtration-field"
+                  %span
+                    年
+                  .registration-container__main__container__form__content__group__select__wrap
+                    %i.fas.fa-chevron-down
+                    = f.date_select :birthday_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".select-default.month.registration-field"
+                  %span
+                    月
+                  .registration-container__main__container__form__content__group__select__wrap
+                    %i.fas.fa-chevron-down
+                    = f.date_select :birthday_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".select.select-default.day.registration-field"
+                  %span
+                    日
+                    .form-info-text ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+              .registration-container__main__container__form__content__group
+                = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数
+                私はロボットではありません
+              .registration-container__main__container__form__content__group
+                .form-info-text 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+              .registration-container__main__container__form__content__submit
+                = f.submit "次へ進む", class:"btn-default btn-red"
+              .registration-container__main__container__form__content__group
+                = link_to "#" do
+                  本人情報の登録について
+                  %i.fas.fa-chevron-right
+.footer
+  .single-footer
+    .nav
+      .ul
+        .li
+          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+        .li
+          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+        .li
+          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    = link_to root_path do
+      = image_tag("logo_gray.svg")
+    %p
+      ©&nbsp;Fmarket,&nbsp;Inc.

@@ -56,6 +56,9 @@
             display: flex;
             position: relative;
             cursor: pointer;
+            &__genre {
+              
+            }
             &__brand {
               position: absolute;
               left: 150px;
@@ -72,7 +75,6 @@
             a:hover {
               color: rgb(0, 149, 238);
             }
-            
           }
         }
       }
@@ -90,6 +92,7 @@
   height: 2rem;
   margin: 0 auto;
   width: 1000px;
+  
     li {
     list-style: none;
     position: relative;
@@ -110,7 +113,7 @@
 }
 /*全てのリスト・リンク共通*/
 .gnav li a {
-  background: #001b34;
+  // background: #001b34;
   border-right: 1px solid #eee;
   color: #524e4e;
   display: block;
@@ -158,4 +161,7 @@
 // }
 .gnav li ul li ul li ul li:hover a {
   // background: red;
+}
+
+.aaa:hover + {
 }

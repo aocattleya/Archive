@@ -24,21 +24,30 @@
           border: solid 1px rgb(204, 204, 204);
           width: 100%;
           &__field {
-            padding: 0 0 0 10px;
+            position: relative;
+            padding: 0 0 0 3px;
             width: 100%;
             input {
-              width: 100%;
-              padding: 7px 0;
+              font-size: 100%;
+              width: 94%;
+              height: 24px;
+              padding: 7px;
               background-color: rgb(245, 245, 245);
               border-style: none;
             }
-          }
-          &__point {
-            button {
-              background-color: rgb(245, 245, 245);
-              padding: 12px;
-              font-size: 14px;
-              border-style: none;
+            &__point {
+              button {
+                width: inherit;
+                position: absolute;
+                top: 4px;
+                right: 3px;
+                background-color: rgb(245, 245, 245);
+                padding: 7px;
+                font-size: 14px;
+                border-style: none;
+                cursor: pointer;
+                z-index: 2;
+              }
             }
           }
         }

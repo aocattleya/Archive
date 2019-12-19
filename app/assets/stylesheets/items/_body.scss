@@ -69,6 +69,13 @@
           padding: 10px;
           font-weight: bold;
           font-size: 22px;
+          &__view {
+            float: right;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 16px;
+            padding: 6px;
+          }
         }
         &__more {
           cursor: pointer;

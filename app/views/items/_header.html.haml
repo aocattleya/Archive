@@ -6,10 +6,12 @@
           = link_to image_tag("fmarket_logo_red.svg", size: '130x36', alt: "Mercari"), root_path
         .top.header__box__upper__form
           .top.header__box__upper__form__field
-            = form_for "" do |f|
-              = f.text_field :content, class: 'top.header__box__upper__form__field', placeholder: '何かお探しですか？', id: "form__box"
-          .top.header__box__upper__form__point
-            %button.fas.fa-search-minus
+            = form_tag(items_searches_path, local: true, method: :get) do |f|
+              = text_field_tag :keyword, "", class: 'top.header__box__upper__form__field', placeholder: '何かお探しですか？', id: "form__box"
+              .top.header__box__upper__form__field__point
+                = button_tag type: 'submit', name: nil do
+                  .fas.fa-search-minus
+            -# %button.fas.fa-search-minus
           .top.header__box__upper__form__icon
       .top.header__box__below
         .top.header__box__below__search

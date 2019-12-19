@@ -1,6 +1,8 @@
 .top.body
   .top.body__image
     .slick
+      .slick__2
+        = image_tag "store.jpg", height: '400px', width: '100%'
       .slick__1
         = link_to 'https://apps.apple.com/jp/app/id667861049?l=ja', class: "appstore" do
           = image_tag 'appstore.svg', size: '400x52'
@@ -11,8 +13,6 @@
         = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: "googleplay" do
           = image_tag 'googleplay.svg', size: '170x58'
         = image_tag "top.jpg", height: '400px', width: '100%'
-      .slick__2
-        = image_tag "store.jpg", height: '400px', width: '100%'
     .top.body__image__box
   .top.body__notice
     .top.body__notice__main

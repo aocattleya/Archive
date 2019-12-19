@@ -61,7 +61,7 @@
             = "¥#{@item.price.to_s(:delimited, delimiter: ',')}"
           %span.item-price-box__tax (税込)
           %span.item-price-box__shipping-fee 送料込み
-          = link_to confirm_items_path, class:"item-buy-btn" do
+          = link_to confirm_item_path, class:"item-buy-btn" do
             購入画面に進む
         .item-description
           .item-description__inner

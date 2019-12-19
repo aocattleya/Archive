@@ -25,7 +25,6 @@
       %section.payment-method-container__main__container
         %h2 支払い方法
         = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
-        
           .payment-method-container__main__container__form__content
             .payment-method-container__main__container__form__content__group
               %label  カード番号
@@ -38,7 +37,6 @@
               .payment-method-container__main__container__form__content__group__select
                 %i.fas.fa-chevron-down
                 %select#exp_year{name: "exp_year", type: "text"}
-                
                   %option{value: ""} --
                   %option{value: "2019"}19
                   %option{value: "2020"}20
@@ -56,7 +54,6 @@
               .payment-method-container__main__container__form__content__group__select
                 %i.fas.fa-chevron-down
                 %select#exp_month{name: "exp_month", type: "text"}
-                
                   %option{value: ""} --
                   %option{value: "1"}01
                   %option{value: "2"}02
@@ -76,13 +73,12 @@
               = label :security_code, "セキュリティコード"
               %span.span 必須
               = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-              
               %i.fas.fa-question-circle
               = link_to "カード裏面の番号とは？", "#"
             .payment-method-container__main__container__form__content__submit
               #card_token
               = submit_tag "追加する", id: "token_submit"
-              
+
 .footer
   .single-footer
     .nav

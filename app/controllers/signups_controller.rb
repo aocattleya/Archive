@@ -1,22 +1,31 @@
 class SignupsController < ApplicationController
   # before_action :save_to_session, only: :sms_confirmation
 
+  def new
+  end
+
   def registration
     @user = User.new
   end
 
-  def sms_confirmation
+  def sns_registration
     @user = User.new
+  end
+
+  def sms_confirmation
+    if session[:uid] == nil
+      session[:password] = user_params[:password]
+    end
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
     session[:last_name] = user_params[:last_name]
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
-    session[:birthday_year] = user_params[:birthday_year]
-    session[:birthday_month] = user_params[:birthday_month]
-    session[:birthday_day] = user_params[:birthday_day]
+    session[:birthday_year] = user_params[:"birthday_year(1i)"]
+    session[:birthday_month] = user_params[:"birthday_month(2i)"]
+    session[:birthday_day] = user_params[:"birthday_day(1i)"]
+    @user = User.new
   end
 
   def address
@@ -33,7 +42,6 @@ class SignupsController < ApplicationController
     session[:city] = address_params[:city]
     session[:street] = address_params[:street]
     session[:building] = address_params[:building]
-
   end
 
   def create
@@ -45,10 +53,12 @@ class SignupsController < ApplicationController
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
-      birthday_year: session[:birthday_year],
-      birthday_month: session[:birthday_month],
-      birthday_day: session[:birthday_day],
-      phonenumber: session[:phonenumber]
+      birthday_year: session[:birthday_year].to_i,
+      birthday_month: session[:birthday_month].to_i,
+      birthday_day: session[:birthday_day].to_i,
+      phonenumber: session[:phonenumber],
+      provider: session[:provider],
+      uid: session[:uid]
     )
     if @user.save
       @address = Address.new(
@@ -73,16 +83,16 @@ class SignupsController < ApplicationController
   def complete
     sign_in User.find(session[:id]) unless user_signed_in?
     redirect_to root_path
-    
-    
   end
 
 end
 
 def save_to_session
+  if session[:uid] == nil
+    session[:password] = user_params[:password]
+  end
   session[:nickname] = user_params[:nickname]
   session[:email] = user_params[:email]
-  session[:password] = user_params[:password]
   session[:last_name] = user_params[:last_name]
   session[:first_name] = user_params[:first_name]
   session[:last_name_kana] = user_params[:last_name_kana]
@@ -102,8 +112,10 @@ def save_to_session
     birthday_year: session[:birthday_year],
     birthday_month: session[:birthday_month],
     birthday_day: session[:birthday_day],
-  )
-  redirect_to registration_signups_path unless @user.valid?
+    provider: session[:provider],
+    uid: session[:uid]
+    )
+  render "signups/registration" unless @user.valid?
 end
 
 

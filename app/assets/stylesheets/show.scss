@@ -46,13 +46,17 @@ body {
           flex-direction: column;
           a {
             display: block;
+            &:nth-child(1) {
+            color: #0099e8;
+            }
           }
           .light-blue {
-            color: #0099e8;
+            color: #5ebbe6;
           }
           .grin-icon {
             font-size: 16px;
             color: #e65e92d5;
+            margin-top: 5px;
           }
           .meh-icon {
             font-size: 16px;
@@ -122,7 +126,7 @@ body {
         padding: 0;
       }
     }
-    a.item-buy-btn {
+    .item-buy-btn {
       font-size: 24px;
       line-height: 60px;
       display: block;
@@ -132,6 +136,14 @@ body {
       line-height: 56px;
       text-align: center;
       font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.5s ease 0s;
+    }
+    .item-buy-btn:hover {
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      opacity: 0.5;
     }
     .item-description {
       &__inner {
@@ -142,6 +154,7 @@ body {
           margin-inline-start: 0px;
           margin-inline-end: 0px;
           text-decoration: inherit;
+          padding: 20px 5px 20px 5px;
         }
       }
       &__btn-left {

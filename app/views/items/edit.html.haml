@@ -15,6 +15,18 @@
                 必須
               %p.sell__main__content__file__up__head__text
                 最大10枚までアップロードできます
+              .sell__main__content__file__up__head__preview
+                %ul#preview_list
+                  - i = 0
+                  - @item.images[0..4].each do |image|
+                    %li.upload-sell-item{id: i}
+                      - i += 1
+                      .preview
+                        .preview__img
+                          %img{src: image.image, size: "114x114"}/
+                        .preview__delete
+                          .preview__delete--button
+                            %p 削除
               .dropbox
                 %label.dropbox__img
                   %p ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード
@@ -106,27 +118,10 @@
                   \-
         .sell__main__content__button
           %div
-            %p
-              = link_to "", target: "_blank" do
-                禁止されている出品
-              \/
-              = link_to "", target: "_blank" do
-                行為
-              を必ずご確認ください。
-            %p
-              またブランド品でシリアルナンバー等がある場合はご記載ください。
-              = link_to "", target: "_blank" do
-                偽ブランドの販売
-              は犯罪であり処罰される可能性があります。
-            %p
-              また、出品をもちまして
-              = link_to "", target: "_blank" do
-                加盟店規約
-              に同意したことになります。
           %button{type: "submit", class: "sell__main__content__button__red"}
-            出品する
-          %a.sell__main__content__button__gray
-            もどる
+            変更する
+          = link_to "キャンセル", item_path(@item), class: "sell__main__content__button__gray"
+          = link_to "商品を削除する", item_path(@item.id), method: :delete, class: "sell__main__content__button__red"
   %header.sell__footer
     %ul
       %li

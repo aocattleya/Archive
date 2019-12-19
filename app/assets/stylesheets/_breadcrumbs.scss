@@ -1,0 +1,23 @@
+.breadcrumbs-nav{
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px -3px rgba(0,0,0,0.16);
+  background-color: #fff;
+  & ul {
+    padding: 16px 0;
+    white-space: normal;
+    margin: 0 15%;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.2;
+    & a {
+      color: #333333;
+      text-decoration: none;
+    }
+    & i {
+      margin: 0 10px;
+      color: #333333;
+    }
+  }
+}

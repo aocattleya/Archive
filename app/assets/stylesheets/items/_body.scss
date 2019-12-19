@@ -2,12 +2,85 @@
   height: 3000px;
   width: 100vw;
   &__image {
-    box-shadow:0 3px 3px 3px rgba(0, 0, 0, 0.2)inset;
-    background-image: url("/assets/store.jpg");
-    background-size: cover;
-    background-position: center;
     width: 100%;
     height: 400px;
+    .slick {
+      box-shadow:0 3px 3px 3px rgba(0, 0, 0, 0.2)inset;
+      display: flex;
+      position: relative;
+      .fa-chevron-left {
+        color: rgb(255, 255, 255);
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        font-size: 40px;
+        z-index: 100;
+        position: absolute;
+        top: 170px;
+        left: 40px;
+      }
+      .fa-chevron-right {
+        color: rgb(255, 255, 255);
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        font-size: 40px;
+        z-index: 100;
+        position: absolute;
+        top: 170px;
+        right: 40px;
+      }
+      .appstore {
+        position: relative;
+        img {
+          position: absolute;
+          top: 303px;
+          left: 310px;
+          z-index: 100;
+        }
+      }
+      .googleplay {
+        position: relative;
+        img {
+          position: absolute;
+          top: 300px;
+          left: 600px;
+          z-index: 100;
+        }
+      }
+      .slick__1 {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(255, 255, 255);
+        color: rgb(33, 34, 34);
+        position: relative;
+        font-weight: bold;
+        b1 {
+          font-size: 60px;
+          z-index: 100;
+          position: absolute;
+          top: 30px;
+          left: 420px;
+        }
+        b2 {
+          font-weight: bold;
+          font-size: 60px;
+          z-index: 100;
+          position: absolute;
+          top: 100px;
+          left: 420px;
+        }
+        b3 {
+          font-size: 23px;
+          z-index: 100;
+          position: absolute;
+          top: 220px;
+          left: 430px;
+        }
+        b4 {
+          font-size: 23px;
+          z-index: 100;
+          position: absolute;
+          top: 250px;
+          left: 430px;
+        }
+      }
+    }
     &__box {
       margin: 0 100px;
       padding: 10px;
@@ -47,13 +120,22 @@
         display: flex;
         justify-content: space-between;
         &__category {
-          padding: 10px;
           font-weight: bold;
           font-size: 22px;
+          line-height: 1.4;
+          &__view {
+            float: right;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 4px;
+          }
         }
         &__more {
-          color: rgb(0, 149, 238);
           cursor: pointer;
+          & a {
+            color: rgb(0, 149, 238);
+            text-decoration: none;
+          }
         }
       }
       &__list {
@@ -66,12 +148,21 @@
           margin: 10px;
           outline: solid 1px lightcyan;
           box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+          position: relative;
           cursor: pointer;
+          & a{
+            z-index: 10;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
           &__image {
             width: 100%;
             height: 73%;
-            background-image: url("/assets/cat.jpg");
-            background-size: cover;
+            position: relative;
             p {
               font-size: 14px;
               width: 40%;
@@ -79,7 +170,7 @@
               padding: 3px 0 3px 5px;
               border-radius: 0 15px 15px 0;
               color: white;
-              position: relative;
+              position: absolute;
               top: 140px;
             }
           }
@@ -109,3 +200,6 @@
     }
   }
 }
+
+
+

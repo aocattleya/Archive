@@ -1,0 +1,31 @@
+.wrapper
+  = render "items/header"
+  %main.container__category-index
+    - breadcrumb :Category
+    = render "shared/breadcrumbs"
+    .container__category-index__content
+      %ul.container__category-index__content__ul
+      %section.container__category-index__content__items
+        %h1.container__category-index__content__items__h1
+          = "#{@category.name}の商品一覧"
+        .container__category-index__content__items__list
+          - @items.each do |item|
+            %section.container__category-index__content__items__list__item
+              = link_to item_path(item.id), class: "container__category-index__content__items__list__item__link" do
+                %figure.container__category-index__content__items__list__item__link__figure
+                  .style-card__thumbnail
+                    - if item.buyer_id != nil
+                      .sold-flag
+                        .sold-flag__text
+                          SOLD
+                  = image_tag(item.images.first,class: "container__category-index__content__items__list__item__link__figure__img")
+                .container__category-index__content__items__list__item__link__body
+                  %h3.container__category-index__content__items__list__item__link__body__h3
+                    = item.name
+                  .container__category-index__content__items__list__item__link__body__num
+                    .container__category-index__content__items__list__item__link__body__num__price
+                      = "¥#{item.price.to_s(:delimited)}"
+                    .container__category-index__content__items__list__item__link__body__num__heart
+                      %i.icon-heart-border
+                      %span= "2"
+  = render "items/footer"

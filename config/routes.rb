@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # get 'card/new'
-
-  # get 'card/show'
 
   resources :card, only: [:new, :show] do
     collection do
@@ -10,11 +7,14 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
+
   resources :signups, only: [:new, :create] do
     collection do
       get :registration
       post :registration
+      get :sns_registration
+      post :sns_registration
       get :sms_confirmation
       post :sms_confirmation
       get :address
@@ -35,13 +35,17 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :items do
+    resources :searches, only: :index
+  end
+
   resources :items do
     collection do
       get :confirm
     end
   end
 
-
+  resources :categories, only: [:index, :show]
 
   root 'items#index'
 

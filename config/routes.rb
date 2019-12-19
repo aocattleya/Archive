@@ -27,6 +27,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :items do
+    resources :searches, only: :index
+  end
+
   resources :items do
     collection do
       get :confirm

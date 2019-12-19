@@ -4,6 +4,14 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  def self.search(search)
+    if search
+      Item.where('name LIKE(?) OR description LIKE(?)', "%#{search}%", "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
   enum size: {
     "XXS以下": 0,
     "XS(SS)": 1,

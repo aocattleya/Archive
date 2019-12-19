@@ -58,7 +58,7 @@
                     = @item.shipping_date
         .item-price-box
           %span.item-price-box__bold
-            = "¥#{@item.price.to_s(:delimited, delimiter: ',')}"
+            #{convert_to_jpy(@item.price)}
           %span.item-price-box__tax (税込)
           %span.item-price-box__shipping-fee 送料込み
           = link_to confirm_item_path, class:"item-buy-btn" do

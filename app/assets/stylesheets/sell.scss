@@ -14,6 +14,19 @@
     vertical-align: top;
     font-weight: 600;
   }
+  .form-optional {
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic,
+      メイリオ, Meiryo, sans-serif;
+    background: #ccc;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    font-weight: 600;
+  }
   &__head {
     height: 128px;
     width: 100%;
@@ -187,6 +200,9 @@
                 cursor: pointer;
                 margin: 0 0 40px;
               }
+            }
+            & #size-select-box {
+              display: none;
             }
           }
           &__price {

@@ -42,6 +42,9 @@ Rails.application.routes.draw do
     member do
       get :confirm
     end
+    member do
+      post 'buy', to: 'transacts#buy'
+    end
   end
 
   resources :categories, only: [:index, :show] do

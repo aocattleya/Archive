@@ -27,8 +27,8 @@
               %br
               - exp_month = @default_card_information.exp_month.to_s
               - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-                %i.fas.fa-plus-circle
-                  登録してください
+              %i.fas.fa-plus-circle
+                登録してください
             .confirm.body__box__form__3
               %p 配送先
               - if user_signed_in? && @address != nil

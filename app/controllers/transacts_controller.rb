@@ -1,6 +1,5 @@
 class TransactsController < ApplicationController
-
-  require 'payjp'
+  before_action :transact_params, only: [:buy]
 
   def buy
     @item = Item.find(params[:id])
@@ -15,7 +14,6 @@ class TransactsController < ApplicationController
       )
       redirect_to root_path
     else
-      binding.pry
       redirect_to item_path
     end
   end

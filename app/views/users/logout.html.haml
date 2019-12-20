@@ -5,6 +5,6 @@
     .logout__content
       .logout__content__inner
         %button{class: "logout__content__inner__button", type: "submit"}
-          = link_to root_path do
+          = link_to root_path, data: {"turbolinks" => false} do
             ログアウト
 = render 'items/footer'

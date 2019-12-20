@@ -1,6 +1,6 @@
 .confirm.wrapper
   .confirm.header
-    = link_to root_path do
+    = link_to root_path, data: {"turbolinks" => false} do
       = image_tag "fmarket_logo_red.svg", size: '170x50', alt: "Mercari"
   .confirm.body
     .confirm.body__top
@@ -37,7 +37,7 @@
         %li メルカリ利用規約
         %li 特定商取引に関する表記
       .confirm.footer__box__middle
-        = link_to root_path do
+        = link_to root_path, data: {"turbolinks" => false} do
           = image_tag "logo_gray.svg", size: '120x70'
       .confirm.footer__box__below
         © Fmarket, Inc.

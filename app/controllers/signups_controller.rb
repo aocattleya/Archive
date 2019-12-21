@@ -73,7 +73,6 @@ class SignupsController < ApplicationController
           redirect_to complete_signups_path
           
        else
-        binding.pry
            redirect_to root_path
        end
     else

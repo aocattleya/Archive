@@ -1,12 +1,12 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :show, :destroy]
-  before_action :set_card, only: [:confirm]
+  before_action :set_item, only: [:confirm, :edit, :update, :show, :destroy]
 
   def index
     @items = Item.all.order("id DESC").limit(10)
   end
 
   def confirm
+    @card = Card.where(user_id: current_user.id).first
     @item = Item.find(params[:id])
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -55,10 +55,6 @@ class ItemsController < ApplicationController
   end
 
   private
-    def set_card
-      @card = Card.where(user_id: current_user.id).first
-    end
-
     def set_item
       @item = Item.find(params[:id])
     end

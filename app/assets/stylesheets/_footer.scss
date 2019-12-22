@@ -27,10 +27,13 @@
           margin-bottom: 6px;
         }
         &__below {
-          .logo {
+          .footer-logo {
             padding: 12px 9px;
             background-color: rgb(255, 255, 255);
             border-radius: 8px;
+            width: 69px;
+            height: 69px;
+            box-sizing: border-box;
           }
           .appstore {
             position: relative;

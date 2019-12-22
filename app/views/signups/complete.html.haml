@@ -24,7 +24,7 @@
   %main.complete-container__main
     %section.complete-container__main__container
       会員登録完了
-   
+
       = form_tag url: root_path, method: :get, class: "complete-container__main__container__form" do
         .complete-container__main__container__form__content
           %p
@@ -32,10 +32,9 @@
             %br
             会員登録が完了しました。
           .complete-container__main__container__form__content__submit
-            = submit_tag "メルカリをはじめる", class:"btn-default btn-red"
-          -# = link_to root_path, class: "btn-default" do
-            メルカリをはじめる
-            
+            = link_to root_path, class: "btn-default btn-red" do
+              メルカリをはじめる
+
 .footer
   .single-footer
     .nav

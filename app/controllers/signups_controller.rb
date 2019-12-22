@@ -22,9 +22,9 @@ class SignupsController < ApplicationController
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
-    session[:birthday_year] = user_params[:"birthday_year(1i)"]
-    session[:birthday_month] = user_params[:"birthday_month(2i)"]
-    session[:birthday_day] = user_params[:"birthday_day(1i)"]
+    session[:birthday_year] = user_params[:"birthday_year(1i)"].to_i
+    session[:birthday_month] = user_params[:"birthday_month(2i)"].to_i
+    session[:birthday_day] = user_params[:"birthday_day(1i)"].to_i
     @user = User.new
   end
 
@@ -32,16 +32,6 @@ class SignupsController < ApplicationController
     @address = Address.new
     @user = User.new
     session[:phonenumber] = user_params[:phonenumber]
-  end
-
-  def payment_method
-    @address = Address.new
-    @user = User.new
-    session[:postal_code] = address_params[:postal_code]
-    session[:prefecture] = address_params[:prefecture]
-    session[:city] = address_params[:city]
-    session[:street] = address_params[:street]
-    session[:building] = address_params[:building]
   end
 
   def create
@@ -53,25 +43,18 @@ class SignupsController < ApplicationController
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
-      birthday_year: session[:birthday_year].to_i,
-      birthday_month: session[:birthday_month].to_i,
-      birthday_day: session[:birthday_day].to_i,
+      birthday_year: session[:birthday_year],
+      birthday_month: session[:birthday_month],
+      birthday_day: session[:birthday_day],
       phonenumber: session[:phonenumber],
       provider: session[:provider],
       uid: session[:uid]
     )
     if @user.save
-      @address = Address.new(
-        postal_code: session[:postal_code],
-        prefecture: session[:prefecture],
-        city: session[:city],
-        street: session[:street],
-        building: session[:building]
-      )
+      @address = Address.new(address_params)
        if @address.save
           session[:id] = @user.id
-          redirect_to complete_signups_path
-          
+          redirect_to new_card_path
        else
            redirect_to root_path
        end
@@ -82,7 +65,6 @@ class SignupsController < ApplicationController
 
   def complete
     sign_in User.find(session[:id]) unless user_signed_in?
-    redirect_to root_path
   end
 
 end

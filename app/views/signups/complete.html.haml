@@ -23,15 +23,19 @@
           .progress-status
   %main.complete-container__main
     %section.complete-container__main__container
-      %h2 会員登録完了
-      = form_for @user, url: root_path, method: :get, class: "complete-container__main__container__form" do |f|
+      会員登録完了
+   
+      = form_tag url: root_path, method: :get, class: "complete-container__main__container__form" do
         .complete-container__main__container__form__content
           %p
             ありがとうございます。
             %br
             会員登録が完了しました。
           .complete-container__main__container__form__content__submit
-            = f.submit "メルカリをはじめる", class:"btn-default btn-red"
+            = submit_tag "メルカリをはじめる", class:"btn-default btn-red"
+          -# = link_to root_path, class: "btn-default" do
+            メルカリをはじめる
+            
 .footer
   .single-footer
     .nav

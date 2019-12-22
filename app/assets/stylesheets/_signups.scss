@@ -775,6 +775,15 @@
     }
   }
 }
+.payment-method-container__main__container__form__content__group {
+  & c {
+    color: #0099e8;
+    float: right;
+  }
+  & .cvc {
+    @include input_default();
+  }
+}
 
 
 .footer {

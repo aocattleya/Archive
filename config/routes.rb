@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :payment_method
       post :payment_method
       get :complete
+      post :complete
     end
   end
 

@@ -8,28 +8,44 @@
     .confirm.body__show
       = image_tag(@item.images.first.image, size: "80x80", class: "confirm.body__show__image")
       .confirm.body__show__detail
-        %p #{@item.name}
+      = form_tag(buy_item_path, method: :post) do
+        %input{type: "hidden",value: @item.id,name: "item_id"}
+        %input{type: "hidden",value: current_user.id,name: "user_id"}
+        #{@item.name}
         %p #{convert_to_jpy(@item.price)}（税込）送料込み
-    .confirm.body__box
-      .confirm.body__box__form
-        .confirm.body__box__form__1
-          支払い金額
-          %a #{convert_to_jpy(@item.price)}
-          = form_for "" do |f|
-            = f.check_box :content, class: 'form__check', id: "form__check"
-            %b ポイントを使用(所持ポイント:0)
-        .confirm.body__box__form__2
-          %p 支払い方法
-          = link_to "" do
-            %i.fas.fa-plus-circle
-              登録してください
-        .confirm.body__box__form__3
-          %p 配送先
-          = link_to "" do
-            %i.fas.fa-plus-circle
-              登録してください
-        .confirm.body__box__form__4
-          購入する
+        .confirm.body__box
+          .confirm.body__box__form
+            .confirm.body__box__form__1
+              支払い金額
+              %a #{convert_to_jpy(@item.price)}
+              %b ポイントを使用(所持ポイント:0)
+            .confirm.body__box__form__2
+              %p 支払い方法
+              %label 登録クレジットカード情報
+              %br
+              = "**** **** **** " + @default_card_information.last4
+              %br
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              %i.fas.fa-plus-circle
+                登録してください
+            .confirm.body__box__form__3
+              %p 配送先
+              - if user_signed_in? && @address != nil
+                〒
+                = @address.first.postal_code
+                %br/
+                = @address.first.prefecture + @address.first.city
+                - if @address.first.building
+                  = @address.first.building
+                %br/
+                = current_user.last_name + " " + current_user.first_name
+              - else
+                %br /
+                %i.fas.fa-plus-circle
+                  登録してください
+            .confirm.body__box__form__4
+              = submit_tag "購入する"
   .confirm.footer
     .confirm.footer__box
       .confirm.footer__box__upper

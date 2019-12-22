@@ -31,15 +31,32 @@
           = link_to "もっと見る ＞", root_path
       .top.body__new__item__list
         - @items.each do |item|
-          .top.body__new__item__list__show
-            = link_to "", item_path(item)
-            .top.body__new__item__list__show__image
-              = image_tag(item.images.first.image, size: "184x184")
-              %p
-                #{convert_to_jpy(item.price)}
-            .top.body__new__item__list__show__name
-              = item.name
-              .top.body__new__item__list__show__name__opa
+          - sold = Transact.find_by(item_id: item.id)
+          - if sold == nil
+            .top.body__new__item__list__show
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+          - else
+            .top.body__new__item__list__sold
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+                  .sold
+                    .back-color
+                      %a
+                        sold
+
       .top.body__new__item__box#mens-items
         .top.body__new__item__box__category
           メンズ新着アイテム
@@ -47,15 +64,35 @@
           = link_to "もっと見る ＞", root_path
       .top.body__new__item__list
         - @items.each do |item|
-          .top.body__new__item__list__show
-            = link_to "", item_path(item)
-            .top.body__new__item__list__show__image
-              = image_tag(item.images.first.image, size: "184x184")
-              %p
-                #{convert_to_jpy(item.price)}
-            .top.body__new__item__list__show__name
-              = item.name
-              .top.body__new__item__list__show__name__opa
+          - sold = Transact.find_by(item_id: item.id)
+          - if sold == nil
+            .top.body__new__item__list__show
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+          - else
+            .top.body__new__item__list__sold
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+                  .sold
+                    .back-color
+                      %a
+                        sold
+
+
+
+
       .top.body__new__item__box#electronics-items
         .top.body__new__item__box__category
           家電新着アイテム
@@ -63,15 +100,34 @@
           = link_to "もっと見る ＞", root_path
       .top.body__new__item__list
         - @items.each do |item|
-          .top.body__new__item__list__show
-            = link_to "", item_path(item)
-            .top.body__new__item__list__show__image
-              = image_tag(item.images.first.image, size: "184x184")
-              %p
-                #{convert_to_jpy(item.price)}
-            .top.body__new__item__list__show__name
-              = item.name
-              .top.body__new__item__list__show__name__opa
+          - sold = Transact.find_by(item_id: item.id)
+          - if sold == nil
+            .top.body__new__item__list__show
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+          - else
+            .top.body__new__item__list__sold
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+                  .sold
+                    .back-color
+                      %a
+                        sold
+
+
+
       .top.body__new__item__box
         .top.body__new__item__box__category#toys-items
           おもちゃ新着アイテム
@@ -79,12 +135,29 @@
           = link_to "もっと見る ＞", root_path
       .top.body__new__item__list
         - @items.each do |item|
-          .top.body__new__item__list__show
-            = link_to "", item_path(item)
-            .top.body__new__item__list__show__image
-              = image_tag(item.images.first.image, size: "184x184")
-              %p
-                #{convert_to_jpy(item.price)}
-            .top.body__new__item__list__show__name
-              = item.name
-              .top.body__new__item__list__show__name__opa
+          - sold = Transact.find_by(item_id: item.id)
+          - if sold == nil
+            .top.body__new__item__list__show
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+          - else
+            .top.body__new__item__list__sold
+              = link_to "", item_path(item)
+              .top.body__new__item__list__show__image
+                = image_tag(item.images.first.image, size: "184x184")
+                %p
+                  #{convert_to_jpy(item.price)}
+              .top.body__new__item__list__show__name
+                = item.name
+                .top.body__new__item__list__show__name__opa
+                  .sold
+                    .back-color
+                      %a
+                        sold
+

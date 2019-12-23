@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :category
   has_many :images, dependent: :destroy, inverse_of: :item
+  has_many :trancacts
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
@@ -13,6 +14,7 @@ class Item < ApplicationRecord
   end
 
   enum size: {
+    "---": nil,
     "XXS以下": 0,
     "XS(SS)": 1,
     "S": 2,

@@ -1,9 +1,4 @@
-.wrapper {
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+.category-wrapper {
   width: 100vw;
   .top.header {
     height: 90px;
@@ -89,17 +84,17 @@
   height: 2rem;
   margin: 0 auto;
   width: 1000px;
-  &__parent{
+  &__parent {
     z-index: 1;
   }
-    li {
+  li {
     list-style: none;
     position: relative;
-      li {
+    li {
       height: 0;
       opacity: 0;
       overflow: hidden;
-      transition: opacity .5s;
+      transition: opacity 0.5s;
       a {
         border-top: 1px solid #eee;
       }
@@ -144,4 +139,3 @@
 .gnav li li:hover a {
   background: rgb(230, 228, 228);
 }
-

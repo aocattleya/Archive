@@ -1,12 +1,35 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :show, :destroy]
+  before_action :set_item, only: [:confirm, :edit, :update, :show, :destroy]
 
   def index
-    @items = Item.all.order("id DESC").limit(10)
+    items = Item.all.order("id DESC")
+    items1 = []
+    items2 = [].take(10)
+    items3 = [].take(10)
+    items4 = [].take(10)
+    items.each do |item|
+      if item.category.parent.parent.id == 1
+        items1.push(item)
+      elsif item.category.parent.parent.id == 2
+        items2.push(item)
+      elsif item.category.parent.parent.id == 8
+        items3.push(item)
+      elsif item.category.parent.parent.id == 6
+        items4.push(item)
+      end
+    end
+    @items1 = items1.first(10)
+    @items2 = items2.first(10)
+    @items3 = items3.first(10)
+    @items4 = items4.first(10)
   end
 
   def confirm
-    @item = Item.find(params[:id])
+    @card = Card.where(user_id: current_user.id).first
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
+    @address = Address.where(user_id: current_user.id)
   end
 
   def new
@@ -71,5 +94,9 @@ class ItemsController < ApplicationController
 
     def update_params
       params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: [:image, :id])
+    end
+
+    def transact_params
+      params.require(:transact).permit(:sold, :confirmation, :evaluat).merge(user_id: current_user.id, item_id: current_item.id)
     end
 end

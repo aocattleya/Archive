@@ -25,11 +25,11 @@
               %tr
                 %th カテゴリー
                 %td.item-box-container__item-main-content-clearfix__table__td
-                  = link_to @item.category.parent.parent.name, class: "light-blue__category"
+                  = link_to @item.category.parent.parent.name, category_path(@item.category.parent.parent), class: "light-blue__category"
                   = fas_icon 'chevron-right', class: "chevron-right"
-                  = link_to @item.category.parent.name, class: "light-blue__category"
+                  = link_to @item.category.parent.name, category_path(@item.category.parent), class: "light-blue__category"
                   = fas_icon 'chevron-right', class: "chevron-right"
-                  = link_to @item.category.name, class: "light-blue__category"
+                  = link_to @item.category.name, category_path(@item.category), class: "light-blue__category"
               %tr
                 %th ブランド
                 %td トリココムデギャルソン

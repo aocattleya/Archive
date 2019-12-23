@@ -14,6 +14,7 @@ class Item < ApplicationRecord
   end
 
   enum size: {
+    "---": nil,
     "XXS以下": 0,
     "XS(SS)": 1,
     "S": 2,

@@ -1,0 +1,22 @@
+= render "items/header"
+%main.container__category-index
+  - breadcrumb :brand
+  = render "shared/breadcrumbs"
+.top.body
+  .top.body__new
+    .top.body__new__item
+      .top.body__new__item__box
+        .top.body__new__item__box__category
+          #{@brand.name}の商品一覧
+      .top.body__new__item__list
+        - @items.each do |item|
+          .top.body__new__item__list__show
+            = link_to "", item_path(item)
+            .top.body__new__item__list__show__image
+              = image_tag(item.images.first.image, size: "184x184")
+              %p
+                ¥#{item.price}
+            .top.body__new__item__list__show__name
+              = item.name
+              .top.body__new__item__list__show__name__opa
+= render "/items/footer"

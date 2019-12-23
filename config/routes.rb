@@ -58,6 +58,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :brands, only: [:index, :show] do
+    collection do
+      get 'search_brand'
+    end
+  end
+
   root 'items#index'
 
 end

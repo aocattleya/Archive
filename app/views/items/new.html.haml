@@ -147,6 +147,16 @@
                   .sell__main__content__form__box__group__select
                     %i.icon-arrow-bottom
                     = f.select :size, Item.sizes.keys[117..124].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "helmets-size"
+              .form-group#brandbox_list
+                #brand_box
+                  %label#brand_box__label
+                    ブランド名
+                    %span.form-optional
+                      任意
+                  %div
+                    = f.text_field :brand_id, placeholder: "例）シャネル", class: "sell__main__content__form__input", id: "input_brand_box", name: "brand_name"
+                  #search_brand_box
+                    %ul#search_brand_result
               %label
                 商品の状態
                 %span.form-require

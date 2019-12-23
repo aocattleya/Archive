@@ -12,6 +12,17 @@ crumb :categories do
   parent :root
 end
 
+crumb :brands do
+  link "ブランド一覧", brands_path
+  parent :root
+end
+
+crumb :brand do |brand|
+  brand = Brand.find(params[:id])
+  link "#{brand.name}", brand_path(params[:id])
+  parent :brands
+end
+
 crumb :profile do
   link "プロフィール"
   parent :mypage

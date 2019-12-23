@@ -32,7 +32,8 @@
                   = link_to @item.category.name, category_path(@item.category), class: "light-blue__category"
               %tr
                 %th ブランド
-                %td トリココムデギャルソン
+                %td
+                  = link_to @item.brand.name, brand_path(@item.brand_id)
               -if @item.size
                 %tr
                   %th 商品のサイズ

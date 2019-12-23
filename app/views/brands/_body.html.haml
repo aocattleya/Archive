@@ -1,0 +1,34 @@
+- breadcrumb :brands
+= render "shared/breadcrumbs"
+.container
+  .container__categories
+    .container__categories__visible
+      %h2.container__categories__visible__h2
+        = "ブランド一覧"
+      .container__categories__visible__clearfix
+        - @brands.each do |brand|
+          = link_to brand.name, "##{brand.id}-header", id: brand.id, class: "container__categories__visible__clearfix__link"
+      .container__categories__visible__list
+        - @brands.each do |brand|
+          .container__categories__visible__list__clearfix
+            .container__categories__visible__list__clearfix__category-name
+              %h3.container__categories__visible__list__clearfix__category-name__h3{id: "#{brand.id}-header"}
+                = brand.name
+            .container__categories__visible__list__clearfix__inner
+              %p.container__categories__visible__list__clearfix__inner__p
+                = link_to brand_path(brand.id),class: "container__categories__visible__list__clearfix__inner__p__link" do
+                  = "すべて"
+              -# - category.children.each do |childcategory|
+              -#   .container__categories__visible__list__clearfix__inner__child
+              -#     %h4.container__categories__visible__list__clearfix__inner__child__h4
+              -#       = childcategory.name
+              -#   .container__categories__visible__list__clearfix__inner__grand-child
+              -#     .container__categories__visible__list__clearfix__inner__grand-child__list
+              -#       %p.container__categories__visible__list__clearfix__inner__grand-child__p
+              -#         = link_to category_path(childcategory.id),class: "container__categories__visible__list__clearfix__inner__grand-child__p__link" do
+              -#           = "すべて"
+              -#       - childcategory.children.each do |grandchild|
+              -#         .container__categories__visible__list__clearfix__inner__grand-child__name
+              -#           %p.container__categories__visible__list__clearfix__inner__grand-child__name__p
+              -#             = link_to category_path(grandchild.id),class:"container__categories__visible__list__clearfix__inner__grand-child__name__p__link" do
+              -#               = grandchild.name

@@ -25,11 +25,11 @@
               %tr
                 %th カテゴリー
                 %td.item-box-container__item-main-content-clearfix__table__td
-                  = link_to @item.category.parent.parent.name, class: "light-blue__category"
+                  = link_to @item.category.parent.parent.name, category_path(@item.category.parent.parent), class: "light-blue__category"
                   = fas_icon 'chevron-right', class: "chevron-right"
-                  = link_to @item.category.parent.name, class: "light-blue__category"
+                  = link_to @item.category.parent.name, category_path(@item.category.parent), class: "light-blue__category"
                   = fas_icon 'chevron-right', class: "chevron-right"
-                  = link_to @item.category.name, class: "light-blue__category"
+                  = link_to @item.category.name, category_path(@item.category), class: "light-blue__category"
               %tr
                 %th ブランド
                 %td トリココムデギャルソン
@@ -61,27 +61,32 @@
             #{convert_to_jpy(@item.price)}
           %span.item-price-box__tax (税込)
           %span.item-price-box__shipping-fee 送料込み
+        -if user_signed_in? && @item.user_id != current_user.id
           = link_to confirm_item_path, class:"item-buy-btn" do
             購入画面に進む
-        .item-description
-          .item-description__inner
-            %p
-              = @item.description
-        .item-description__clearfix
-          .item-description__btn-left
-            .item-description__btn-left__box
-              .item-description__btn-left__box__button__like
-                = far_icon 'heart', class: "heart-icon"
-                %span いいね!
-                %i.icon-like-border
-                %span.fade-in-down
-              .item-description__btn-left__box__button__flag
-                = far_icon 'flag', class: "flag-icon"
-                %span 不適切な商品の報告
-            .item-description__btn-right
-              .item-description__btn-right__button__lock
-                = fa_icon 'lock', class: "lock-icon"
-                %span あんしん・あんぜんへの取り組み
+          .item-description
+            .item-description__inner
+              %p
+                = @item.description
+          .item-description__clearfix
+            .item-description__btn-left
+              .item-description__btn-left__box
+                .item-description__btn-left__box__button__like
+                  = far_icon 'heart', class: "heart-icon"
+                  %span いいね!
+                  %i.icon-like-border
+                  %span.fade-in-down
+                .item-description__btn-left__box__button__flag
+                  = far_icon 'flag', class: "flag-icon"
+                  %span 不適切な商品の報告
+              .item-description__btn-right
+                .item-description__btn-right__button__lock
+                  = fa_icon 'lock', class: "lock-icon"
+                  %span あんしん・あんぜんへの取り組み
+        -if user_signed_in? && @item.user_id == current_user.id
+          .item-description
+            = link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "sell__main__content__button__red"
+            = link_to "この商品を削除する", item_path(@item.id), method: :delete, class: "sell__main__content__button__red"
     .item-detail-message
       .item-detail-message__container
       .item-detail-message__content

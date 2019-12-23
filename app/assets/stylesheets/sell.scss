@@ -200,6 +200,12 @@
                 cursor: pointer;
                 margin: 0 0 40px;
               }
+              & .parent_box {
+                margin: 0;
+              }
+              & .child_box {
+                margin: 0;
+              }
             }
             & #size-select-box {
               display: none;

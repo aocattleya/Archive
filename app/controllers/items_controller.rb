@@ -2,7 +2,26 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:confirm, :edit, :update, :show, :destroy]
 
   def index
-    @items = Item.all.order("id DESC").limit(10)
+    items = Item.all.order("id DESC")
+    items1 = []
+    items2 = [].take(10)
+    items3 = [].take(10)
+    items4 = [].take(10)
+    items.each do |item|
+      if item.category.parent.parent.id == 1
+        items1.push(item)
+      elsif item.category.parent.parent.id == 2
+        items2.push(item)
+      elsif item.category.parent.parent.id == 8
+        items3.push(item)
+      elsif item.category.parent.parent.id == 6
+        items4.push(item)
+      end
+    end
+    @items1 = items1.first(10)
+    @items2 = items2.first(10)
+    @items3 = items3.first(10)
+    @items4 = items4.first(10)
   end
 
   def confirm
@@ -17,6 +36,8 @@ class ItemsController < ApplicationController
     @item = Item.new
     1.times { @item.images.build }
     @parents = Category.all.order("id ASC").limit(13)
+    ids = [14..159]
+    @children = Category.where(id: ids)
   end
 
   def create
@@ -30,6 +51,15 @@ class ItemsController < ApplicationController
 
   def edit
     @parents = Category.all.order("id ASC").limit(13)
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
+
+    @category_child_array = @item.category.parent.parent.children
+
+    @category_grandchild_array = @item.category.parent.children
   end
 
   def update

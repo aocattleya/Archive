@@ -1,4 +1,4 @@
-.wrapper {
+.header-wrapper {
   width: 100vw;
   .top.header {
     height: 90px;
@@ -27,6 +27,7 @@
             position: relative;
             padding: 0 0 0 3px;
             width: 100%;
+            line-height: 38px;
             input {
               font-size: 100%;
               width: 94%;
@@ -63,6 +64,7 @@
           width: 50%;
           &__category {
             cursor: pointer;
+            margin-top: 5px;
             i {
               color: rgb(234, 53, 45);
               font-size: 14px;
@@ -77,35 +79,39 @@
             a:hover {
               color: rgb(0, 149, 238);
             }
+            .fas.fa-bars {
+              margin: 3px 2px 0 0;
+            }
+            .fas.fa-tags {
+              margin: 3px 2px 0 0;
+            }
           }
         }
         &__users {
           &__member {
             display: flex;
             font-size: 15px;
-            &__left {
+            i {
+              padding-top: 7px;
+              margin-left: 20px;
+              color: #333;
+              cursor: pointer;
             }
-              i {
-                padding-top: 7px;
-                margin-left: 20px;
-                color: #333;
-                cursor: pointer;
-              }
-              i:hover {
-                color: rgb(0, 149, 238);
-              }
-              .mypage {
-                color: #333;
-                text-decoration: none;
-              }
-              .mypage:hover {
-                color: rgb(0, 149, 238);
-              }
+            i:hover {
+              color: rgb(0, 149, 238);
+            }
+            .mypage {
+              color: #333;
+              text-decoration: none;
+            }
+            .mypage:hover {
+              color: rgb(0, 149, 238);
+            }
             .newreg {
               cursor: pointer;
               font-size: 14px;
               border-radius: 6px;
-              padding: 5px 10px 5px 10px;
+              padding: 6px 10px 5px 10px;
               background-color: rgb(234, 53, 45);
               color: rgb(255, 255, 255);
               text-decoration: none;
@@ -119,7 +125,7 @@
               -webkit-transition: all 0.3s ease;
               -moz-transition: all 0.3s ease;
               -o-transition: all 0.3s ease;
-              transition: all  0.3s ease;
+              transition: all 0.3s ease;
               border-width: 1px;
               border-style: solid;
               border-color: rgb(0, 149, 238);
@@ -134,7 +140,7 @@
               -webkit-transition: all 0.3s ease;
               -moz-transition: all 0.3s ease;
               -o-transition: all 0.3s ease;
-              transition: all  0.3s ease;
+              transition: all 0.3s ease;
               .member_right {
                 color: rgb(255, 255, 255);
                 text-decoration: none;
@@ -152,11 +158,12 @@
     position: fixed;
     color: rgb(255, 255, 255);
     width: 160px;
-    height: 140px;
+    height: 160px;
     background-color: rgb(234, 53, 45);
     border-radius: 50%;
     text-align: center;
     padding-top: 20px;
+    box-sizing: border-box;
     cursor: pointer;
     a {
       font-size: 22px;
@@ -170,11 +177,3 @@
     }
   }
 }
-
-
-
-
-
-
-
-

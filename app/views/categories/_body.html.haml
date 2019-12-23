@@ -1,6 +1,6 @@
+- breadcrumb :categories
+= render "shared/breadcrumbs"
 .container
-  - breadcrumb :categories
-  = render "shared/breadcrumbs"
   .container__categories
     .container__categories__visible
       %h2.container__categories__visible__h2
@@ -9,8 +9,8 @@
         - @categories.each do |category|
           = link_to category.name, "##{category.id}-header", id: category.id, class: "container__categories__visible__clearfix__link"
       .container__categories__visible__list
-        .container__categories__visible__list__clearfix
-          - @categories.each do |category|
+        - @categories.each do |category|
+          .container__categories__visible__list__clearfix
             .container__categories__visible__list__clearfix__category-name
               %h3.container__categories__visible__list__clearfix__category-name__h3{id: "#{category.id}-header"}
                 = category.name

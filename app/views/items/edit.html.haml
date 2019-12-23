@@ -1,6 +1,6 @@
 .sell
   %header.sell__head
-    = link_to root_path do
+    = link_to root_path, data: {"turbolinks": false} do
       = image_tag "fmarket_logo_red.svg", class: "sell__head__img"
   .sell__main
     .sell__main__content
@@ -47,13 +47,123 @@
           %h3.sell__main__content__form__sub
             商品の詳細
           .sell__main__content__form__box
-            .sell__main__content__form__box__group
+            .sell__main__content__form__box__group#category-select-box_list
               %label
                 カテゴリ
                 %span.form-require
                   必須
-              .sell__main__content__form__box__group__select
-                = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form"
+              .sell__main__content__form__box__group__select#parent_box
+                = f.select :category, options_for_select(@category_parent_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.parent.id), {}, {class: 'sell__main__content__form__box__group__select__form parent_box', id: 'parent_form'}
+              .sell__main__content__form__box__group__select#child_box
+                = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'sell__main__content__form__box__group__select__form child_box', id: 'child_form'}
+              .sell__main__content__form__box__group__select#grandchild_box
+                = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'sell__main__content__form__box__group__select__form', id: 'grandchild_form'}
+              = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
+              .form-group#size-select-box
+                #clothes-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[0..9].to_a, {}, class: "sell__main__content__form__box__group__select__form", id: "clothes-size"
+                #ladies-shoes-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[10..25].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "ladies-shoes-size"
+                #mens-shoes-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[26..41].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "mens-shoes-size"
+                #babies-clothes-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[42..46].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "babies-clothes-size"
+                #kids-clothes-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[47..53].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "kids-clothes-size"
+                #kids-shoes-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[54..61].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "kids-shoes-size"
+                #lens-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[62..73].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "lens-size"
+                #tvs-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[74..83].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "tvs-size"
+                #snowboards-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[84..90].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "snowboards-size"
+                #skiingboards-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[91..97].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "skiingborads-size"
+                #tires-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[98..110].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "tires-size"
+                #motorcycles-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[111..116].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "motorcycles-size"
+                #helmets-size
+                  %label
+                    サイズ
+                    %span.form-optional
+                      任意
+                  .sell__main__content__form__box__group__select
+                    %i.icon-arrow-bottom
+                    = f.select :size, Item.sizes.keys[117..124].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "helmets-size"
               %label
                 商品の状態
                 %span.form-require
@@ -121,7 +231,6 @@
           %button{type: "submit", class: "sell__main__content__button__red"}
             変更する
           = link_to "キャンセル", item_path(@item), class: "sell__main__content__button__gray"
-          = link_to "商品を削除する", item_path(@item.id), method: :delete, class: "sell__main__content__button__red"
   %header.sell__footer
     %ul
       %li
@@ -134,7 +243,7 @@
         = link_to "", target: "_blank" do
           特定商取引に関する表記
     .sell__footer__logo
-      = link_to root_path do
+      = link_to root_path, data: {"turbolinks": false} do
         = image_tag "logo_gray.svg"
       %small
         ©&nbsp;Fmarket,&nbsp;Inc.

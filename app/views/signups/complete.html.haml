@@ -31,7 +31,9 @@
             %br
             会員登録が完了しました。
           .complete-container__main__container__form__content__submit
-            = f.submit "メルカリをはじめる", class:"btn-default btn-red"
+            = link_to root_path, class: "btn-default btn-red" do
+              メルカリをはじめる
+
 .footer
   .single-footer
     .nav

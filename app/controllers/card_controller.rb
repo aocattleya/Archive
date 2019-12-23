@@ -1,5 +1,6 @@
 class CardController < ApplicationController
   before_action :set_card, only: [:new, :show, :destroy]
+  before_action :authenticate_user!
 
   def new
     redirect_to card_path(@card.id) if @card
@@ -19,7 +20,7 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to card_path(@card.id)
+        redirect_to complete_signups_path
       else
         redirect_to new_card_path
       end
@@ -48,7 +49,12 @@ class CardController < ApplicationController
 
   private
   def set_card
-    @card = Card.where(user_id: current_user.id).first
+    if session[:id] != nil
+      @card = Card.where(user_id: session[:id]).first
+      sign_in User.find(session[:id]) unless user_signed_in?
+    else
+      @card = Card.where(user_id: current_user.id).first
+    end
   end
 
 end

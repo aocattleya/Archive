@@ -2,7 +2,7 @@
   .complete-container
   %header.complete-container__header
     %h1
-      = link_to root_path, data: {"turbolinks" => false} do
+      = link_to root_path, data: {"turbolinks": false} do
         = image_tag("fmarket_logo_red.svg")
     %nav.complete-container__header__nav
       %ol.complete-container__header__nav__ol
@@ -24,7 +24,7 @@
   %main.complete-container__main
     %section.complete-container__main__container
       %h2 会員登録完了
-      = form_for @user, url: root_path, method: :get, data: {"turbolinks" => false}, class: "complete-container__main__container__form" do |f|
+      = form_for @user, url: root_path, method: :get, data: {"turbolinks": false}, class: "complete-container__main__container__form" do |f|
         .complete-container__main__container__form__content
           %p
             ありがとうございます。
@@ -42,7 +42,7 @@
           = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
         .li
           = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
-    = link_to root_path, data: {"turbolinks" => false} do
+    = link_to root_path, data: {"turbolinks": false} do
       = image_tag("logo_gray.svg")
     %p
       ©&nbsp;Fmarket,&nbsp;Inc.

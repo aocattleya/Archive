@@ -46,8 +46,11 @@
               %tr
                 %th 配送料の負担
                 %td
-                  %a
-                    = @item.shipping_price
+                  = @item.shipping_price
+              %tr
+                %th 配送の方法
+                %td
+                  = @item.shipping_method
               %tr
                 %th 発送元地域
                 %td.item-box-container__item-main-content-clearfix__table__td
@@ -55,8 +58,7 @@
               %tr
                 %th 発送日の目安
                 %td
-                  %a
-                    = @item.shipping_date
+                  = @item.shipping_date
         .item-price-box
           %span.item-price-box__bold
             #{convert_to_jpy(@item.price)}

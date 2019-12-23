@@ -39,15 +39,15 @@ class SignupsController < ApplicationController
       uid: session[:uid]
     )
     if @user.save
-      @address = Address.new(address_params)
-       if @address.save
-          session[:id] = @user.id
-          redirect_to new_card_path
-       else
+      @address = Address.new(address_params.merge(user_id: @user.id))
+      if @address.save
+        session[:id] = @user.id
+        redirect_to new_card_path
+      else
         session[:id] = @user.id
         sign_in User.find(session[:id]) unless user_signed_in?
         redirect_to address_signups_path
-       end
+      end
     else
       render '/signups/registration'
     end
@@ -117,5 +117,5 @@ private
       :city,
       :street,
       :building
-    ).merge(user_id: @user.id)
+    )
   end

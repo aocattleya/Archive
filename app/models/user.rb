@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :last_name,       presence: true, format: { with: /\A[一-龥ぁ-ん]/}
   validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/}
   validates :last_name_kana,  presence: true, format: { with: /\A[ァ-ヶー－]+\z/}
-  validates :phonenumber,     presence: true, format: { with: /\A\d{10,11}\z/ }, on: create
+  # validates :phonenumber,     presence: true, format: { with: /\A\d{10,11}\z/ }, on: :create
   validates :birthday_year,   presence: true
   validates :birthday_month,  presence: true
   validates :birthday_day,    presence: true

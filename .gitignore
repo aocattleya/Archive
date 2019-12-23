@@ -25,4 +25,5 @@ doc/
 .secret
 config/secrets.yml
 /public/uploads/image
+/public/uploads
 .env

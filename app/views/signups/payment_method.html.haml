@@ -2,7 +2,7 @@
   .payment-method-container
     %header.payment-method-container__header
       %h1
-        = link_to root_path do
+        = link_to root_path, data: {"turbolinks": false} do
           = image_tag("fmarket_logo_red.svg")
       %nav.payment-method-container__header__nav
         %ol.payment-method-container__header__nav__ol
@@ -86,7 +86,7 @@
           = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
         .li
           = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
-    = link_to root_path do
+    = link_to root_path, data: {"turbolinks": false} do
       = image_tag("logo_gray.svg")
     %p
       ©&nbsp;Fmarket,&nbsp;Inc.

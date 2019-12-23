@@ -1,4 +1,4 @@
-@mixin clearfix(){ 
+@mixin clearfix(){
   ::after{
     content: "";
     display: block;
@@ -49,6 +49,7 @@
       margin: 30px auto;
       display: block;
       background-color: #f5f5f5;
+      clear: both;
       &__clearfix{
         border-radius: 4px;
         margin-bottom: 40px;
@@ -56,7 +57,7 @@
         &__category-name{
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
-          padding: 7px 30px 0 30px;
+          padding: 3px 30px 0 30px;
           height: 40px;
           color: #fff;
           background-color: #ea352d;

@@ -41,6 +41,10 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :confirm
+      get :category
+    end
+    member do
+      post 'buy', to: 'transacts#buy'
     end
   end
 

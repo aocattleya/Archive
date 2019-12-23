@@ -36,6 +36,8 @@ class ItemsController < ApplicationController
     @item = Item.new
     1.times { @item.images.build }
     @parents = Category.all.order("id ASC").limit(13)
+    ids = [14..159]
+    @children = Category.where(id: ids)
   end
 
   def create
@@ -49,6 +51,15 @@ class ItemsController < ApplicationController
 
   def edit
     @parents = Category.all.order("id ASC").limit(13)
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
+
+    @category_child_array = @item.category.parent.parent.children
+
+    @category_grandchild_array = @item.category.parent.children
   end
 
   def update

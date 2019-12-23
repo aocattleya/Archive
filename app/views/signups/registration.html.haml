@@ -68,20 +68,17 @@
                 .registration-container__main__container__form__content__group__select
                   .registration-container__main__container__form__content__group__select__wrap
                     %i.fas.fa-chevron-down
-                    = f.select :birthday_year, (1900..Time.now.year).reverse_each{|n| p n }, prompt:"--"
-                    -# = f.date_select :birthday_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".select-default.year.resigtration-field"
+                    = f.date_select :birthday_year, discard_month:true, discard_day:true, prompt:"--", start_year:Time.now.year, end_year:Time.now.year-119, class: ".select-default.year.resigtration-field"
                   %span
                     年
                   .registration-container__main__container__form__content__group__select__wrap
                     %i.fas.fa-chevron-down
-                    = f.select :birthday_month, (1..12).reverse_each{|n| p n }, prompt:"--"
-                    -# = f.date_select :birthday_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".select-default.month.registration-field"
+                    = f.date_select :birthday_month, discard_year:true, discard_day:true, use_month_numbers:true, prompt:"--", class: ".select-default.month.registration-field"
                   %span
                     月
                   .registration-container__main__container__form__content__group__select__wrap
                     %i.fas.fa-chevron-down
-                    = f.select :birthday_day, (1..31).reverse_each{|n| p n }, prompt:"--"
-                    -# = f.date_select :birthday_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".select.select-default.day.registration-field"
+                    = f.date_select :birthday_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".select.select-default.day.registration-field"
                   %span
                     日
                     .form-info-text ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。

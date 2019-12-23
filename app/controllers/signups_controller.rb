@@ -85,7 +85,8 @@ def save_to_session
     birthday_month: session[:birthday_month],
     birthday_day: session[:birthday_day],
     provider: session[:provider],
-    uid: session[:uid]
+    uid: session[:uid],
+    phonenumber: "1234567890"
     )
   redirect_to registration_signups_path unless @user.valid?
 end

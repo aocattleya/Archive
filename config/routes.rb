@@ -32,6 +32,9 @@ Rails.application.routes.draw do
       get :card
       get :logout
     end
+    member do
+      get :listing
+    end
   end
 
   namespace :items do

@@ -28,8 +28,8 @@
               %i.far.fa-bell
                 お知らせ
               %i.fas.fa-check
-                やることリスト
-              = link_to profile_users_path, class: "mypage" do
+                .fa-check-text やることリスト
+              = link_to user_path(current_user), class: "mypage" do
                 %i.fas.fa-user-circle
                 マイページ
             - else

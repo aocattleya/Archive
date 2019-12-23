@@ -33,11 +33,15 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    1.times { @item.images.build }
-    @parents = Category.all.order("id ASC").limit(13)
-    ids = [14..159]
-    @children = Category.where(id: ids)
+    if user_signed_in?
+      @item = Item.new
+      1.times { @item.images.build }
+      @parents = Category.all.order("id ASC").limit(13)
+      ids = [14..159]
+      @children = Category.where(id: ids)
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -50,16 +54,21 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @parents = Category.all.order("id ASC").limit(13)
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+      @parents = Category.all.order("id ASC").limit(13)
 
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent
+      @category_parent_array = []
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent
+      end
+
+      @category_child_array = @item.category.parent.parent.children
+
+      @category_grandchild_array = @item.category.parent.children
+    else
+      redirect_to item_path(@item)
     end
-
-    @category_child_array = @item.category.parent.parent.children
-
-    @category_grandchild_array = @item.category.parent.children
   end
 
   def update

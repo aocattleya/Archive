@@ -24,7 +24,7 @@
     %main.address-container__main
       %section.address-container__main__container
         %h2 お届け先住所入力
-        = form_for [@user,@address], url: payment_method_signups_path, method: :post, class:"address-container__main__container__form" do |f|
+        = form_for [@user,@address], url: signups_path, method: :post, class:"address-container__main__container__form" do |f|
           .address-container__main__container__form__content
             .address-container__main__container__form__content__group
               = f.label :postal_code, "郵便番号"

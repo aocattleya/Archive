@@ -1,0 +1,44 @@
+= render 'items/header'
+.user-contents
+  - breadcrumb :mypage
+  = render "shared/breadcrumbs"
+  .user-contents__box
+    = render 'items/sidebar'
+    .user-content
+      .items-tab
+        .items-tab__tabs
+          出品した商品
+        .items-tab__tabs__select
+          .items-tab__tabs__select__active
+            出品中
+          .items-tab__tabs__select__todo
+            取引中
+        .items-tab__content
+          .items-tab__content__active
+            - if @items.present?
+              - @items.each do |item|
+                .items-tab__content__active__link
+                  = link_to item_path(item) do
+                    .items-tab__content__active__link__logo
+                      = image_tag(item.images.first.image, size: "48x48")
+                    .items-tab__content__active__link__body
+                      .items-tab__content__active__link__body__text
+                        = item.name
+                      .items-tab__content__active__link__body__icon
+                        %time
+                          = far_icon 'heart'
+                          10
+                        %span.items-tab__content__active__link__body__icon__second
+                          = far_icon 'comment-alt'
+                          5
+                        %span.items-tab__content__active__link__body__icon__blue
+                          出品中
+                    = fa_icon 'chevron-right', class: "tab1__content__active__link__icon", id: "chevron-right"
+            - else
+              .items-tab__tabs__content
+                .items-tab__tabs__content__current
+                  .items-tab__tabs__content__current__bold
+                    = image_tag src="logo_gray.svg", class: "box"
+                    %li 取引中の商品がありません
+                .items-tab__tabs__content__past
+= render 'items/footer'

@@ -10,14 +10,16 @@
           .user__link__figure
             = image_tag src="/animal-17430.jpg", size: "60x60"
           .user__link__bold
-            %a CAT
+            %a
+            = @user.nickname
           .user__link__number
             .user__link__number__evaluation
               評価
               %span.bold 999
             .user__link__number__exhibit
               出品数
-              %span.bold 999
+              %span.bold
+                = @items.length
       .tab1
         .tab1__tabs
           .tab1__tabs__active

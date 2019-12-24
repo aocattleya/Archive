@@ -219,13 +219,13 @@
               %li.sell__main__content__form__box__price__fee
                 .sell__main__content__form__box__price__fee__left
                   販売手数料 (10%)
-                .sell__main__content__form__box__price__fee__right
-                  \-
+                .sell__main__content__form__box__price__fee__right#tax-text
+                  #{convert_to_jpy((@item.price * 0.1).to_i)}
               %li.sell__main__content__form__box__price__profit
                 .sell__main__content__form__box__price__profit__left
                   販売利益
-                .sell__main__content__form__box__price__profit__right
-                  \-
+                .sell__main__content__form__box__price__profit__right#profit-text
+                  #{convert_to_jpy((@item.price * 0.9).to_i)}
         .sell__main__content__button
           %div
           %button{type: "submit", class: "sell__main__content__button__red"}

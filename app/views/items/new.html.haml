@@ -153,8 +153,11 @@
                     ブランド名
                     %span.form-optional
                       任意
+                    %span.attention
+                      ※ 検索候補から選択してください
                   %div
-                    = f.text_field :brand_id, placeholder: "例）シャネル", class: "sell__main__content__form__input", id: "input_brand_box", name: "brand_name"
+                    = f.text_field :brand_id, placeholder: "例）シャネル", class: "sell__main__content__form__input", id: "input_brand_box"
+                    = f.hidden_field :brand_id
                   #search_brand_box
                     %ul#search_brand_result
               %label

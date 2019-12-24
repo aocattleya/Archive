@@ -22,6 +22,26 @@ class ItemsController < ApplicationController
     @items2 = items2.first(10)
     @items3 = items3.first(10)
     @items4 = items4.first(10)
+
+    items5 = []
+    items6 = [].take(10)
+    items7 = [].take(10)
+    items8 = [].take(10)
+    items.each do |item|
+      if item.brand_id == 1
+        items5.push(item)
+      elsif item.brand_id == 2
+        items6.push(item)
+      elsif item.brand_id == 3
+        items7.push(item)
+      elsif item.brand_id == 4
+        items8.push(item)
+      end
+    end
+    @items5 = items5.first(10)
+    @items6 = items6.first(10)
+    @items7 = items7.first(10)
+    @items8 = items8.first(10)
   end
 
   def confirm

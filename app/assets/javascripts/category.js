@@ -247,6 +247,11 @@ $(document).on("turbolinks:load",function() {
     addResult.append(html);
   }
 
+  function addNoUser() {
+    var html = `<li class="brand_box_list">該当するブランドはありません</li>`
+    addResult.append(html);
+  }
+
   $(function(){
     $("#input_brand_box").on("keyup", function() {
       var input = $("#input_brand_box").val();
@@ -266,10 +271,12 @@ $(document).on("turbolinks:load",function() {
           brands.forEach(function(brand) {
             brandHit(brand);
           });
+        } else if (brands.length == 0) {
+          addNoUser();
         }
       })
       .fail(function() {
-        alert("通信エラーです。ユーザーが表示できません。");
+        alert("該当するブランドはありません");
       });
     });
   })

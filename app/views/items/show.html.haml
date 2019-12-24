@@ -34,11 +34,10 @@
                 %th ブランド
                 %td
                   = link_to @item.brand.name, brand_path(@item.brand_id)
-              -if @item.size
-                %tr
-                  %th 商品のサイズ
-                  %td
-                    = @item.size
+              %tr
+                %th 商品のサイズ
+                %td
+                  = @item.size
               %tr
                 %th 商品の状態
                 %td

@@ -207,28 +207,26 @@
           box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.2);
           position: relative;
           cursor: pointer;
-          
+          .sold {
+            position: relative;
+            bottom: 245px;
+            color: white;
+            font-size: 20px;
+            .back-color {
+              background-color: red;
+              height: 50px;
+              width: 50px;
+              transform: rotate(-45deg);
+              a {
+                line-height: 45px;
+              }
+            }
+          }
         }
         &__show:hover {
           outline: solid 2px rgb(0, 149, 238);
         }
       }
-    }
-  }
-}
-.sold {
-  position: relative;
-  bottom: 189px;
-  right: 108px;
-  color: white;
-  font-size: 20px;
-  .back-color {
-    background-color: red;
-    height: 50px;
-    width: 50px;
-    transform: rotate(-45deg);
-    a {
-      line-height: 45px;
     }
   }
 }

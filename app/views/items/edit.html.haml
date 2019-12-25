@@ -58,7 +58,7 @@
                 = f.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'sell__main__content__form__box__group__select__form child_box', id: 'child_form'}
               .sell__main__content__form__box__group__select#grandchild_box
                 = f.select :category, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'sell__main__content__form__box__group__select__form', id: 'grandchild_form'}
-              = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
+                = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
               .form-group#size-select-box
                 #clothes-size
                   %label
@@ -164,6 +164,24 @@
                   .sell__main__content__form__box__group__select
                     %i.icon-arrow-bottom
                     = f.select :size, Item.sizes.keys[117..124].to_a, {prompt: "---"}, class: "sell__main__content__form__box__group__select__form", id: "helmets-size"
+              .form-group#brandbox_list
+                #brand_box
+                  %label#brand_box__label
+                    ブランド名
+                    %span.form-optional
+                      任意
+                    %span.attention
+                      ※ 検索候補から選択してください
+                  - if @item.brand
+                    %div
+                      = f.text_field :brand_id, value: @item.brand.name, placeholder: "例）シャネル", class: "sell__main__content__form__input", id: "input_brand_box"
+                      = f.hidden_field :brand_id
+                  - else
+                    %div
+                      = f.text_field :brand_id, placeholder: "例）シャネル", class: "sell__main__content__form__input", id: "input_brand_box"
+                      = f.hidden_field :brand_id
+                  #search_brand_box
+                    %ul#search_brand_result
               %label
                 商品の状態
                 %span.form-require
@@ -219,13 +237,13 @@
               %li.sell__main__content__form__box__price__fee
                 .sell__main__content__form__box__price__fee__left
                   販売手数料 (10%)
-                .sell__main__content__form__box__price__fee__right
-                  \-
+                .sell__main__content__form__box__price__fee__right#tax-text
+                  #{convert_to_jpy((@item.price * 0.1).to_i)}
               %li.sell__main__content__form__box__price__profit
                 .sell__main__content__form__box__price__profit__left
                   販売利益
-                .sell__main__content__form__box__price__profit__right
-                  \-
+                .sell__main__content__form__box__price__profit__right#profit-text
+                  #{convert_to_jpy((@item.price * 0.9).to_i)}
         .sell__main__content__button
           %div
           %button{type: "submit", class: "sell__main__content__button__red"}

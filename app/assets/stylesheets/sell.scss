@@ -27,6 +27,10 @@
     vertical-align: top;
     font-weight: 600;
   }
+  .attention {
+    margin: 0 0 0 8px;
+    color: #333;
+  }
   &__head {
     height: 128px;
     width: 100%;
@@ -209,6 +213,47 @@
             }
             & #size-select-box {
               display: none;
+            }
+            & #brandbox_list {
+              display: none;
+              position: relative;
+              & #search_brand_result {
+                overflow: auto;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                max-height: 280px;
+                background: #fff;
+                box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+                scrollbar-face-color: #333;
+                li {
+                  padding: 16px 8px;
+                  font-size: 14px;
+                  cursor: pointer;
+                }
+              }
+            }
+            & #brandbox_list_show {
+              position: relative;
+              & #search_brand_result {
+                overflow: auto;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                max-height: 280px;
+                background: #fff;
+                box-shadow: 0 0 4px 0 rgba(0,0,0,0.64);
+                scrollbar-face-color: #333;
+                li {
+                  padding: 16px 8px;
+                  font-size: 14px;
+                  cursor: pointer;
+                }
+              }
             }
           }
           &__price {

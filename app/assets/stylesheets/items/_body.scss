@@ -1,5 +1,5 @@
 .top.body {
-  height: 3000px;
+  height: 6000px;
   width: 100vw;
   &__image {
     width: 100%;
@@ -113,7 +113,7 @@
   }
   &__new {
     background-color: rgb(245, 245, 245);
-    height: 2425px;
+    height: 2625px;
     &__item {
       padding-top: 30px;
       width: 1020px;
@@ -207,28 +207,38 @@
           box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.2);
           position: relative;
           cursor: pointer;
-          
+          & a{
+            z-index: 10;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+          .sold {
+            border-bottom: 120px solid transparent;
+            border-left: 120px solid #EA352D;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            .back-color {
+              a {
+                color: #fff;
+                font-size: 25px;
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 50px;
+                left: -116px;
+                font-family: monospace;
+              }
+            }
+          }
         }
         &__show:hover {
           outline: solid 2px rgb(0, 149, 238);
         }
       }
-    }
-  }
-}
-.sold {
-  position: relative;
-  bottom: 189px;
-  right: 108px;
-  color: white;
-  font-size: 20px;
-  .back-color {
-    background-color: red;
-    height: 50px;
-    width: 50px;
-    transform: rotate(-45deg);
-    a {
-      line-height: 45px;
     }
   }
 }

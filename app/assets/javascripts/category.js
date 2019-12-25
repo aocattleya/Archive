@@ -198,4 +198,106 @@ $(document).on("turbolinks:load",function() {
     })
   })
 
+  $(function() {
+    $("#category-select-box_list").on('change', "#grandchild_form", function(){
+      let grandChildValue = $("#grandchild_form").val();
+      if(grandChildValue != ""){
+        if(clothesArray.indexOf(grandChildValue) >= 0) {
+          $("#brandbox_list").show();
+          $("#input_brand_box").siblings().hide();
+          $("#input_brand_box").show()
+        }else {
+          $("#brandbox_list").hide();
+        }
+      } else {
+        $("#brandbox_list").hide();
+      }
+    })
+  })
+
+});
+
+$(document).on("turbolinks:load",function() {
+  $(function(){
+    $("#item_price").on('input',function(){
+      let price = $(this).val();
+      let minPrice = 300
+      let maxPrice = 9999999
+      let fee = 10
+      let tax = Math.floor(price / fee)
+      let taxProfit = tax.toLocaleString()
+      let profit = price - tax
+      let kanmaProfit = profit.toLocaleString()
+      if(price >= minPrice && price <= maxPrice){
+        $("#tax-text").text("¥" + taxProfit);
+        $("#profit-text").text("¥" + kanmaProfit);
+      } else {
+        $("#tax-text").text("-");
+        $("#profit-text").text("-");
+      }
+    })
+  })
+});
+
+$(document).on("turbolinks:load",function() {
+  var addResult = $("#search_brand_result");
+
+  function brandHit(brand) {
+    var html = `<li id="${brand.id}" class="brand_box_list">${brand.name}</li>`
+    addResult.append(html);
+  }
+
+  function addNoUser() {
+    var html = `<li class="brand_box_list">該当するブランドはありません</li>`
+    addResult.append(html);
+  }
+
+  $(function(){
+    $("#input_brand_box").on("keyup", function() {
+      var input = $("#input_brand_box").val();
+      $("#item_brand_id").val();
+      $.ajax({
+        type: 'GET',
+        url: '/brands/search_brand',
+        data: { keyword: input },
+        dataType: 'json'
+      })
+      .done(function(brands) {
+          $("#search_brand_result").children().remove();
+        if(input == ""){
+          $("#search_brand_result").children().remove();
+          $("#item_brand_id").val("");
+          return
+        }
+        if (brands.length !== 0) {
+          brands.forEach(function(brand) {
+            brandHit(brand);
+          });
+        } else if (brands.length == 0) {
+          addNoUser();
+        }
+      })
+      .fail(function() {
+        alert("該当するブランドはありません");
+      });
+    });
+  })
+});
+
+$(document).on("turbolinks:load",function() {
+  $(function(){
+    $(document).on('mouseover',"#search_brand_result > li", function(){
+      $(this).css({"color":"#fff","background":"#0099e8"})
+    })
+    $(document).on('mouseout',"#search_brand_result > li", function(){
+      $(this).css({"color":"#333","background":"#fff"})
+    })
+    $(document).on('click',"#search_brand_result li", function(){
+      let brandText = $(this).text();
+      let brandId = $(this).attr("id");
+      $("#input_brand_box").val(brandText);
+      $("#item_brand_id").val(brandId);
+      $("#search_brand_result > li").remove()
+    })
+  })
 });

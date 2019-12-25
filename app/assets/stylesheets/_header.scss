@@ -146,6 +146,11 @@
                 text-decoration: none;
               }
             }
+            & .fa-check-text {
+              font-weight: 400;
+              float: right;
+              padding-left: 4px;
+            }
           }
         }
       }
@@ -165,6 +170,7 @@
     padding-top: 20px;
     box-sizing: border-box;
     cursor: pointer;
+    z-index: 200;
     a {
       font-size: 22px;
       font-family: "游ゴシック体", YuGothic;

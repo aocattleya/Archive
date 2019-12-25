@@ -2,12 +2,13 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :images, dependent: :destroy, inverse_of: :item
   has_many :trancacts
+  belongs_to :brand, optional: true
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
   def self.search(search)
     if search
-      Item.where('name LIKE(?) OR description LIKE(?)', "%#{search}%", "%#{search}%")
+      Item.joins(:brand).where('items.name LIKE(?) OR description LIKE(?) OR brands.name LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
     else
       Item.all
     end

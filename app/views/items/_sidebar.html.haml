@@ -2,81 +2,81 @@
   %nav.sidebar__nav
     %ul.sidebar__nav__list
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to user_path(current_user), class: "sidebar__nav__list__item" do
           マイページ
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           お知らせ
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           やることリスト
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           いいね！一覧
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to new_item_path, class: "sidebar__nav__list__item" do
           出品する
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to listing_user_path(current_user), class: "sidebar__nav__list__item" do
           出品した商品 - 出品中
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           出品した商品 - 取引中
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           出品した商品 - 売却済み
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           購入した商品 - 取引中
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           購入した商品 - 過去の取引
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           ニュース一覧
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           評価一覧
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           ガイド
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           お問い合わせ
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
     %h3.sidebar__nav__head
       メルペイ
     %ul.sidebar__nav__list
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           売上・振込申請
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           ポイント
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
     %h3.sidebar__nav__head
       設定
     %ul.sidebar__nav__list
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to profile_users_path, class: "sidebar__nav__list__item" do
           プロフィール
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           発送元・お届け先住所変更
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
@@ -84,15 +84,15 @@
           支払い情報
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           メール/パスワード
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           本人情報
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li
-        = link_to "", class: "sidebar__nav__list__item", target: "_blank" do
+        = link_to "", class: "sidebar__nav__list__item" do
           電話番号の確認
           = fa_icon 'chevron-right', class: "sidebar__nav__list__item__icon"
       %li

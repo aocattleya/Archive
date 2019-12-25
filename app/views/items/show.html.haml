@@ -35,13 +35,14 @@
                   = link_to @item.category.parent.name, category_path(@item.category.parent), class: "light-blue__category"
                   = fas_icon 'chevron-right', class: "chevron-right"
                   = link_to @item.category.name, category_path(@item.category), class: "light-blue__category"
-              %tr
-                %th ブランド
-                %td
+                %tr
+                  %th ブランド
                   - if @item.brand
-                    = link_to @item.brand.name, brand_path(@item.brand_id)
+                    %td
+                      = link_to @item.brand.name, brand_path(@item.brand_id)
                   - else
-                    ""
+                    %td
+                      = @item.brand
               %tr
                 %th 商品のサイズ
                 %td

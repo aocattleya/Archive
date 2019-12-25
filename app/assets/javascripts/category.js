@@ -255,6 +255,7 @@ $(document).on("turbolinks:load",function() {
   $(function(){
     $("#input_brand_box").on("keyup", function() {
       var input = $("#input_brand_box").val();
+      $("#item_brand_id").val();
       $.ajax({
         type: 'GET',
         url: '/brands/search_brand',
@@ -265,6 +266,7 @@ $(document).on("turbolinks:load",function() {
           $("#search_brand_result").children().remove();
         if(input == ""){
           $("#search_brand_result").children().remove();
+          $("#item_brand_id").val("");
           return
         }
         if (brands.length !== 0) {

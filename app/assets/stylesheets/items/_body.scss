@@ -217,17 +217,20 @@
             height: 100%;
           }
           .sold {
-            position: relative;
-            bottom: 245px;
-            color: white;
-            font-size: 20px;
+            border-bottom: 120px solid transparent;
+            border-left: 120px solid #EA352D;
+            position: absolute;
+            top: 0px;
+            left: 0px;
             .back-color {
-              background-color: red;
-              height: 50px;
-              width: 50px;
-              transform: rotate(-45deg);
               a {
-                line-height: 45px;
+                color: #fff;
+                font-size: 25px;
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 50px;
+                left: -116px;
+                font-family: monospace;
               }
             }
           }

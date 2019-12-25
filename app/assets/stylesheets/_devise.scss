@@ -24,6 +24,7 @@
           width: 185px;
           height: 49px;
           vertical-align: middle;
+          margin: 0 0 20px 30px;
         }
       }
     }
@@ -63,13 +64,13 @@
   font-weight: inherit;
 }
 
-@mixin btn_default(){
+@mixin btn_default() {
   margin-top: 32px;
   display: block;
   width: 100%;
   line-height: 48px;
   font-size: 14px;
-  transition: all ease-out .3s;
+  transition: all ease-out 0.3s;
   cursor: pointer;
   text-align: center;
   min-height: 1.5em;
@@ -78,21 +79,21 @@
   color: #fff;
 }
 
-.devise-login-container{
+.devise-login-container {
   @include signup-head();
-  &__main{
+  &__main {
     display: block;
-    &__container{
+    &__container {
       background: #fff;
       width: 456px;
       margin: 0 auto;
-      &__new{
+      &__new {
         padding: 40px 64px;
         text-align: center;
-        & p{
+        & p {
           font-size: 14px;
         }
-        & a{
+        & a {
           display: block;
           margin: 8px 0 0;
           border: 1px solid #0099e8;
@@ -103,10 +104,10 @@
           touch-action: manipulation;
         }
       }
-      &__sns{
+      &__sns {
         padding: 32px 64px;
         border-top: 1px solid #eee;
-        &__facebook{
+        &__facebook {
           background: #385185;
           color: #fff;
           position: relative;
@@ -121,12 +122,12 @@
           touch-action: manipulation;
           min-height: 1.5em;
           overflow: visible;
-          & a{
+          & a {
             color: #fff;
             text-decoration: none;
           }
         }
-        &__google{
+        &__google {
           margin: 16px 0 0;
           background: #fff;
           border: #979797 solid 1px;
@@ -141,22 +142,22 @@
           touch-action: manipulation;
           min-height: 1.5em;
           overflow: visible;
-          & a{
+          & a {
             color: #000000;
             text-decoration: none;
           }
         }
       }
-      &__form{
-        &__content{
+      &__form {
+        &__content {
           padding: 24px 64px 32px;
           &__group:first-child {
             margin-top: 0;
           }
-          &__group{
+          &__group {
             margin-top: 24px;
-            & input{
-              @include input_default()
+            & input {
+              @include input_default();
             }
             & a {
               color: #0099e8;
@@ -169,8 +170,8 @@
               height: 20px;
             }
           }
-          &__submit{
-            & .btn-default{
+          &__submit {
+            & .btn-default {
               @include btn_default();
             }
           }

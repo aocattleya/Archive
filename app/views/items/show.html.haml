@@ -6,6 +6,11 @@
         = @item.name
       .item-box-container__item-main-content
         .item-box-container__item-main-content-clearfix
+          - sold = Transact.find_by(item_id: params[:id])
+          - if sold == nil
+          - else
+            .sold
+              sold
           .item-box-container__item-main-content-clearfix__image
             .item-box-container__item-main-content-clearfix__image__top
               = image_tag(@item.images.first.image, width: "285px")
@@ -67,9 +72,18 @@
             #{convert_to_jpy(@item.price)}
           %span.item-price-box__tax (税込)
           %span.item-price-box__shipping-fee 送料込み
-        -if user_signed_in? && @item.user_id != current_user.id
+        - sold = Transact.find_by(item_id: params[:id])
+        -if user_signed_in? && @item.user_id != current_user.id && sold == nil
           = link_to confirm_item_path, class:"item-buy-btn" do
             購入画面に進む
+        - elsif user_signed_in? && @item.user_id == current_user.id && sold == nil
+        - elsif sold
+          .sold-item
+            売り切れ
+        - else
+          = link_to new_user_session_path, class:"item-buy-btn" do
+            購入画面に進む
+
           .item-description
             .item-description__inner
               %p
@@ -89,10 +103,15 @@
                 .item-description__btn-right__button__lock
                   = fa_icon 'lock', class: "lock-icon"
                   %span あんしん・あんぜんへの取り組み
-        -if user_signed_in? && @item.user_id == current_user.id
+        - sold = Transact.find_by(item_id: params[:id])
+        - if user_signed_in? && @item.user_id == current_user.id && sold == nil
           .item-description
             = link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "sell__main__content__button__red"
             = link_to "この商品を削除する", item_path(@item.id), method: :delete, class: "sell__main__content__button__red"
+        - else
+
+
+
     .item-detail-message
       .item-detail-message__container
       .item-detail-message__content

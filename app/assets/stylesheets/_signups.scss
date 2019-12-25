@@ -1,15 +1,15 @@
-@mixin signup-btn($border,$back-color,$color) {
+@mixin signup-btn($border, $back-color, $color) {
   max-width: 343px;
   margin: 0 auto;
   border-radius: 4px;
   position: relative;
   background: #eee;
   display: block;
-  width:100%;
+  width: 100%;
   line-height: 48px;
   font-size: 14px;
   border: 1px solid $border;
-  transition: all ease-out .3s;
+  transition: all ease-out 0.3s;
   cursor: pointer;
   text-align: center;
   color: #fff;
@@ -21,13 +21,13 @@
   }
 }
 
-@mixin progress-status-after($color:#ccc,$width:100%){
+@mixin progress-status-after($color: #ccc, $width: 100%) {
   left: 50%;
   position: absolute;
   bottom: 5px;
   z-index: -1;
   display: block;
-  content: '';
+  content: "";
   width: 100%;
   height: 2px;
   background: $color;
@@ -38,13 +38,13 @@
   box-sizing: inherit;
 }
 
-@mixin progress-status-before($color:#ccc){
+@mixin progress-status-before($color: #ccc) {
   right: 50%;
   position: absolute;
   bottom: 5px;
   z-index: -1;
   display: block;
-  content: '';
+  content: "";
   width: 100%;
   height: 2px;
   background: $color;
@@ -55,7 +55,7 @@
   box-sizing: inherit;
 }
 
-@mixin progress-status($color:#888) {
+@mixin progress-status($color: #888) {
   font-weight: 600;
   color: $color;
   position: relative;
@@ -65,7 +65,7 @@
   text-align: -webkit-match-parent;
   font-size: 12px;
   margin: 0 40px 0 0;
-  & div{
+  & div {
     background: $color;
     width: 12px;
     height: 12px;
@@ -76,7 +76,6 @@
 
 @mixin signup-head() {
   &__header {
-    // height: 128px;
     font-size: inherit;
     line-height: inherit;
     text-align: center;
@@ -86,7 +85,7 @@
     box-sizing: inherit;
     & h1 {
       display: inline-block;
-      margin: 40px 0 0;
+      margin: 40px 0 30px 30px;
       & a {
         display: inline-block;
         width: 185px;
@@ -111,32 +110,33 @@
       border-top: 1px solid #eee;
       font-size: 0;
       text-align: center;
+
       &__ol {
         margin: 0;
         list-style: none;
-        & .deactive{
+        & .deactive {
           @include progress-status();
-          & div::before{
-            @include progress-status-before()
+          & div::before {
+            @include progress-status-before();
           }
-          & .middle::after{
+          & .middle::after {
             @include progress-status-after();
           }
         }
-        & .active{
+        & .active {
           @include progress-status(#ea352d);
-          & div::after{
+          & div::after {
             @include progress-status-after();
           }
         }
-        & .complete::after{
-            @include progress-status-after(#ea352d,200%);
-            z-index: 10;
+        & .complete::after {
+          @include progress-status-after(#ea352d, 200%);
+          z-index: 10;
         }
-        & .midle-comp{
+        & .midle-comp {
           @include progress-status(#ea352d);
-          & div::before{
-            @include progress-status-before(#ea352d)
+          & div::before {
+            @include progress-status-before(#ea352d);
           }
         }
       }
@@ -170,13 +170,13 @@
   font-weight: inherit;
 }
 
-@mixin btn_default(){
+@mixin btn_default() {
   margin-top: 32px;
   display: block;
   width: 100%;
   line-height: 48px;
   font-size: 14px;
-  transition: all ease-out .3s;
+  transition: all ease-out 0.3s;
   cursor: pointer;
   text-align: center;
   min-height: 1.5em;
@@ -185,7 +185,7 @@
   color: #fff;
 }
 
-@mixin select-wrap-half(){
+@mixin select-wrap-half() {
   display: inline-block;
   width: calc(42% - 2px);
   margin: 8px 0 0;
@@ -193,7 +193,7 @@
   background: #fff;
 }
 
-@mixin select-half(){
+@mixin select-half() {
   width: calc(100%);
   position: relative;
   z-index: 2;
@@ -235,7 +235,7 @@
 
 .signup {
   display: block;
-  &__container{
+  &__container {
     background: #fff;
     width: 700px;
     margin: 0 auto;
@@ -246,18 +246,18 @@
       text-align: center;
     }
     &__form {
-      padding: 24px,16px,40px;
-      border-top:1px solid #f5f5f5;
+      padding: 24px, 16px, 40px;
+      border-top: 1px solid #f5f5f5;
       &__content {
         padding: 40px 40px 64px;
         &__email {
-          @include signup-btn(transparent,#ea352d,#ffffff);
+          @include signup-btn(transparent, #ea352d, #ffffff);
         }
         &__facebook {
-          @include signup-btn(transparent,#385185,#ffffff);
+          @include signup-btn(transparent, #385185, #ffffff);
         }
         &__google {
-          @include signup-btn(#979797,#fff,#333);
+          @include signup-btn(#979797, #fff, #333);
         }
       }
     }
@@ -285,10 +285,14 @@
           max-width: 343px;
           margin: 0 auto;
           text-align: left;
+          padding-bottom: 30px;
           &__group {
             font-size: inherit;
             line-height: inherit;
             margin: 24px 0 0;
+            &:nth-last-child(1) {
+              text-align: right;
+            }
             & label {
               font-weight: 600;
               font-size: 14px;
@@ -307,18 +311,18 @@
             & .input-default {
               @include input_default();
             }
-            & #last_name{
+            & #last_name {
               @include half();
               margin-right: 8px;
             }
-            & #first_name{
+            & #first_name {
               @include half();
             }
-            & #last_name_kana{
+            & #last_name_kana {
               @include half();
               margin-right: 8px;
             }
-            & #first_name_kana{
+            & #first_name_kana {
               @include half();
             }
             &__fields {
@@ -338,7 +342,6 @@
             & a {
               color: #0099e8;
               text-decoration: none;
-              float: right;
               font-size: 14px;
             }
             &__select {
@@ -359,7 +362,6 @@
                   display: inline-block;
                   font-family: "Font Awesome 5 Free";
                   font-style: normal;
-                  // font-weight: 400;
                   font-variant: normal;
                   text-transform: none;
                   line-height: 1;
@@ -414,6 +416,7 @@
       width: 700px;
       margin: 0 auto;
       text-align: left;
+      padding: 50px 0;
       & h2 {
         font-size: 22px;
         padding: 32px;
@@ -426,6 +429,7 @@
         &__content {
           max-width: 343px;
           margin: 0 auto;
+          padding-bottom: 30px;
           &__group {
             & label {
               font-weight: 600;
@@ -443,7 +447,7 @@
           & .input-default {
             @include input_default();
           }
-          &__submit{
+          &__submit {
             & .btn-default {
               @include btn_default();
             }
@@ -457,7 +461,6 @@
           & a {
             color: #0099e8;
             text-decoration: none;
-            float: right;
             font-size: 14px;
           }
         }
@@ -466,36 +469,36 @@
   }
 }
 
-.address-container{
+.address-container {
   @include signup-head();
-  &__main{
+  &__main {
     display: block;
-    &__container{
+    &__container {
       background: #fff;
       width: 700px;
       margin: 0 auto;
-      & h2{
+      & h2 {
         font-size: 22px;
         padding: 32px;
         line-height: 1.5;
         text-align: center;
       }
-      &__form{
+      &__form {
         padding: 40px 40px 64px;
         border-top: 1px solid #f5f5f5;
-        &__content{
+        &__content {
           max-width: 343px;
           margin: 0 auto;
-          &__group{
+          &__group {
             font-size: inherit;
             line-height: inherit;
             margin: 24px 0 0;
-            & label{
+            & label {
               font-weight: 600;
               display: inline-block;
               touch-action: manipulation;
             }
-            & .span{
+            & .span {
               background: #ea352d;
               margin: 0 0 0 8px;
               padding: 2px 4px;
@@ -507,7 +510,7 @@
             & .input-default {
               @include input_default();
             }
-            &__select{
+            &__select {
               position: relative;
               & i {
                 right: 18px;
@@ -519,9 +522,8 @@
                 -webkit-transform: translate(0, -50%);
                 transform: translate(0, -50%);
                 display: inline-block;
-                font-family: 'Font Awesome 5 Free';
+                font-family: "Font Awesome 5 Free";
                 font-style: normal;
-                // font-weight: 400;
                 font-variant: normal;
                 text-transform: none;
                 line-height: 1;
@@ -548,13 +550,14 @@
                 font-style: inherit;
                 font-weight: inherit;
               }
-              & #address_prefecture_id{
+              & #address_prefecture_id {
                 @include input_default();
               }
             }
           }
-          &__submit{
-            & .btn-default{
+          &__submit {
+            padding-bottom: 30px;
+            & .btn-default {
               @include btn_default();
             }
           }
@@ -589,13 +592,16 @@
             font-size: inherit;
             line-height: inherit;
             margin: 24px 0 0;
+            &:nth-last-child(1) {
+              margin-bottom: 5px;
+            }
             & label {
               font-weight: 600;
               display: inline-block;
               touch-action: manipulation;
               font-size: 14px;
             }
-            & .span{
+            & .span {
               background: #ea352d;
               margin: 0 0 0 8px;
               padding: 2px 4px;
@@ -609,7 +615,7 @@
               line-height: 1.5;
               font-size: 14px;
             }
-            &__select{
+            &__select {
               position: relative;
               & i {
                 right: 220px;
@@ -621,9 +627,8 @@
                 -webkit-transform: translate(0, -50%);
                 transform: translate(0, -50%);
                 display: inline-block;
-                font-family: 'Font Awesome 5 Free';
+                font-family: "Font Awesome 5 Free";
                 font-style: normal;
-                // font-weight: 400;
                 font-variant: normal;
                 text-transform: none;
                 line-height: 1;
@@ -656,7 +661,8 @@
           & .input-default {
             @include input_default();
           }
-          &__submit{
+          &__submit {
+            padding-bottom: 30px;
             & .btn-default {
               @include btn_default();
             }
@@ -691,7 +697,7 @@
       -webkit-transform: translate(0, -50%);
       transform: translate(0, -50%);
       display: inline-block;
-      font-family: 'Font Awesome 5 Free';
+      font-family: "Font Awesome 5 Free";
       font-style: normal;
       font-weight: 400;
       font-variant: normal;
@@ -700,7 +706,7 @@
       -webkit-font-smoothing: antialiased;
     }
     & i::before {
-      content: '\e001';
+      content: "\e001";
       border-style: solid;
       border-width: 0;
       text-decoration: inherit;
@@ -708,7 +714,7 @@
       box-sizing: inherit;
     }
     & select {
-      @include select-half()
+      @include select-half();
     }
   }
   & span {
@@ -739,6 +745,7 @@
         &__content {
           max-width: 343px;
           margin: 0 auto;
+          padding-bottom: 150px;
           & label {
             font-weight: 600;
             display: inline-block;
@@ -754,7 +761,7 @@
           & .input-default {
             @include input_default();
           }
-          &__submit{
+          &__submit {
             & .btn-default {
               @include btn_default();
             }
@@ -776,6 +783,9 @@
   }
 }
 .payment-method-container__main__container__form__content__group {
+  &:nth-last-child(1) {
+    margin-bottom: 5px;
+  }
   & c {
     color: #0099e8;
     float: right;
@@ -785,14 +795,12 @@
   }
 }
 
-
 .footer {
-  // height: 220px;
   background-color: #f5f5f5;
   text-align: center;
   & .single-footer {
     height: 250px;
-    padding: 90px 0;
+    padding: 70px 0;
     text-align: center;
     & .ul {
       text-align: center;
@@ -820,4 +828,3 @@
     }
   }
 }
-

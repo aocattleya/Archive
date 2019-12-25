@@ -38,7 +38,10 @@
               %tr
                 %th ブランド
                 %td
-                  = link_to @item.brand.name, brand_path(@item.brand_id)
+                  - if @item.brand
+                    = link_to @item.brand.name, brand_path(@item.brand_id)
+                  - else
+                    ""
               %tr
                 %th 商品のサイズ
                 %td
@@ -72,11 +75,13 @@
         -if user_signed_in? && @item.user_id != current_user.id && sold == nil
           = link_to confirm_item_path, class:"item-buy-btn" do
             購入画面に進む
-        - elsif @item.user_id == current_user.id
-
-        - else
+        - elsif user_signed_in? && @item.user_id == current_user.id && sold == nil
+        - elsif sold
           .sold-item
             売り切れ
+        - else
+          = link_to new_user_session_path, class:"item-buy-btn" do
+            購入画面に進む
 
           .item-description
             .item-description__inner

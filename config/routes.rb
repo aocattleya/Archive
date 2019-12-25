@@ -33,6 +33,9 @@ Rails.application.routes.draw do
       get :card
       get :logout
     end
+    member do
+      get :listing
+    end
   end
 
   namespace :items do
@@ -53,6 +56,12 @@ Rails.application.routes.draw do
     collection do
       get 'get_child_category'
       get 'get_grandchild_category'
+    end
+  end
+
+  resources :brands, only: [:index, :show] do
+    collection do
+      get 'search_brand'
     end
   end
 

@@ -18,7 +18,7 @@
             %i.fas.fa-bars
             = link_to "カテゴリーから探す", categories_path
             %i.fas.fa-tags
-            = link_to "ブランドから探す", root_path
+            = link_to "ブランドから探す", brands_path
         .top.header__box__below__users
           .top.header__box__below__users__member
             .top.header__box__below__users__member__left
@@ -28,10 +28,10 @@
               %i.far.fa-bell
                 お知らせ
               %i.fas.fa-check
-                やることリスト
-              = link_to profile_users_path, class: "mypage" do
-                %i.fas.fa-user-circle
-                マイページ
+                .fa-check-text やることリスト
+              = link_to user_path(current_user), class: "mypage" do
+                %i.far.fa-user-circle
+                  マイページ
             - else
               = link_to "新規登録", new_signup_path, class: "newreg"
               .top.header__box__below__users__member__right

@@ -22,6 +22,26 @@ class ItemsController < ApplicationController
     @items2 = items2.first(10)
     @items3 = items3.first(10)
     @items4 = items4.first(10)
+
+    items5 = []
+    items6 = [].take(10)
+    items7 = [].take(10)
+    items8 = [].take(10)
+    items.each do |item|
+      if item.brand_id == 1
+        items5.push(item)
+      elsif item.brand_id == 2
+        items6.push(item)
+      elsif item.brand_id == 3
+        items7.push(item)
+      elsif item.brand_id == 4
+        items8.push(item)
+      end
+    end
+    @items5 = items5.first(10)
+    @items6 = items6.first(10)
+    @items7 = items7.first(10)
+    @items8 = items8.first(10)
   end
 
   def confirm
@@ -33,11 +53,15 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
-    1.times { @item.images.build }
-    @parents = Category.all.order("id ASC").limit(13)
-    ids = [14..159]
-    @children = Category.where(id: ids)
+    if user_signed_in?
+      @item = Item.new
+      1.times { @item.images.build }
+      @parents = Category.all.order("id ASC").limit(13)
+      ids = [14..159]
+      @children = Category.where(id: ids)
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -50,16 +74,21 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @parents = Category.all.order("id ASC").limit(13)
+    @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+      @parents = Category.all.order("id ASC").limit(13)
 
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent
+      @category_parent_array = []
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent
+      end
+
+      @category_child_array = @item.category.parent.parent.children
+
+      @category_grandchild_array = @item.category.parent.children
+    else
+      redirect_to item_path(@item)
     end
-
-    @category_child_array = @item.category.parent.parent.children
-
-    @category_grandchild_array = @item.category.parent.children
   end
 
   def update
@@ -89,11 +118,11 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: :image).merge(user_id: current_user.id)
+      params.require(:item).permit(:name, :description, :price, :size, :brand_id, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: :image).merge(user_id: current_user.id)
     end
 
     def update_params
-      params.require(:item).permit(:name, :description, :price, :size, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: [:image, :id])
+      params.require(:item).permit(:name, :description, :price, :size, :brand_id, :category_id, :condition, :shipping_date, :shipping_price, :shipping_area, :shipping_method, :category_id, :brand_id, :user_id, images_attributes: [:image, :id])
     end
 
     def transact_params

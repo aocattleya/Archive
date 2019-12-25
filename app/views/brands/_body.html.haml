@@ -1,0 +1,10 @@
+- breadcrumb :brands
+= render "shared/breadcrumbs"
+.container
+  .container__categories
+    .container__categories__visible
+      %h2.container__categories__visible__h2
+        = "ブランド一覧"
+      .container__categories__visible__clearfix
+        - @brands.each do |brand|
+          = link_to brand.name, brand_path(brand.id), id: brand.id, class: "container__categories__visible__clearfix__link"

@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many :images, dependent: :destroy, inverse_of: :item
   has_many :trancacts
-  belongs_to :brand
+  belongs_to :brand, optional: true
 
   accepts_nested_attributes_for :images, allow_destroy: true
 

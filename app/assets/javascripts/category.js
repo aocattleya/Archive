@@ -215,6 +215,24 @@ $(document).on("turbolinks:load",function() {
     })
   })
 
+  $(function() {
+    $("#category-select-box_list").on('change', "#grandchild_form", function(){
+      let grandChildValue = $("#grandchild_form").val();
+      if(grandChildValue != ""){
+        if(clothesArray.indexOf(grandChildValue) >= 0) {
+          $("#brandbox_list_show").show();
+          $("#input_brand_box").siblings().hide();
+          $("#input_brand_box").show()
+        }else {
+          $("#brandbox_list_show").hide();
+          $("#item_brand_id").val("");
+        }
+      } else {
+        $("#brandbox_list_show").hide();
+      }
+    })
+  })
+
 });
 
 $(document).on("turbolinks:load",function() {

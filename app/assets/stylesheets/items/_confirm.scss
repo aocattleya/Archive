@@ -12,7 +12,7 @@
   }
   .confirm.body {
     background-color: rgb(255, 255, 255);
-    height: 730px;
+    height: 100%;
     width: 700px;
     margin: 0 auto;
     &__top {
@@ -33,10 +33,10 @@
       }
     }
     &__box {
-      height: 465px;
+      height: 100%;
       &__form {
+        height: 100%;
         padding: 32px 170px 48px;
-        height: 430px;
         margin: 0 auto;
         p {
           font-size: 15px;
@@ -60,6 +60,7 @@
           }
           b {
             width: 100%;
+            margin: 24px 0 32px;
           }
           a {
             font-size: 25px;
@@ -67,6 +68,7 @@
             float: right;
             position: relative;
             bottom: 15px;
+            padding-top: 9px;
           }
           .form__check {
             margin-top: 2px;
@@ -79,23 +81,32 @@
           }
         }
         &__2 {
-          height: 60px;
-          padding: 20px 0;
+          padding: 32px 0;
           border-bottom: ridge 0.5px;
         }
         &__3 {
-          height: 60px;
-          padding: 20px 0;
+          padding: 32px 0;
           border-bottom: ridge 0.5px;
         }
         &__4 {
           width: 100%;
-          background-color: gray;
-          margin-top: 40px;
-          padding-top: 10px;
-          height: 40px;
+          background-color: #ea352d;;
           text-align: center;
-          color: white;
+          .buy {
+            margin: 40px 0 0;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out 0.3s;
+            transition: all ease-out 0.3s;
+            cursor: grab;
+            text-align: center;
+          }
         }
       }
     }

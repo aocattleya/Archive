@@ -29,6 +29,8 @@
               .sms-confirmation-container__container__form__content__group
                 = f.label :phonenumber, "携帯電話の番号"
                 = f.phone_field :phonenumber, placeholder: "携帯電話の番号", class: "input-default"
+                - if session[:errorphonenumber]
+                  %q 番号が無効です
               %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
               .sms-confirmation-container__main__container__form__content__submit
                 = f.submit "次へ進む", class:"btn-default btn-red"

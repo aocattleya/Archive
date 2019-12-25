@@ -30,24 +30,34 @@
               = f.label :postal_code, "郵便番号"
               %span.span 必須
               = f.text_field :postal_code, placeholder: "例) 123-4567", class: "input-default"
+              - if session[:errorpostal_code]
+                %q 郵便番号が無効です
             .address-container__main__container__form__content__group
               = f.label :prefecture, "地域"
               %span.span 必須
               .address-container__main__container__form__content__group__select
                 %i.fas.fa-chevron-down
                 = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "---", class: "input-default"
+                - if session[:errorprefecture]
+                  %q 都道府県が無効です
             .address-container__main__container__form__content__group
               = f.label :city, "市町村"
               %span.span 必須
               = f.text_field :city, placeholder: "例) 横浜市緑区", class: "input-default"
+              - if session[:errorcity]
+                %q 都市が無効です
             .address-container__main__container__form__content__group
               = f.label :street, "番地"
               %span.span 必須
               = f.text_field :street, placeholder: "例) 青山1-1-1", class: "input-default"
+              - if session[:errorstreet]
+                %q 地域が無効です
             .address-container__main__container__form__content__group
               = f.label :building, "建物名"
               %span.span 任意
               = f.text_field :building, placeholder: "例) 柳ビル103", class: "input-default"
+              - if session[:errorbuilding]
+                %q 建物名が無効です
             .address-container__main__container__form__content__submit
               = f.submit "次へ進む", class:"btn-default btn-red"
 .footer

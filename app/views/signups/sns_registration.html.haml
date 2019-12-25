@@ -44,15 +44,15 @@
                   = f.label :last_name, "お名前(全角) "
                   %span.span 必須
                 .registration-container__main__container__form__content__group__fields
-                  = f.text_field :last_name, placeholder: "例) 山田", class: "input-default"
-                  = f.text_field :first_name, placeholder: "例) 彩", class: "input-default"
+                = f.text_field :last_name, placeholder: "例) 山田", class: "input-default"
+                = f.text_field :first_name, placeholder: "例) 彩", class: "input-default"
               .registration-container__main__container__form__content__group
                 %div
                   = f.label :last_name_kana, "お名前カナ(全角) "
                   %span.span 必須
                 .registration-container__main__container__form__content__group__fields
-                  = f.text_field :last_name_kana, placeholder: "例) ヤマダ", class: "input-default"
-                  = f.text_field :first_name_kana, placeholder: "例) アヤ", class: "input-default"
+                = f.text_field :last_name_kana, placeholder: "例) ヤマダ", class: "input-default"
+                = f.text_field :first_name_kana, placeholder: "例) アヤ", class: "input-default"
               .registration-container__main__container__form__content__group
                 = label_tag :birthday, "生年月日 "
                 %span.span 必須

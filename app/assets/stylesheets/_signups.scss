@@ -404,6 +404,10 @@
     }
   }
 }
+q {
+  color: red;
+}
+
 
 .sms-confirmation-container {
   @include signup-head();

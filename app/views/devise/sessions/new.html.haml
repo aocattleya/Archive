@@ -7,6 +7,7 @@
     %main.devise-login-container__main
       .devise-login-container__main__container
         .devise-login-container__main__container__new
+          - flash[:notice]
           %p アカウントお持ちでない方はこちら
           = link_to registration_signups_path, class: "container__new" do
             = "新規会員登録"

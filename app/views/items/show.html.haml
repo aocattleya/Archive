@@ -10,7 +10,9 @@
           - if sold == nil
           - else
             .sold
-              sold
+              .back-color
+                %a
+                  SOLD
           .item-box-container__item-main-content-clearfix__image
             .item-box-container__item-main-content-clearfix__image__top
               = image_tag(@item.images.first.image, width: "285px")

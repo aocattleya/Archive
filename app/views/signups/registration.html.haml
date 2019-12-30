@@ -55,25 +55,25 @@
                 .form-info-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
               .registration-container__main__container__form__content__group
                 %div
-                  = f.label :last_name, "お名前(全角) "
-                  %span.span 必須
+                = f.label :last_name, "お名前(全角) "
+                %span.span 必須
                 .registration-container__main__container__form__content__group__fields
                 = f.text_field :last_name, placeholder: "例) 山田", class: "input-default"
-                  - if session[:errorlastname]
+                - if session[:errorlastname]
                   %q 名字が無効です
                 = f.text_field :first_name, placeholder: "例) 彩", class: "input-default"
-                  - if session[:errorfirstname]
+                - if session[:errorfirstname]
                   %q 名前が無効です
               .registration-container__main__container__form__content__group
                 %div
-                  = f.label :last_name_kana, "お名前カナ(全角) "
-                  %span.span 必須
+                = f.label :last_name_kana, "お名前カナ(全角) "
+                %span.span 必須
                 .registration-container__main__container__form__content__group__fields
                 = f.text_field :last_name_kana, placeholder: "例) ヤマダ", class: "input-default"
-                  - if session[:errorlastname_kana]
+                - if session[:errorlastname_kana]
                   %q 名字(カナ)が無効です
                 = f.text_field :first_name_kana, placeholder: "例) アヤ", class: "input-default"
-                  - if session[:errorfirstname_kana]
+                - if session[:errorfirstname_kana]
                   %q 名前(カナ)が無効です
               .registration-container__main__container__form__content__group
                 = f.label "生年月日 "
@@ -95,6 +95,8 @@
                     = f.date_select :birthday_day, discard_day:true, discard_month:true, start_year: 1, end_year: 31, prompt:"--", class: ".select.select-default.day.registration-field"
                   %span
                     日
+                    - if session[:errorbirthday_year]
+                      %q 生年月日が無効です
                     .form-info-text ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
               .registration-container__main__container__form__content__group
                 = check_box_tag :name, "", "", checked: false, class: "checkbox-default" #仮の引数

@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :first_name_kana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/}
   validates :last_name_kana,  presence: true, format: { with: /\A[ァ-ヶー－]+\z/}
   validates :phonenumber,     presence: true, format: { with: /\A\d{10,11}\z/ }
-  validates :birthday_year,   presence: true
+  validates :birthday_year,   presence: true, format: { with: /\A\d{4}\z/}
   validates :birthday_month,  presence: true
   validates :birthday_day,    presence: true
   def self.from_omniauth(auth)

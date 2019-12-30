@@ -41,12 +41,17 @@ class SignupsController < ApplicationController
     )
     if @user.save
       @address = Address.new(address_params.merge(user_id: @user.id))
+    elsif session[:id] != nil
+      @address = Address.new(address_params.merge(user_id: session[:id]))
     elsif user_signed_in?
       @address = Address.new(address_params.merge(user_id: current_user.id))
     else
       redirect_to root_path
     end
       if @address.save
+        if session[:id] == nil
+        session[:id] = @user.id
+        end
         redirect_to new_card_path
       else
         session[:flag2] = @address.errors.messages.first
@@ -55,14 +60,14 @@ class SignupsController < ApplicationController
         session[:errorcity] = @address.errors.messages[:city].first
         session[:errorstreet] = @address.errors.messages[:street].first
         session[:errorbuilding] = @address.errors.messages[:building].first
+        if session[:id] == nil
         session[:id] = @user.id
-        sign_in User.find(session[:id]) unless user_signed_in?
+        end
         redirect_to address_signups_path
       end
     end
 
   def complete
-    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
 end
@@ -118,6 +123,7 @@ def save_to_session
       session[:errorlastname] = @user.errors.messages[:last_name].first
       session[:errorfirstname_kana] = @user.errors.messages[:first_name_kana].first
       session[:errorlastname_kana] = @user.errors.messages[:last_name_kana].first
+      session[:errorbirthday_year] = @user.errors.messages[:birthday_year].first
       if session[:uid] == nil
       redirect_to registration_signups_path
       else
